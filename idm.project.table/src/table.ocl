@@ -1,0 +1,10 @@
+import 'table.ecore'
+
+package table
+
+context Table
+
+-- Nom de la table invalide
+inv validName: self.name <> ''
+
+endpackage
