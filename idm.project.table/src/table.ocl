@@ -3,8 +3,11 @@ import 'table.ecore'
 package table
 
 context Table
-
--- Nom de la table invalide
-inv validName: self.name <> ''
+--
+-- example invariant with a custom error message to verify that
+-- the 'name' property of all 'table::Table' instances is non-null
+--
+inv NonNull_name('The \'name\' property of "' + self.toString() + '" is null'):
+	name <> null
 
 endpackage
