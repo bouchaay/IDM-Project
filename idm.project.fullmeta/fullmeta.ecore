@@ -6,49 +6,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="shemaelements" upperBound="-1"
         eType="#//ShemaElements" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="DataType">
-    <eLiterals name="INTEGER" literal="integer"/>
-    <eLiterals name="FLOAT" value="1" literal="float"/>
-    <eLiterals name="STRING" value="2" literal="string"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Case" eSuperTypes="#//TableElements">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" eType="#//DataType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"
-        eType="#//Column"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="line" lowerBound="1" eType="#//Line"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="allocation" upperBound="-1"
-        eType="#//Allocation" eOpposite="#//Allocation/case"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="#//TableElements">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="linecases" lowerBound="1"
-        upperBound="-1" eType="#//Case" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Column" eSuperTypes="#//TableElements">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id_name"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="columncases" lowerBound="1"
-        upperBound="-1" eType="#//Case" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Stockage">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Allocation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="necessity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="case" lowerBound="1" eType="#//Case"
-        eOpposite="#//Case/allocation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="stockage" lowerBound="1"
-        eType="#//Stockage"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableElements" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//ShemaElements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tableelements" upperBound="-1"
         eType="#//TableElements.1" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="DataType">
-    <eLiterals name="INTEGER" literal="integer"/>
-    <eLiterals name="FLOAT" value="1" literal="float"/>
-    <eLiterals name="STRING" value="2" literal="string"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Algorithme" eSuperTypes="#//ShemaElements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -66,21 +28,21 @@
   <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="#//TableElements.1">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linecase" lowerBound="1"
-        upperBound="-1" eType="#//Case.1" containment="true"/>
+        upperBound="-1" eType="#//Case" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Column" eSuperTypes="#//TableElements.1">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="columncase" lowerBound="1"
-        upperBound="-1" eType="#//Case.1" containment="true"/>
+        upperBound="-1" eType="#//Case" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Case" eSuperTypes="#//TableElements.1">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" eType="#//TableDataType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="caseline" lowerBound="1"
-        eType="#//Line.1"/>
+        eType="#//Line"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="casecolumn" lowerBound="1"
-        eType="#//Column.1"/>
+        eType="#//Column"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="allocation" upperBound="-1"
-        eType="#//Allocation.1" eOpposite="#//Allocation.1/allocationcase"/>
+        eType="#//Allocation" eOpposite="#//Allocation/allocationcase"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="caseposition" lowerBound="1"
         eType="#//Position" eOpposite="#//Position/positioncase"/>
   </eClassifiers>
@@ -91,16 +53,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="Allocation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="necessity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="allocationcase" lowerBound="1"
-        eType="#//Case.1" eOpposite="#//Case.1/allocation"/>
+        eType="#//Case" eOpposite="#//Case/allocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stockage" lowerBound="1"
-        eType="#//Stockage.1"/>
+        eType="#//Stockage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TableDataType">
     <eLiterals name="INTEGER"/>
     <eLiterals name="STRING" value="1"/>
     <eLiterals name="FLOAT" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ForeignColumn" eSuperTypes="#//Column.1">
+  <eClassifiers xsi:type="ecore:EClass" name="ForeignColumn" eSuperTypes="#//Column">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="table_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="foreign_id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -149,7 +111,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="col_id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="line_id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="positioncase" lowerBound="1"
-        eType="#//Case.1" eOpposite="#//Case.1/caseposition"/>
+        eType="#//Case" eOpposite="#//Case/caseposition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Exportation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="source_table" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -181,5 +143,5 @@
     <eLiterals name="TROISDIM" value="3"/>
     <eLiterals name="BARCHART" value="4"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InputColumn" eSuperTypes="#//Column.1"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InputColumn" eSuperTypes="#//Column"/>
 </ecore:EPackage>
