@@ -58,6 +58,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="columncases" lowerBound="1"
         upperBound="-1" eType="#//Case" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraintfile" eType="#//Constraint"
+        eOpposite="#//Constraint/columnconstrainted"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Case" eSuperTypes="#//TableElements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" eType="#//TableDataType"/>
@@ -151,4 +153,9 @@
         upperBound="3" eType="#//InputColumn" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InputColumn" eSuperTypes="#//Column"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="file_path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columnconstrainted" lowerBound="1"
+        upperBound="-1" eType="#//Column" eOpposite="#//Column/constraintfile"/>
+  </eClassifiers>
 </ecore:EPackage>
