@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.n7.idm.project.shematable/src-gen" creationIcons="false"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/fr.n7.idm.project.shematable/src-gen" creationIcons="false"
     editDirectory="/fr.n7.idm.project.shematable.edit/src-gen" editorDirectory="/fr.n7.idm.project.shematable.editor/src-gen"
     modelPluginID="fr.n7.idm.project.shematable" modelName="Shematable" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="20.0"
@@ -9,6 +10,29 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Shematable" basePackage="fr.n7.idm.project" disposableProviderFactory="true"
       ecorePackage="shematable.ecore#/">
-    <genClasses ecoreClass="shematable.ecore#//NewEClass1"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="shematable.ecore#//ColumnDataType">
+      <genEnumLiterals ecoreEnumLiteral="shematable.ecore#//ColumnDataType/int"/>
+      <genEnumLiterals ecoreEnumLiteral="shematable.ecore#//ColumnDataType/float"/>
+      <genEnumLiterals ecoreEnumLiteral="shematable.ecore#//ColumnDataType/string"/>
+    </genEnums>
+    <genClasses ecoreClass="shematable.ecore#//ShemaTable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shematable.ecore#//ShemaTable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shematable.ecore#//ShemaTable/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shematable.ecore#//ShemaTable/columns"/>
+    </genClasses>
+    <genClasses ecoreClass="shematable.ecore#//Column">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shematable.ecore#//Column/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shematable.ecore#//Column/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shematable.ecore#//Column/dataType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shematable.ecore#//Column/constraintFile"/>
+    </genClasses>
+    <genClasses ecoreClass="shematable.ecore#//ReferencedColumn">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shematable.ecore#//ReferencedColumn/foreignTable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shematable.ecore#//ReferencedColumn/foreignColumn"/>
+    </genClasses>
+    <genClasses ecoreClass="shematable.ecore#//DerivedColumn"/>
+    <genClasses ecoreClass="shematable.ecore#//Constraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shematable.ecore#//Constraint/filePath"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

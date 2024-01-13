@@ -1,0 +1,54 @@
+[comment encoding = UTF-8 /]
+[module ShemaTable('http://www.example.org/shematable')]
+
+
+[template public ShemaTable(aShemaTable : ShemaTable)]
+[comment @main/]
+[file (aShemaTable.name + '.java', false, 'UTF-8')]!
+package mainPackage;
+import shemaTableElements.*;
+
+public class TableApplication {
+
+	public static void main(String['['/]] args) {
+		
+		[comment Récupérer les éléments d'identification de la table du modèle/] 
+		// La table d'id [aShemaTable.id/]
+		ShemaTable table = new ShemaTable("[aShemaTable.name/]", [aShemaTable.id/]);
+
+		[comment Récupérer les colonnes de la table depuis le modèle /]
+		[let colonnes : OrderedSet(Column) = aShemaTable.columns]
+
+		[comment Parcourir les colonnes du modèle /]
+ 		[for (colonne : Column | colonnes)]
+
+			[comment Fichier des contraintes de la colonnes courante /]
+			// Fichier des contraintes de la colonne courante
+			Constraint contraintes =  new Constraint("[colonne.constraintFile.filePath/]");
+			
+			[comment Parcourir les colonnes du modèle et les ajouter à la table /]
+			// Création de la colonne courante d'id [colonne.id/]
+			[if colonne.dataType = ColumnDataType::int]
+			currentColumn = new Column<Integer>("[colonne.name/]", [colonne.id/], ColumnDataType.INTEGER, contraintes);
+			[elseif colonne.dataType = ColumnDataType::float]
+			currentColumn = new Column<Float>("[colonne.name/]", [colonne.id/], ColumnDataType.FLOAT, contraintes);
+			[elseif colonne.dataType = ColumnDataType::string]
+			currentColumn = new Column<String>("[colonne.name/]", [colonne.id/], ColumnDataType.STRING, contraintes);
+			[/if]
+
+			[comment Ajouter la colonnne à la table /]
+			// Ajouter la colonne d'id [colonne.id/] à la table
+			table.addColumn(currentColumn);
+
+
+[/for]
+[/let]
+		
+
+	}
+
+}
+
+
+[/file]
+[/template]

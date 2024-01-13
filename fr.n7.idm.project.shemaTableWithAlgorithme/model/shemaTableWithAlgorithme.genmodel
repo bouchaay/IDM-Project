@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/fr.n7.idm.project.shemaTableWithAlgorithme/src-gen"
+    creationIcons="false" editDirectory="/fr.n7.idm.project.shemaTableWithAlgorithme.edit/src-gen"
+    editorDirectory="/fr.n7.idm.project.shemaTableWithAlgorithme.editor/src-gen" modelPluginID="fr.n7.idm.project.shemaTableWithAlgorithme"
+    modelName="ShemaTableWithAlgorithme" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="20.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>shemaTableWithAlgorithme.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="ShemaTableWithAlgorithme" basePackage="fr.n7.idm.project" disposableProviderFactory="true"
+      ecorePackage="shemaTableWithAlgorithme.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="shemaTableWithAlgorithme.ecore#//ColumnDataType">
+      <genEnumLiterals ecoreEnumLiteral="shemaTableWithAlgorithme.ecore#//ColumnDataType/int"/>
+      <genEnumLiterals ecoreEnumLiteral="shemaTableWithAlgorithme.ecore#//ColumnDataType/float"/>
+      <genEnumLiterals ecoreEnumLiteral="shemaTableWithAlgorithme.ecore#//ColumnDataType/string"/>
+    </genEnums>
+    <genClasses ecoreClass="shemaTableWithAlgorithme.ecore#//ShemaTable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shemaTableWithAlgorithme.ecore#//ShemaTable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shemaTableWithAlgorithme.ecore#//ShemaTable/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//ShemaTable/columns"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//ShemaTable/catalogue"/>
+    </genClasses>
+    <genClasses ecoreClass="shemaTableWithAlgorithme.ecore#//Constraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shemaTableWithAlgorithme.ecore#//Constraint/filePath"/>
+    </genClasses>
+    <genClasses ecoreClass="shemaTableWithAlgorithme.ecore#//Column">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shemaTableWithAlgorithme.ecore#//Column/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shemaTableWithAlgorithme.ecore#//Column/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shemaTableWithAlgorithme.ecore#//Column/dataType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//Column/constraint"/>
+    </genClasses>
+    <genClasses ecoreClass="shemaTableWithAlgorithme.ecore#//ReferencedColumn">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//ReferencedColumn/foreignColumn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//ReferencedColumn/foreignTable"/>
+    </genClasses>
+    <genClasses ecoreClass="shemaTableWithAlgorithme.ecore#//DerivedColumn">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//DerivedColumn/outputColumn"/>
+    </genClasses>
+    <genClasses ecoreClass="shemaTableWithAlgorithme.ecore#//Resource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shemaTableWithAlgorithme.ecore#//Resource/folderPath"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//Resource/algorithms"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//Resource/resourceFiles"/>
+    </genClasses>
+    <genClasses ecoreClass="shemaTableWithAlgorithme.ecore#//Algorithm">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//Algorithm/input"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//Algorithm/output"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//Algorithm/fileOfAlgo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shemaTableWithAlgorithme.ecore#//Algorithm/name"/>
+    </genClasses>
+    <genClasses ecoreClass="shemaTableWithAlgorithme.ecore#//AlgorithmFile">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//AlgorithmFile/algoOfFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shemaTableWithAlgorithme.ecore#//AlgorithmFile/fileName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//AlgorithmFile/resource"/>
+    </genClasses>
+    <genClasses ecoreClass="shemaTableWithAlgorithme.ecore#//Input">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//Input/inputColumns"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//Input/constante"/>
+    </genClasses>
+    <genClasses ecoreClass="shemaTableWithAlgorithme.ecore#//Output">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//Output/AlgoOfOutput"/>
+    </genClasses>
+    <genClasses ecoreClass="shemaTableWithAlgorithme.ecore#//Constant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shemaTableWithAlgorithme.ecore#//Constant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="shemaTableWithAlgorithme.ecore#//Catalogue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute shemaTableWithAlgorithme.ecore#//Catalogue/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference shemaTableWithAlgorithme.ecore#//Catalogue/algorithmFiles"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

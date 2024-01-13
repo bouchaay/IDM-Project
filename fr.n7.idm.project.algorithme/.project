@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>fr.n7.idm.project.shematable</name>
+	<name>fr.n7.idm.project.algorithme</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -50,7 +50,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1705099151757</id>
+			<id>1705099151750</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
