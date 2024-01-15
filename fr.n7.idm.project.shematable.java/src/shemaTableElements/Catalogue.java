@@ -6,15 +6,15 @@ public class Catalogue {
 
     /** Le nom du catalogue */
     private String name;
-    /** Les noms des algorithmes du catalogue */
-    private List<String> algorithms;
+    /** Les algorithmes */
+    private List<Algorithm> algorithms;
 
     /**
      * Constructeur de la classe Catalogue
      * @param name Le nom du catalogue
      * @param algorithms Les noms des algorithmes du catalogue
      */
-    public Catalogue(String name, List<String> algorithms) {
+    public Catalogue(String name, List<Algorithm> algorithms) {
         this.name = name;
         this.algorithms = algorithms;
     }
@@ -25,7 +25,7 @@ public class Catalogue {
      */
     public Catalogue(String name) {
         this.name = name;
-        this.algorithms = new ArrayList<String>();
+        this.algorithms = new ArrayList<Algorithm>();
     }
 
     /**
@@ -40,7 +40,7 @@ public class Catalogue {
      * Retourne les noms des algorithmes du catalogue
      * @return Les noms des algorithmes du catalogue
      */
-    public List<String> getAlgorithms() {
+    public List<Algorithm> getAlgorithms() {
         return algorithms;
     }
 
@@ -56,7 +56,7 @@ public class Catalogue {
      * Modifie les noms des algorithmes du catalogue
      * @param algorithms Les nouveaux noms des algorithmes du catalogue
      */
-    public void setAlgorithms(List<String> algorithms) {
+    public void setAlgorithms(List<Algorithm> algorithms) {
         this.algorithms = algorithms;
     }
 
@@ -64,7 +64,7 @@ public class Catalogue {
      * Ajoute un algorithme au catalogue
      * @param algorithm Le nom de l'algorithme à ajouter
      */
-    public void addAlgorithm(String algorithm) {
+    public void addAlgorithm(Algorithm algorithm) {
         this.algorithms.add(algorithm);
     }
 
@@ -72,7 +72,18 @@ public class Catalogue {
      * Retire un algorithme du catalogue
      * @param algorithm Le nom de l'algorithme à retirer
      */
-    public void removeAlgorithm(String algorithm) {
+    public void removeAlgorithm(Algorithm algorithm) {
         this.algorithms.remove(algorithm);
+    }
+
+    /** Retourner la liste des noms des algorithmes du catalogue
+     * @return La liste des noms des algorithmes du catalogue
+     */
+    public List<String> getAlgorithmsNames() {
+        List<String> algorithmsNames = new ArrayList<String>();
+        for (Algorithm algorithm : this.algorithms) {
+            algorithmsNames.add(algorithm.getName());
+        }
+        return algorithmsNames;
     }
 }

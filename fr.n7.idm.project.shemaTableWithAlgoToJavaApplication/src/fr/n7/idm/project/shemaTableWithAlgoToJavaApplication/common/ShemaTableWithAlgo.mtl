@@ -1,7 +1,0 @@
-[comment encoding = UTF-8 /]
-[module ShemaTableWithAlgo('http://www.example.org/shemaTableWithAlgorithme')]
-
-
-[template public ShemaTableWithAlgo(aShemaTable : ShemaTable)]
-
-[/template]

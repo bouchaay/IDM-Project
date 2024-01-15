@@ -10,14 +10,17 @@ public class ShemaTable {
     private int id;
     /** Liste des colonnes de la table */
     private List<Column<?>> columns;
+    /** Catalogue associé à la table */
+    private Catalogue catalogue;
     
     /** Constructeur de la classe ShemaTable
      * @param name Le nom de la table
      * @param id L'identifiant de la table
      */
-    public ShemaTable(String name, int id) {
+    public ShemaTable(String name, int id, Catalogue catalogue) {
         this.name = name;
         this.id = id;
+        this.catalogue = catalogue;
         this.columns = new ArrayList<Column<?>>();
         this.columns.add(new Column<Integer>("Lines Id", 0, ColumnDataType.INTEGER, new Constraint("")));
     }
@@ -47,6 +50,14 @@ public class ShemaTable {
      */
     public int getId() {
         return id;
+    }
+
+    /**
+     * Retourne le catalogue associé à la table
+     * @return Le catalogue associé à la table
+     */
+    public Catalogue getCatalogue() {
+        return catalogue;
     }
 
     /**

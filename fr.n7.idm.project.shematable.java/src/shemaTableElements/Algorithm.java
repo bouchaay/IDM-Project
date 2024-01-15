@@ -1,4 +1,6 @@
 package shemaTableElements;
+import java.util.ArrayList;
+import java.util.List;
 
 /** Classe représentant un algorithme */
 public class Algorithm {
@@ -10,7 +12,7 @@ public class Algorithm {
     /** Le nom de l'algorithme */
     String name;
     /** Le fichier de l'algorithme */
-    AlgorithmFile file;
+    String path;
 
     /**
      * Constructeur de la classe Algorithm
@@ -19,11 +21,11 @@ public class Algorithm {
      * @param name Le nom de l'algorithme
      * @param file Le fichier de l'algorithme
      */
-    public Algorithm(Input input, Output output, String name, AlgorithmFile file) {
+    public Algorithm(Input input, Output output, String name, String path) {
         this.input = input;
         this.output = output;
         this.name = name;
-        this.file = file;
+        this.path = path;
     }
 
     /**
@@ -54,9 +56,10 @@ public class Algorithm {
      * Retourne le fichier de l'algorithme
      * @return Le fichier de l'algorithme
      */
-    public AlgorithmFile getFile() {
-        return file;
+    public String getPath() {
+        return path;
     }
+    
 
     /**
      * Modifie l'entrée de l'algorithme
@@ -86,7 +89,7 @@ public class Algorithm {
      * Modifie le fichier de l'algorithme
      * @param file Le nouveau fichier de l'algorithme
      */
-    public void setFile(AlgorithmFile file) {
-        this.file = file;
+    public void setPath(String path) {
+        this.path = path;
     }
 }

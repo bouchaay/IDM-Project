@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module Tables('http://shematables')]
+
+
+[template public Tables(aTables : Tables)]
+[comment @main/]
+[file ('Tables.Java', false, 'UTF-8')]
+
+[/file]
+[/template]

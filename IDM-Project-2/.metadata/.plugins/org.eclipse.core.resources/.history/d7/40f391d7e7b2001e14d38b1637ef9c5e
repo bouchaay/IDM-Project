@@ -1,0 +1,13 @@
+import 'ShemaTables.ecore'
+
+package shematables
+
+context Tables
+--
+-- example invariant with a custom error message to verify that
+-- the 'shematables' property of all 'shematables::Tables' instances is non-null
+--
+inv NonNull_shematables('The \'shematables\' property of "' + self.toString() + '" is null'):
+	shematables <> null
+
+endpackage

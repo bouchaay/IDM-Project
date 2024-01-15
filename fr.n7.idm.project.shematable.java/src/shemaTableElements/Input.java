@@ -11,6 +11,22 @@ public class Input {
     private Constant constante;
 
     /**
+     * Constructeur de la classe Input (nouvelle entrée vide)
+     */
+    public Input() {
+        this.columns = new ArrayList<Column<?>>();
+    }
+
+    /**
+     * Constructeur de la classe Input (nouvelle entrée vide)
+     * @param constante La constante pour l'entrée de l'algorithme
+     */
+    public Input(Constant constante) {
+        this.columns = new ArrayList<Column<?>>();
+        this.constante = constante;
+    }
+
+    /**
      * Constructeur de la classe Input
      * @param columns La liste des colonnes pour l'entrée de l'algorithme
      * @param constante La constante pour l'entrée de l'algorithme
@@ -56,7 +72,7 @@ public class Input {
      * Ajoute une colonne à la liste des colonnes pour l'entrée de l'algorithme
      * @param column La colonne à ajouter
      */
-    public void addColumn(Column<?> column) {
+    public void addColumnToInput(Column<?> column) {
         this.columns.add(column);
     }
 
