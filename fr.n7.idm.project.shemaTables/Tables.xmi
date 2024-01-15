@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<shemaTables:Tables
+<shematables:Tables
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:shemaTables="http://www.example.org/shemaTables">
+    xmlns:shematables="http://shematables"
+    xsi:schemaLocation="http://shematables ShemaTables.ecore">
   <shematables
       name="Tab1"
       id="1">
@@ -14,26 +15,27 @@
         name="col12"
         id="2"/>
     <columns
-        xsi:type="shemaTables:ReferencedColumn"
-        name="col3"
+        xsi:type="shematables:ReferencedColumn"
+        name="col13"
         id="3"
         foreignTable="//@shematables.1"
         foreignColumn="//@shematables.1/@columns.1"/>
     <columns
-        xsi:type="shemaTables:DerivedColumn"
-        name="col4"
+        xsi:type="shematables:DerivedColumn"
+        name="col14"
         id="4"
-        outputColumn="//@shematables.0/@catalogue/@algorithm.0/@output"/>
+        algorithm="//@shematables.0/@catalogue/@algorithms.0"
+        outputColumn="//@shematables.0/@catalogue/@algorithms.0/@output"/>
     <catalogue
         name="cat1">
-      <algorithm
+      <algorithms
           name="add"
           path="c://add.py">
-        <input
-            column="//@shematables.0/@columns.0 //@shematables.0/@columns.1"/>
         <output
             name="col1+col2"/>
-      </algorithm>
+        <input
+            columns="//@shematables.0/@columns.0 //@shematables.0/@columns.1"/>
+      </algorithms>
     </catalogue>
   </shematables>
   <shematables
@@ -48,4 +50,4 @@
     <catalogue
         name="cat2"/>
   </shematables>
-</shemaTables:Tables>
+</shematables:Tables>

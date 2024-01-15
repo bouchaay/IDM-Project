@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables.impl;
+package shematables.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -9,8 +9,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import shemaTables.Constraint;
-import shemaTables.ShemaTablesPackage;
+import shematables.Constraint;
+import shematables.ShematablesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +20,7 @@ import shemaTables.ShemaTablesPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link shemaTables.impl.ConstraintImpl#getFilePath <em>File Path</em>}</li>
+ *   <li>{@link shematables.impl.ConstraintImpl#getFilePath <em>File Path</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,7 +62,7 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ShemaTablesPackage.Literals.CONSTRAINT;
+		return ShematablesPackage.Literals.CONSTRAINT;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
 		String oldFilePath = filePath;
 		filePath = newFilePath;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.CONSTRAINT__FILE_PATH, oldFilePath, filePath));
+			eNotify(new ENotificationImpl(this, Notification.SET, ShematablesPackage.CONSTRAINT__FILE_PATH, oldFilePath, filePath));
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ShemaTablesPackage.CONSTRAINT__FILE_PATH:
+			case ShematablesPackage.CONSTRAINT__FILE_PATH:
 				return getFilePath();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -110,7 +110,7 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ShemaTablesPackage.CONSTRAINT__FILE_PATH:
+			case ShematablesPackage.CONSTRAINT__FILE_PATH:
 				setFilePath((String)newValue);
 				return;
 		}
@@ -125,7 +125,7 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.CONSTRAINT__FILE_PATH:
+			case ShematablesPackage.CONSTRAINT__FILE_PATH:
 				setFilePath(FILE_PATH_EDEFAULT);
 				return;
 		}
@@ -140,7 +140,7 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.CONSTRAINT__FILE_PATH:
+			case ShematablesPackage.CONSTRAINT__FILE_PATH:
 				return FILE_PATH_EDEFAULT == null ? filePath != null : !FILE_PATH_EDEFAULT.equals(filePath);
 		}
 		return super.eIsSet(featureID);

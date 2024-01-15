@@ -1,13 +1,13 @@
 /**
  */
-package shemaTables.util;
+package shematables.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import shemaTables.*;
+import shematables.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,17 +19,17 @@ import shemaTables.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see shemaTables.ShemaTablesPackage
+ * @see shematables.ShematablesPackage
  * @generated
  */
-public class ShemaTablesSwitch<T> extends Switch<T> {
+public class ShematablesSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ShemaTablesPackage modelPackage;
+	protected static ShematablesPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -37,9 +37,9 @@ public class ShemaTablesSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ShemaTablesSwitch() {
+	public ShematablesSwitch() {
 		if (modelPackage == null) {
-			modelPackage = ShemaTablesPackage.eINSTANCE;
+			modelPackage = ShematablesPackage.eINSTANCE;
 		}
 	}
 
@@ -66,77 +66,92 @@ public class ShemaTablesSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ShemaTablesPackage.SHEMA_TABLE: {
+			case ShematablesPackage.TABLES: {
+				Tables tables = (Tables)theEObject;
+				T result = caseTables(tables);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ShematablesPackage.SHEMA_TABLE: {
 				ShemaTable shemaTable = (ShemaTable)theEObject;
 				T result = caseShemaTable(shemaTable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShemaTablesPackage.CONSTRAINT: {
-				Constraint constraint = (Constraint)theEObject;
-				T result = caseConstraint(constraint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ShemaTablesPackage.COLUMN: {
+			case ShematablesPackage.COLUMN: {
 				Column column = (Column)theEObject;
 				T result = caseColumn(column);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShemaTablesPackage.REFERENCED_COLUMN: {
+			case ShematablesPackage.REFERENCED_COLUMN: {
 				ReferencedColumn referencedColumn = (ReferencedColumn)theEObject;
 				T result = caseReferencedColumn(referencedColumn);
 				if (result == null) result = caseColumn(referencedColumn);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShemaTablesPackage.DERIVED_COLUMN: {
+			case ShematablesPackage.DERIVED_COLUMN: {
 				DerivedColumn derivedColumn = (DerivedColumn)theEObject;
 				T result = caseDerivedColumn(derivedColumn);
 				if (result == null) result = caseColumn(derivedColumn);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShemaTablesPackage.ALGORITHM: {
+			case ShematablesPackage.CONSTRAINT: {
+				Constraint constraint = (Constraint)theEObject;
+				T result = caseConstraint(constraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ShematablesPackage.CATALOGUE: {
+				Catalogue catalogue = (Catalogue)theEObject;
+				T result = caseCatalogue(catalogue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ShematablesPackage.ALGORITHM: {
 				Algorithm algorithm = (Algorithm)theEObject;
 				T result = caseAlgorithm(algorithm);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShemaTablesPackage.INPUT: {
+			case ShematablesPackage.INPUT: {
 				Input input = (Input)theEObject;
 				T result = caseInput(input);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShemaTablesPackage.OUTPUT: {
+			case ShematablesPackage.OUTPUT: {
 				Output output = (Output)theEObject;
 				T result = caseOutput(output);
 				if (result == null) result = caseColumn(output);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShemaTablesPackage.CONSTANT: {
+			case ShematablesPackage.CONSTANT: {
 				Constant constant = (Constant)theEObject;
 				T result = caseConstant(constant);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ShemaTablesPackage.CATALOGUE: {
-				Catalogue catalogue = (Catalogue)theEObject;
-				T result = caseCatalogue(catalogue);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ShemaTablesPackage.TABLES: {
-				Tables tables = (Tables)theEObject;
-				T result = caseTables(tables);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Tables</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Tables</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTables(Tables object) {
+		return null;
 	}
 
 	/**
@@ -151,21 +166,6 @@ public class ShemaTablesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseShemaTable(ShemaTable object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constraint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConstraint(Constraint object) {
 		return null;
 	}
 
@@ -211,6 +211,36 @@ public class ShemaTablesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDerivedColumn(DerivedColumn object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstraint(Constraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Catalogue</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Catalogue</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCatalogue(Catalogue object) {
 		return null;
 	}
 
@@ -275,36 +305,6 @@ public class ShemaTablesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Catalogue</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Catalogue</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCatalogue(Catalogue object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Tables</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Tables</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTables(Tables object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -320,4 +320,4 @@ public class ShemaTablesSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //ShemaTablesSwitch
+} //ShematablesSwitch

@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables;
+package shematables;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -9,17 +9,26 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see shemaTables.ShemaTablesPackage
+ * @see shematables.ShematablesPackage
  * @generated
  */
-public interface ShemaTablesFactory extends EFactory {
+public interface ShematablesFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ShemaTablesFactory eINSTANCE = shemaTables.impl.ShemaTablesFactoryImpl.init();
+	ShematablesFactory eINSTANCE = shematables.impl.ShematablesFactoryImpl.init();
+
+	/**
+	 * Returns a new object of class '<em>Tables</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Tables</em>'.
+	 * @generated
+	 */
+	Tables createTables();
 
 	/**
 	 * Returns a new object of class '<em>Shema Table</em>'.
@@ -29,15 +38,6 @@ public interface ShemaTablesFactory extends EFactory {
 	 * @generated
 	 */
 	ShemaTable createShemaTable();
-
-	/**
-	 * Returns a new object of class '<em>Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Constraint</em>'.
-	 * @generated
-	 */
-	Constraint createConstraint();
 
 	/**
 	 * Returns a new object of class '<em>Column</em>'.
@@ -65,6 +65,24 @@ public interface ShemaTablesFactory extends EFactory {
 	 * @generated
 	 */
 	DerivedColumn createDerivedColumn();
+
+	/**
+	 * Returns a new object of class '<em>Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Constraint</em>'.
+	 * @generated
+	 */
+	Constraint createConstraint();
+
+	/**
+	 * Returns a new object of class '<em>Catalogue</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Catalogue</em>'.
+	 * @generated
+	 */
+	Catalogue createCatalogue();
 
 	/**
 	 * Returns a new object of class '<em>Algorithm</em>'.
@@ -103,30 +121,12 @@ public interface ShemaTablesFactory extends EFactory {
 	Constant createConstant();
 
 	/**
-	 * Returns a new object of class '<em>Catalogue</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Catalogue</em>'.
-	 * @generated
-	 */
-	Catalogue createCatalogue();
-
-	/**
-	 * Returns a new object of class '<em>Tables</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Tables</em>'.
-	 * @generated
-	 */
-	Tables createTables();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	ShemaTablesPackage getShemaTablesPackage();
+	ShematablesPackage getShematablesPackage();
 
-} //ShemaTablesFactory
+} //ShematablesFactory

@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables;
+package shematables;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,41 +15,29 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link shemaTables.Input#getInputColumns <em>Input Columns</em>}</li>
- *   <li>{@link shemaTables.Input#getConstante <em>Constante</em>}</li>
+ *   <li>{@link shematables.Input#getConstante <em>Constante</em>}</li>
+ *   <li>{@link shematables.Input#getColumns <em>Columns</em>}</li>
  * </ul>
  *
- * @see shemaTables.ShemaTablesPackage#getInput()
+ * @see shematables.ShematablesPackage#getInput()
  * @model
  * @generated
  */
 public interface Input extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Input Columns</b></em>' containment reference list.
-	 * The list contents are of type {@link shemaTables.Column}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Input Columns</em>' containment reference list.
-	 * @see shemaTables.ShemaTablesPackage#getInput_InputColumns()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Column> getInputColumns();
-
 	/**
 	 * Returns the value of the '<em><b>Constante</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Constante</em>' containment reference.
 	 * @see #setConstante(Constant)
-	 * @see shemaTables.ShemaTablesPackage#getInput_Constante()
+	 * @see shematables.ShematablesPackage#getInput_Constante()
 	 * @model containment="true"
 	 * @generated
 	 */
 	Constant getConstante();
 
 	/**
-	 * Sets the value of the '{@link shemaTables.Input#getConstante <em>Constante</em>}' containment reference.
+	 * Sets the value of the '{@link shematables.Input#getConstante <em>Constante</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Constante</em>' containment reference.
@@ -57,5 +45,17 @@ public interface Input extends EObject {
 	 * @generated
 	 */
 	void setConstante(Constant value);
+
+	/**
+	 * Returns the value of the '<em><b>Columns</b></em>' reference list.
+	 * The list contents are of type {@link shematables.Column}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Columns</em>' reference list.
+	 * @see shematables.ShematablesPackage#getInput_Columns()
+	 * @model required="true"
+	 * @generated
+	 */
+	EList<Column> getColumns();
 
 } // Input

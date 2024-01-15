@@ -7,11 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated shemaTables -->
+      <!-- @generated ShemaTables -->
       <package
-            uri="http://www.example.org/shemaTables"
-            class="shemaTables.ShemaTablesPackage"
-            genModel="shemaTables.genmodel"/>
+            uri="http://shematables"
+            class="shematables.ShematablesPackage"
+            genModel="ShemaTables.genmodel"/>
    </extension>
 
 </plugin>

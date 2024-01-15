@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables;
+package shematables;
 
 
 /**
@@ -9,7 +9,7 @@ package shemaTables;
  * <!-- end-user-doc -->
  *
  *
- * @see shemaTables.ShemaTablesPackage#getOutput()
+ * @see shematables.ShematablesPackage#getOutput()
  * @model
  * @generated
  */

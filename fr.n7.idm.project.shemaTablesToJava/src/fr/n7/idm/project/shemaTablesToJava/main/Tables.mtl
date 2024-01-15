@@ -1,0 +1,102 @@
+[comment encoding = UTF-8 /]
+[module Tables('http://shematables')]
+
+
+[template public Tables(aTables : Tables)]
+[comment @main/]
+[file ('UserTableModel.java', false, 'UTF-8')]
+package Main;
+import ShemaTableElements.*;
+
+public class UserTableModel {
+
+	public static void main(String['['/]] args) {
+		
+			[let tables : OrderedSet(ShemaTable) = aTables.shematables]
+			[for (aShemaTable : ShemaTable | tables)]
+			// Catalogue de la table
+			Catalogue catalogue_[aShemaTable.id/] = new Catalogue("[aShemaTable.catalogue.name/]");
+			[let algorithmes : OrderedSet(Algorithm) = aShemaTable.catalogue.algorithms]
+ 			[for (algorithme : Algorithm | algorithmes)]
+
+			// L'input de l'algorithme actuel
+			[let currentAlgoInput : Input = algorithme.input]
+			[if input.constante <> null]
+			[let value : Constant = input.constante]
+			Constant cons = new Constant([value/]);
+			Input input_[algorithme.name/]_[aShemaTable.id/] = new Input(cons);
+			[/let]
+			[else]
+			Input input_[algorithme.name/]_[aShemaTable.id/] = new Input();
+			[/if]
+
+			// Les colonnes de l'input
+			[let inputCols : OrderedSet(Column) = input.columns]
+			[for (currentCol : Column | inputCols)]
+			[if currentCol.constraint <> null]
+			Constraint currentColConstr_[algorithme.name/]_[aShemaTable.id/]_[currentCol.id/] = new Constraint("[currentCol.constraint.filePath/]");
+			[else]
+			Constraint currentColConstr_[algorithme.name/]_[aShemaTable.id/]_[currentCol.id/] = new Constraint("");
+			[/if]
+			[if currentCol.dataType = ColumnDataType::int]
+			Column<Integer> currentColumn_[algorithme.name/]_[aShemaTable.id/]_[currentCol.id/] = new Column<Integer>("[currentCol.name/]", [currentCol.id/], ColumnDataType.INTEGER, currentColConstr_[algorithme.name/]_[aShemaTable.id/]_[currentCol.id/]);
+			[elseif currentCol.dataType = ColumnDataType::float]
+			Column<Float> currentColumn_[algorithme.name/]_[aShemaTable.id/]_[currentCol.id/] = new Column<Float>("[currentCol.name/]", [currentCol.id/], ColumnDataType.FLOAT, currentColConstr_[algorithme.name/]_[aShemaTable.id/]_[currentCol.id/]);
+			[elseif currentCol.dataType = ColumnDataType::string]
+			Column<String> currentColumn_[algorithme.name/]_[aShemaTable.id/]_[currentCol.id/] = new Column<String>("[currentCol.name/]", [currentCol.id/], ColumnDataType.STRING, currentColConstr_[algorithme.name/]_[aShemaTable.id/]_[currentCol.id/]);
+			[/if]
+			input_[algorithme.name/]_[aShemaTable.id/].addColumnToInput(currentColumn_[algorithme.name/]_[aShemaTable.id/]_[currentCol.id/]);
+			[/for]
+			[/let]
+			[/let]
+
+			// L'output de l'algorithme
+			[let currentAlgoOutput : Output = algorithme.output]
+			Constraint outputConstr_[algorithme.name/]__[aShemaTable.id/]_[currentAlgoOutput.id/] = new Constraint("");
+			[if currentAlgoOutput.dataType = ColumnDataType::int]
+			Column<Integer> currentAlgoOutput_[algorithme.name/]_[aShemaTable.id/]_[currentAlgoOutput.id/] = new Column<Integer>("[currentAlgoOutput.name/]", [currentAlgoOutput.id/], ColumnDataType.INTEGER, outputConstr_[algorithme.name/]__[aShemaTable.id/]_[currentAlgoOutput.id/]);
+			[elseif currentAlgoOutput.dataType = ColumnDataType::float]
+			Column<Float> currentAlgoOutput_[algorithme.name/]_[aShemaTable.id/]_[currentAlgoOutput.id/] = new Column<Float>("[currentAlgoOutput.name/]", [currentAlgoOutput.id/], ColumnDataType.FLOAT, outputConstr_[algorithme.name/]__[aShemaTable.id/]_[currentAlgoOutput.id/]outputConstr);
+			[elseif currentAlgoOutput.dataType = ColumnDataType::string]
+			Column<String> currentAlgoOutput_[algorithme.name/]_[aShemaTable.id/]_[currentAlgoOutput.id/] = new Column<String>("[currentAlgoOutput.name/]", [currentAlgoOutput.id/], ColumnDataType.STRING, outputConstr_[algorithme.name/]__[aShemaTable.id/]_[currentAlgoOutput.id/]);
+			[/if]
+
+			// Créer l'algorithme
+			Algorithm currentAlgo_[algorithme.name/]_[aShemaTable.id/] = new Algorithm(input_[algorithme.name/]_[aShemaTable.id/], (Output) currentAlgoOutput_[algorithme.name/]_[aShemaTable.id/]_[currentAlgoOutput.id/], "[algorithme.name/]", "[algorithme.path/]");
+			[/let]
+			catalogue_[aShemaTable.id/].addAlgorithm(currentAlgo_[algorithme.name/]_[aShemaTable.id/]);
+			[/for]
+			[/let]
+			
+			// La table d'id [aShemaTable.id/]
+			ShemaTable table_[aShemaTable.id/] = new ShemaTable("[aShemaTable.name/]", [aShemaTable.id/], catalogue_[aShemaTable.id/]);
+			[let colonnes : OrderedSet(Column) = aShemaTable.columns]
+ 			[for (colonne : Column | colonnes)]
+
+			// Fichier des contraintes de la colonne courante
+			[if colonne.constraint <> null]
+			Constraint contraintes_[aShemaTable.id/]_[colonne.id/] =  new Constraint("[colonne.constraint.filePath/]");
+			[else]
+			Constraint contraintes_[aShemaTable.id/]_[colonne.id/] =  new Constraint("");
+			[/if]
+
+			// Création de la colonne courante d'id [colonne.id/]
+			[if colonne.dataType = ColumnDataType::int]
+			Column<Integer> currentColumn_[aShemaTable.id/]_[colonne.id/] = new Column<Integer>("[colonne.name/]", [colonne.id/], ColumnDataType.INTEGER, contraintes_[aShemaTable.id/]_[colonne.id/]);
+			[elseif colonne.dataType = ColumnDataType::float]
+			Column<Float> currentColumn_[aShemaTable.id/]_[colonne.id/] = new Column<Float>("[colonne.name/]", [colonne.id/], ColumnDataType.FLOAT, contraintes_[aShemaTable.id/]_[colonne.id/]);
+			[elseif colonne.dataType = ColumnDataType::string]
+			Column<String> currentColumn_[aShemaTable.id/]_[colonne.id/] = new Column<String>("[colonne.name/]", [colonne.id/], ColumnDataType.STRING, contraintes_[aShemaTable.id/]_[colonne.id/]);
+			[/if]
+
+			// Ajouter la colonne d'id [colonne.id/] à la table
+			table_[aShemaTable.id/].addColumn(currentColumn_[aShemaTable.id/]_[colonne.id/]);
+		[/for]
+		[/let]
+		[/for]
+		[/let]
+	}
+}
+
+[/file]
+[/template]

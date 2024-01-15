@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables;
+package shematables;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Column Data Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see shemaTables.ShemaTablesPackage#getColumnDataType()
+ * @see shematables.ShematablesPackage#getColumnDataType()
  * @model
  * @generated
  */

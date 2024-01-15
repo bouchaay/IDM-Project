@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables;
+package shematables;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,21 +15,21 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link shemaTables.Tables#getShematables <em>Shematables</em>}</li>
+ *   <li>{@link shematables.Tables#getShematables <em>Shematables</em>}</li>
  * </ul>
  *
- * @see shemaTables.ShemaTablesPackage#getTables()
+ * @see shematables.ShematablesPackage#getTables()
  * @model
  * @generated
  */
 public interface Tables extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Shematables</b></em>' containment reference list.
-	 * The list contents are of type {@link shemaTables.ShemaTable}.
+	 * The list contents are of type {@link shematables.ShemaTable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Shematables</em>' containment reference list.
-	 * @see shemaTables.ShemaTablesPackage#getTables_Shematables()
+	 * @see shematables.ShematablesPackage#getTables_Shematables()
 	 * @model containment="true"
 	 * @generated
 	 */

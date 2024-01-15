@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables.impl;
+package shematables.impl;
 
 import java.util.Collection;
 
@@ -15,13 +15,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import shemaTables.Column;
-import shemaTables.Constant;
-import shemaTables.Input;
-import shemaTables.ShemaTablesPackage;
+import shematables.Column;
+import shematables.Constant;
+import shematables.Input;
+import shematables.ShematablesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,23 +30,13 @@ import shemaTables.ShemaTablesPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link shemaTables.impl.InputImpl#getInputColumns <em>Input Columns</em>}</li>
- *   <li>{@link shemaTables.impl.InputImpl#getConstante <em>Constante</em>}</li>
+ *   <li>{@link shematables.impl.InputImpl#getConstante <em>Constante</em>}</li>
+ *   <li>{@link shematables.impl.InputImpl#getColumns <em>Columns</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class InputImpl extends MinimalEObjectImpl.Container implements Input {
-	/**
-	 * The cached value of the '{@link #getInputColumns() <em>Input Columns</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInputColumns()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Column> inputColumns;
-
 	/**
 	 * The cached value of the '{@link #getConstante() <em>Constante</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -57,6 +46,16 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	 * @ordered
 	 */
 	protected Constant constante;
+
+	/**
+	 * The cached value of the '{@link #getColumns() <em>Columns</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumns()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Column> columns;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,20 +73,7 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ShemaTablesPackage.Literals.INPUT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Column> getInputColumns() {
-		if (inputColumns == null) {
-			inputColumns = new EObjectContainmentEList<Column>(Column.class, this, ShemaTablesPackage.INPUT__INPUT_COLUMNS);
-		}
-		return inputColumns;
+		return ShematablesPackage.Literals.INPUT;
 	}
 
 	/**
@@ -109,7 +95,7 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 		Constant oldConstante = constante;
 		constante = newConstante;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.INPUT__CONSTANTE, oldConstante, newConstante);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ShematablesPackage.INPUT__CONSTANTE, oldConstante, newConstante);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -125,14 +111,27 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 		if (newConstante != constante) {
 			NotificationChain msgs = null;
 			if (constante != null)
-				msgs = ((InternalEObject)constante).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ShemaTablesPackage.INPUT__CONSTANTE, null, msgs);
+				msgs = ((InternalEObject)constante).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ShematablesPackage.INPUT__CONSTANTE, null, msgs);
 			if (newConstante != null)
-				msgs = ((InternalEObject)newConstante).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ShemaTablesPackage.INPUT__CONSTANTE, null, msgs);
+				msgs = ((InternalEObject)newConstante).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ShematablesPackage.INPUT__CONSTANTE, null, msgs);
 			msgs = basicSetConstante(newConstante, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.INPUT__CONSTANTE, newConstante, newConstante));
+			eNotify(new ENotificationImpl(this, Notification.SET, ShematablesPackage.INPUT__CONSTANTE, newConstante, newConstante));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Column> getColumns() {
+		if (columns == null) {
+			columns = new EObjectResolvingEList<Column>(Column.class, this, ShematablesPackage.INPUT__COLUMNS);
+		}
+		return columns;
 	}
 
 	/**
@@ -143,9 +142,7 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ShemaTablesPackage.INPUT__INPUT_COLUMNS:
-				return ((InternalEList<?>)getInputColumns()).basicRemove(otherEnd, msgs);
-			case ShemaTablesPackage.INPUT__CONSTANTE:
+			case ShematablesPackage.INPUT__CONSTANTE:
 				return basicSetConstante(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -159,10 +156,10 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ShemaTablesPackage.INPUT__INPUT_COLUMNS:
-				return getInputColumns();
-			case ShemaTablesPackage.INPUT__CONSTANTE:
+			case ShematablesPackage.INPUT__CONSTANTE:
 				return getConstante();
+			case ShematablesPackage.INPUT__COLUMNS:
+				return getColumns();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,12 +173,12 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ShemaTablesPackage.INPUT__INPUT_COLUMNS:
-				getInputColumns().clear();
-				getInputColumns().addAll((Collection<? extends Column>)newValue);
-				return;
-			case ShemaTablesPackage.INPUT__CONSTANTE:
+			case ShematablesPackage.INPUT__CONSTANTE:
 				setConstante((Constant)newValue);
+				return;
+			case ShematablesPackage.INPUT__COLUMNS:
+				getColumns().clear();
+				getColumns().addAll((Collection<? extends Column>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,11 +192,11 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.INPUT__INPUT_COLUMNS:
-				getInputColumns().clear();
-				return;
-			case ShemaTablesPackage.INPUT__CONSTANTE:
+			case ShematablesPackage.INPUT__CONSTANTE:
 				setConstante((Constant)null);
+				return;
+			case ShematablesPackage.INPUT__COLUMNS:
+				getColumns().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -213,10 +210,10 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.INPUT__INPUT_COLUMNS:
-				return inputColumns != null && !inputColumns.isEmpty();
-			case ShemaTablesPackage.INPUT__CONSTANTE:
+			case ShematablesPackage.INPUT__CONSTANTE:
 				return constante != null;
+			case ShematablesPackage.INPUT__COLUMNS:
+				return columns != null && !columns.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

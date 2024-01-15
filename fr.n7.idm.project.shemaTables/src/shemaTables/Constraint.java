@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables;
+package shematables;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link shemaTables.Constraint#getFilePath <em>File Path</em>}</li>
+ *   <li>{@link shematables.Constraint#getFilePath <em>File Path</em>}</li>
  * </ul>
  *
- * @see shemaTables.ShemaTablesPackage#getConstraint()
+ * @see shematables.ShematablesPackage#getConstraint()
  * @model
  * @generated
  */
@@ -27,14 +27,14 @@ public interface Constraint extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>File Path</em>' attribute.
 	 * @see #setFilePath(String)
-	 * @see shemaTables.ShemaTablesPackage#getConstraint_FilePath()
+	 * @see shematables.ShematablesPackage#getConstraint_FilePath()
 	 * @model
 	 * @generated
 	 */
 	String getFilePath();
 
 	/**
-	 * Sets the value of the '{@link shemaTables.Constraint#getFilePath <em>File Path</em>}' attribute.
+	 * Sets the value of the '{@link shematables.Constraint#getFilePath <em>File Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>File Path</em>' attribute.

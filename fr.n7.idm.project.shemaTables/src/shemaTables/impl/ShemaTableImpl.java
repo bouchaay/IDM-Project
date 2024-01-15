@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables.impl;
+package shematables.impl;
 
 import java.util.Collection;
 
@@ -18,10 +18,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import shemaTables.Catalogue;
-import shemaTables.Column;
-import shemaTables.ShemaTable;
-import shemaTables.ShemaTablesPackage;
+import shematables.Catalogue;
+import shematables.Column;
+import shematables.ShemaTable;
+import shematables.ShematablesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,10 +31,10 @@ import shemaTables.ShemaTablesPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link shemaTables.impl.ShemaTableImpl#getName <em>Name</em>}</li>
- *   <li>{@link shemaTables.impl.ShemaTableImpl#getId <em>Id</em>}</li>
- *   <li>{@link shemaTables.impl.ShemaTableImpl#getColumns <em>Columns</em>}</li>
- *   <li>{@link shemaTables.impl.ShemaTableImpl#getCatalogue <em>Catalogue</em>}</li>
+ *   <li>{@link shematables.impl.ShemaTableImpl#getName <em>Name</em>}</li>
+ *   <li>{@link shematables.impl.ShemaTableImpl#getId <em>Id</em>}</li>
+ *   <li>{@link shematables.impl.ShemaTableImpl#getColumns <em>Columns</em>}</li>
+ *   <li>{@link shematables.impl.ShemaTableImpl#getCatalogue <em>Catalogue</em>}</li>
  * </ul>
  *
  * @generated
@@ -91,7 +91,7 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 	protected EList<Column> columns;
 
 	/**
-	 * The cached value of the '{@link #getCatalogue() <em>Catalogue</em>}' reference.
+	 * The cached value of the '{@link #getCatalogue() <em>Catalogue</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCatalogue()
@@ -116,7 +116,7 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ShemaTablesPackage.Literals.SHEMA_TABLE;
+		return ShematablesPackage.Literals.SHEMA_TABLE;
 	}
 
 	/**
@@ -139,7 +139,7 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.SHEMA_TABLE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ShematablesPackage.SHEMA_TABLE__NAME, oldName, name));
 	}
 
 	/**
@@ -162,7 +162,7 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 		int oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.SHEMA_TABLE__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, ShematablesPackage.SHEMA_TABLE__ID, oldId, id));
 	}
 
 	/**
@@ -173,7 +173,7 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 	@Override
 	public EList<Column> getColumns() {
 		if (columns == null) {
-			columns = new EObjectContainmentEList<Column>(Column.class, this, ShemaTablesPackage.SHEMA_TABLE__COLUMNS);
+			columns = new EObjectContainmentEList<Column>(Column.class, this, ShematablesPackage.SHEMA_TABLE__COLUMNS);
 		}
 		return columns;
 	}
@@ -185,14 +185,6 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 	 */
 	@Override
 	public Catalogue getCatalogue() {
-		if (catalogue != null && catalogue.eIsProxy()) {
-			InternalEObject oldCatalogue = (InternalEObject)catalogue;
-			catalogue = (Catalogue)eResolveProxy(oldCatalogue);
-			if (catalogue != oldCatalogue) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShemaTablesPackage.SHEMA_TABLE__CATALOGUE, oldCatalogue, catalogue));
-			}
-		}
 		return catalogue;
 	}
 
@@ -201,8 +193,14 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Catalogue basicGetCatalogue() {
-		return catalogue;
+	public NotificationChain basicSetCatalogue(Catalogue newCatalogue, NotificationChain msgs) {
+		Catalogue oldCatalogue = catalogue;
+		catalogue = newCatalogue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ShematablesPackage.SHEMA_TABLE__CATALOGUE, oldCatalogue, newCatalogue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -212,10 +210,17 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 	 */
 	@Override
 	public void setCatalogue(Catalogue newCatalogue) {
-		Catalogue oldCatalogue = catalogue;
-		catalogue = newCatalogue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.SHEMA_TABLE__CATALOGUE, oldCatalogue, catalogue));
+		if (newCatalogue != catalogue) {
+			NotificationChain msgs = null;
+			if (catalogue != null)
+				msgs = ((InternalEObject)catalogue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ShematablesPackage.SHEMA_TABLE__CATALOGUE, null, msgs);
+			if (newCatalogue != null)
+				msgs = ((InternalEObject)newCatalogue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ShematablesPackage.SHEMA_TABLE__CATALOGUE, null, msgs);
+			msgs = basicSetCatalogue(newCatalogue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShematablesPackage.SHEMA_TABLE__CATALOGUE, newCatalogue, newCatalogue));
 	}
 
 	/**
@@ -226,8 +231,10 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ShemaTablesPackage.SHEMA_TABLE__COLUMNS:
+			case ShematablesPackage.SHEMA_TABLE__COLUMNS:
 				return ((InternalEList<?>)getColumns()).basicRemove(otherEnd, msgs);
+			case ShematablesPackage.SHEMA_TABLE__CATALOGUE:
+				return basicSetCatalogue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -240,15 +247,14 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ShemaTablesPackage.SHEMA_TABLE__NAME:
+			case ShematablesPackage.SHEMA_TABLE__NAME:
 				return getName();
-			case ShemaTablesPackage.SHEMA_TABLE__ID:
+			case ShematablesPackage.SHEMA_TABLE__ID:
 				return getId();
-			case ShemaTablesPackage.SHEMA_TABLE__COLUMNS:
+			case ShematablesPackage.SHEMA_TABLE__COLUMNS:
 				return getColumns();
-			case ShemaTablesPackage.SHEMA_TABLE__CATALOGUE:
-				if (resolve) return getCatalogue();
-				return basicGetCatalogue();
+			case ShematablesPackage.SHEMA_TABLE__CATALOGUE:
+				return getCatalogue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -262,17 +268,17 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ShemaTablesPackage.SHEMA_TABLE__NAME:
+			case ShematablesPackage.SHEMA_TABLE__NAME:
 				setName((String)newValue);
 				return;
-			case ShemaTablesPackage.SHEMA_TABLE__ID:
+			case ShematablesPackage.SHEMA_TABLE__ID:
 				setId((Integer)newValue);
 				return;
-			case ShemaTablesPackage.SHEMA_TABLE__COLUMNS:
+			case ShematablesPackage.SHEMA_TABLE__COLUMNS:
 				getColumns().clear();
 				getColumns().addAll((Collection<? extends Column>)newValue);
 				return;
-			case ShemaTablesPackage.SHEMA_TABLE__CATALOGUE:
+			case ShematablesPackage.SHEMA_TABLE__CATALOGUE:
 				setCatalogue((Catalogue)newValue);
 				return;
 		}
@@ -287,16 +293,16 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.SHEMA_TABLE__NAME:
+			case ShematablesPackage.SHEMA_TABLE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ShemaTablesPackage.SHEMA_TABLE__ID:
+			case ShematablesPackage.SHEMA_TABLE__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case ShemaTablesPackage.SHEMA_TABLE__COLUMNS:
+			case ShematablesPackage.SHEMA_TABLE__COLUMNS:
 				getColumns().clear();
 				return;
-			case ShemaTablesPackage.SHEMA_TABLE__CATALOGUE:
+			case ShematablesPackage.SHEMA_TABLE__CATALOGUE:
 				setCatalogue((Catalogue)null);
 				return;
 		}
@@ -311,13 +317,13 @@ public class ShemaTableImpl extends MinimalEObjectImpl.Container implements Shem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.SHEMA_TABLE__NAME:
+			case ShematablesPackage.SHEMA_TABLE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ShemaTablesPackage.SHEMA_TABLE__ID:
+			case ShematablesPackage.SHEMA_TABLE__ID:
 				return id != ID_EDEFAULT;
-			case ShemaTablesPackage.SHEMA_TABLE__COLUMNS:
+			case ShematablesPackage.SHEMA_TABLE__COLUMNS:
 				return columns != null && !columns.isEmpty();
-			case ShemaTablesPackage.SHEMA_TABLE__CATALOGUE:
+			case ShematablesPackage.SHEMA_TABLE__CATALOGUE:
 				return catalogue != null;
 		}
 		return super.eIsSet(featureID);

@@ -1,23 +1,26 @@
 /**
  */
-package shemaTables.impl;
+package shematables.impl;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
-import shemaTables.Algorithm;
-import shemaTables.Catalogue;
-import shemaTables.ShemaTablesPackage;
+import shematables.Algorithm;
+import shematables.Catalogue;
+import shematables.ShematablesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,8 +30,8 @@ import shemaTables.ShemaTablesPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link shemaTables.impl.CatalogueImpl#getName <em>Name</em>}</li>
- *   <li>{@link shemaTables.impl.CatalogueImpl#getAlgorithms <em>Algorithms</em>}</li>
+ *   <li>{@link shematables.impl.CatalogueImpl#getName <em>Name</em>}</li>
+ *   <li>{@link shematables.impl.CatalogueImpl#getAlgorithms <em>Algorithms</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,7 +58,7 @@ public class CatalogueImpl extends MinimalEObjectImpl.Container implements Catal
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAlgorithms() <em>Algorithms</em>}' reference list.
+	 * The cached value of the '{@link #getAlgorithms() <em>Algorithms</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAlgorithms()
@@ -80,7 +83,7 @@ public class CatalogueImpl extends MinimalEObjectImpl.Container implements Catal
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ShemaTablesPackage.Literals.CATALOGUE;
+		return ShematablesPackage.Literals.CATALOGUE;
 	}
 
 	/**
@@ -103,7 +106,7 @@ public class CatalogueImpl extends MinimalEObjectImpl.Container implements Catal
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.CATALOGUE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ShematablesPackage.CATALOGUE__NAME, oldName, name));
 	}
 
 	/**
@@ -114,7 +117,7 @@ public class CatalogueImpl extends MinimalEObjectImpl.Container implements Catal
 	@Override
 	public EList<Algorithm> getAlgorithms() {
 		if (algorithms == null) {
-			algorithms = new EObjectResolvingEList<Algorithm>(Algorithm.class, this, ShemaTablesPackage.CATALOGUE__ALGORITHMS);
+			algorithms = new EObjectContainmentEList<Algorithm>(Algorithm.class, this, ShematablesPackage.CATALOGUE__ALGORITHMS);
 		}
 		return algorithms;
 	}
@@ -125,11 +128,25 @@ public class CatalogueImpl extends MinimalEObjectImpl.Container implements Catal
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ShematablesPackage.CATALOGUE__ALGORITHMS:
+				return ((InternalEList<?>)getAlgorithms()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ShemaTablesPackage.CATALOGUE__NAME:
+			case ShematablesPackage.CATALOGUE__NAME:
 				return getName();
-			case ShemaTablesPackage.CATALOGUE__ALGORITHMS:
+			case ShematablesPackage.CATALOGUE__ALGORITHMS:
 				return getAlgorithms();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -144,10 +161,10 @@ public class CatalogueImpl extends MinimalEObjectImpl.Container implements Catal
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ShemaTablesPackage.CATALOGUE__NAME:
+			case ShematablesPackage.CATALOGUE__NAME:
 				setName((String)newValue);
 				return;
-			case ShemaTablesPackage.CATALOGUE__ALGORITHMS:
+			case ShematablesPackage.CATALOGUE__ALGORITHMS:
 				getAlgorithms().clear();
 				getAlgorithms().addAll((Collection<? extends Algorithm>)newValue);
 				return;
@@ -163,10 +180,10 @@ public class CatalogueImpl extends MinimalEObjectImpl.Container implements Catal
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.CATALOGUE__NAME:
+			case ShematablesPackage.CATALOGUE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ShemaTablesPackage.CATALOGUE__ALGORITHMS:
+			case ShematablesPackage.CATALOGUE__ALGORITHMS:
 				getAlgorithms().clear();
 				return;
 		}
@@ -181,9 +198,9 @@ public class CatalogueImpl extends MinimalEObjectImpl.Container implements Catal
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.CATALOGUE__NAME:
+			case ShematablesPackage.CATALOGUE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ShemaTablesPackage.CATALOGUE__ALGORITHMS:
+			case ShematablesPackage.CATALOGUE__ALGORITHMS:
 				return algorithms != null && !algorithms.isEmpty();
 		}
 		return super.eIsSet(featureID);

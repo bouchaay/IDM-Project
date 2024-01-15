@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables;
+package shematables;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link shemaTables.Column#getName <em>Name</em>}</li>
- *   <li>{@link shemaTables.Column#getId <em>Id</em>}</li>
- *   <li>{@link shemaTables.Column#getDataType <em>Data Type</em>}</li>
- *   <li>{@link shemaTables.Column#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link shematables.Column#getName <em>Name</em>}</li>
+ *   <li>{@link shematables.Column#getId <em>Id</em>}</li>
+ *   <li>{@link shematables.Column#getDataType <em>Data Type</em>}</li>
+ *   <li>{@link shematables.Column#getConstraint <em>Constraint</em>}</li>
  * </ul>
  *
- * @see shemaTables.ShemaTablesPackage#getColumn()
+ * @see shematables.ShematablesPackage#getColumn()
  * @model
  * @generated
  */
@@ -30,14 +30,14 @@ public interface Column extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see shemaTables.ShemaTablesPackage#getColumn_Name()
+	 * @see shematables.ShematablesPackage#getColumn_Name()
 	 * @model
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link shemaTables.Column#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link shematables.Column#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -52,14 +52,14 @@ public interface Column extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(int)
-	 * @see shemaTables.ShemaTablesPackage#getColumn_Id()
+	 * @see shematables.ShematablesPackage#getColumn_Id()
 	 * @model
 	 * @generated
 	 */
 	int getId();
 
 	/**
-	 * Sets the value of the '{@link shemaTables.Column#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link shematables.Column#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Id</em>' attribute.
@@ -70,24 +70,24 @@ public interface Column extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Data Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link shemaTables.ColumnDataType}.
+	 * The literals are from the enumeration {@link shematables.ColumnDataType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data Type</em>' attribute.
-	 * @see shemaTables.ColumnDataType
+	 * @see shematables.ColumnDataType
 	 * @see #setDataType(ColumnDataType)
-	 * @see shemaTables.ShemaTablesPackage#getColumn_DataType()
+	 * @see shematables.ShematablesPackage#getColumn_DataType()
 	 * @model
 	 * @generated
 	 */
 	ColumnDataType getDataType();
 
 	/**
-	 * Sets the value of the '{@link shemaTables.Column#getDataType <em>Data Type</em>}' attribute.
+	 * Sets the value of the '{@link shematables.Column#getDataType <em>Data Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Data Type</em>' attribute.
-	 * @see shemaTables.ColumnDataType
+	 * @see shematables.ColumnDataType
 	 * @see #getDataType()
 	 * @generated
 	 */
@@ -99,14 +99,14 @@ public interface Column extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Constraint</em>' containment reference.
 	 * @see #setConstraint(Constraint)
-	 * @see shemaTables.ShemaTablesPackage#getColumn_Constraint()
+	 * @see shematables.ShematablesPackage#getColumn_Constraint()
 	 * @model containment="true"
 	 * @generated
 	 */
 	Constraint getConstraint();
 
 	/**
-	 * Sets the value of the '{@link shemaTables.Column#getConstraint <em>Constraint</em>}' containment reference.
+	 * Sets the value of the '{@link shematables.Column#getConstraint <em>Constraint</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Constraint</em>' containment reference.

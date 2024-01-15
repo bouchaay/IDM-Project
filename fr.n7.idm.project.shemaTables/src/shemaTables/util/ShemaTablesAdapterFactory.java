@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables.util;
+package shematables.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -9,24 +9,24 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import shemaTables.*;
+import shematables.*;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see shemaTables.ShemaTablesPackage
+ * @see shematables.ShematablesPackage
  * @generated
  */
-public class ShemaTablesAdapterFactory extends AdapterFactoryImpl {
+public class ShematablesAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ShemaTablesPackage modelPackage;
+	protected static ShematablesPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -34,9 +34,9 @@ public class ShemaTablesAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ShemaTablesAdapterFactory() {
+	public ShematablesAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = ShemaTablesPackage.eINSTANCE;
+			modelPackage = ShematablesPackage.eINSTANCE;
 		}
 	}
 
@@ -65,15 +65,15 @@ public class ShemaTablesAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ShemaTablesSwitch<Adapter> modelSwitch =
-		new ShemaTablesSwitch<Adapter>() {
+	protected ShematablesSwitch<Adapter> modelSwitch =
+		new ShematablesSwitch<Adapter>() {
+			@Override
+			public Adapter caseTables(Tables object) {
+				return createTablesAdapter();
+			}
 			@Override
 			public Adapter caseShemaTable(ShemaTable object) {
 				return createShemaTableAdapter();
-			}
-			@Override
-			public Adapter caseConstraint(Constraint object) {
-				return createConstraintAdapter();
 			}
 			@Override
 			public Adapter caseColumn(Column object) {
@@ -86,6 +86,14 @@ public class ShemaTablesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDerivedColumn(DerivedColumn object) {
 				return createDerivedColumnAdapter();
+			}
+			@Override
+			public Adapter caseConstraint(Constraint object) {
+				return createConstraintAdapter();
+			}
+			@Override
+			public Adapter caseCatalogue(Catalogue object) {
+				return createCatalogueAdapter();
 			}
 			@Override
 			public Adapter caseAlgorithm(Algorithm object) {
@@ -102,14 +110,6 @@ public class ShemaTablesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseConstant(Constant object) {
 				return createConstantAdapter();
-			}
-			@Override
-			public Adapter caseCatalogue(Catalogue object) {
-				return createCatalogueAdapter();
-			}
-			@Override
-			public Adapter caseTables(Tables object) {
-				return createTablesAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -132,13 +132,27 @@ public class ShemaTablesAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link shemaTables.ShemaTable <em>Shema Table</em>}'.
+	 * Creates a new adapter for an object of class '{@link shematables.Tables <em>Tables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see shemaTables.ShemaTable
+	 * @see shematables.Tables
+	 * @generated
+	 */
+	public Adapter createTablesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link shematables.ShemaTable <em>Shema Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see shematables.ShemaTable
 	 * @generated
 	 */
 	public Adapter createShemaTableAdapter() {
@@ -146,27 +160,13 @@ public class ShemaTablesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link shemaTables.Constraint <em>Constraint</em>}'.
+	 * Creates a new adapter for an object of class '{@link shematables.Column <em>Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see shemaTables.Constraint
-	 * @generated
-	 */
-	public Adapter createConstraintAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link shemaTables.Column <em>Column</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see shemaTables.Column
+	 * @see shematables.Column
 	 * @generated
 	 */
 	public Adapter createColumnAdapter() {
@@ -174,13 +174,13 @@ public class ShemaTablesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link shemaTables.ReferencedColumn <em>Referenced Column</em>}'.
+	 * Creates a new adapter for an object of class '{@link shematables.ReferencedColumn <em>Referenced Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see shemaTables.ReferencedColumn
+	 * @see shematables.ReferencedColumn
 	 * @generated
 	 */
 	public Adapter createReferencedColumnAdapter() {
@@ -188,13 +188,13 @@ public class ShemaTablesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link shemaTables.DerivedColumn <em>Derived Column</em>}'.
+	 * Creates a new adapter for an object of class '{@link shematables.DerivedColumn <em>Derived Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see shemaTables.DerivedColumn
+	 * @see shematables.DerivedColumn
 	 * @generated
 	 */
 	public Adapter createDerivedColumnAdapter() {
@@ -202,69 +202,27 @@ public class ShemaTablesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link shemaTables.Algorithm <em>Algorithm</em>}'.
+	 * Creates a new adapter for an object of class '{@link shematables.Constraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see shemaTables.Algorithm
+	 * @see shematables.Constraint
 	 * @generated
 	 */
-	public Adapter createAlgorithmAdapter() {
+	public Adapter createConstraintAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link shemaTables.Input <em>Input</em>}'.
+	 * Creates a new adapter for an object of class '{@link shematables.Catalogue <em>Catalogue</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see shemaTables.Input
-	 * @generated
-	 */
-	public Adapter createInputAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link shemaTables.Output <em>Output</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see shemaTables.Output
-	 * @generated
-	 */
-	public Adapter createOutputAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link shemaTables.Constant <em>Constant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see shemaTables.Constant
-	 * @generated
-	 */
-	public Adapter createConstantAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link shemaTables.Catalogue <em>Catalogue</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see shemaTables.Catalogue
+	 * @see shematables.Catalogue
 	 * @generated
 	 */
 	public Adapter createCatalogueAdapter() {
@@ -272,16 +230,58 @@ public class ShemaTablesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link shemaTables.Tables <em>Tables</em>}'.
+	 * Creates a new adapter for an object of class '{@link shematables.Algorithm <em>Algorithm</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see shemaTables.Tables
+	 * @see shematables.Algorithm
 	 * @generated
 	 */
-	public Adapter createTablesAdapter() {
+	public Adapter createAlgorithmAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link shematables.Input <em>Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see shematables.Input
+	 * @generated
+	 */
+	public Adapter createInputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link shematables.Output <em>Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see shematables.Output
+	 * @generated
+	 */
+	public Adapter createOutputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link shematables.Constant <em>Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see shematables.Constant
+	 * @generated
+	 */
+	public Adapter createConstantAdapter() {
 		return null;
 	}
 
@@ -297,4 +297,4 @@ public class ShemaTablesAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //ShemaTablesAdapterFactory
+} //ShematablesAdapterFactory

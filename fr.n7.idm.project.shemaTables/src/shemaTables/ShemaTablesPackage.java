@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables;
+package shematables;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -20,18 +20,18 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see shemaTables.ShemaTablesFactory
+ * @see shematables.ShematablesFactory
  * @model kind="package"
  * @generated
  */
-public interface ShemaTablesPackage extends EPackage {
+public interface ShematablesPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "shemaTables";
+	String eNAME = "shematables";
 
 	/**
 	 * The package namespace URI.
@@ -39,7 +39,7 @@ public interface ShemaTablesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/shemaTables";
+	String eNS_URI = "http://shematables";
 
 	/**
 	 * The package namespace name.
@@ -47,7 +47,7 @@ public interface ShemaTablesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "shemaTables";
+	String eNS_PREFIX = "shematables";
 
 	/**
 	 * The singleton instance of the package.
@@ -55,17 +55,54 @@ public interface ShemaTablesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ShemaTablesPackage eINSTANCE = shemaTables.impl.ShemaTablesPackageImpl.init();
+	ShematablesPackage eINSTANCE = shematables.impl.ShematablesPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link shemaTables.impl.ShemaTableImpl <em>Shema Table</em>}' class.
+	 * The meta object id for the '{@link shematables.impl.TablesImpl <em>Tables</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see shemaTables.impl.ShemaTableImpl
-	 * @see shemaTables.impl.ShemaTablesPackageImpl#getShemaTable()
+	 * @see shematables.impl.TablesImpl
+	 * @see shematables.impl.ShematablesPackageImpl#getTables()
 	 * @generated
 	 */
-	int SHEMA_TABLE = 0;
+	int TABLES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Shematables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLES__SHEMATABLES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Tables</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLES_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Tables</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLES_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link shematables.impl.ShemaTableImpl <em>Shema Table</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see shematables.impl.ShemaTableImpl
+	 * @see shematables.impl.ShematablesPackageImpl#getShemaTable()
+	 * @generated
+	 */
+	int SHEMA_TABLE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -95,7 +132,7 @@ public interface ShemaTablesPackage extends EPackage {
 	int SHEMA_TABLE__COLUMNS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Catalogue</b></em>' reference.
+	 * The feature id for the '<em><b>Catalogue</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -122,48 +159,11 @@ public interface ShemaTablesPackage extends EPackage {
 	int SHEMA_TABLE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link shemaTables.impl.ConstraintImpl <em>Constraint</em>}' class.
+	 * The meta object id for the '{@link shematables.impl.ColumnImpl <em>Column</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see shemaTables.impl.ConstraintImpl
-	 * @see shemaTables.impl.ShemaTablesPackageImpl#getConstraint()
-	 * @generated
-	 */
-	int CONSTRAINT = 1;
-
-	/**
-	 * The feature id for the '<em><b>File Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT__FILE_PATH = 0;
-
-	/**
-	 * The number of structural features of the '<em>Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link shemaTables.impl.ColumnImpl <em>Column</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see shemaTables.impl.ColumnImpl
-	 * @see shemaTables.impl.ShemaTablesPackageImpl#getColumn()
+	 * @see shematables.impl.ColumnImpl
+	 * @see shematables.impl.ShematablesPackageImpl#getColumn()
 	 * @generated
 	 */
 	int COLUMN = 2;
@@ -223,11 +223,11 @@ public interface ShemaTablesPackage extends EPackage {
 	int COLUMN_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link shemaTables.impl.ReferencedColumnImpl <em>Referenced Column</em>}' class.
+	 * The meta object id for the '{@link shematables.impl.ReferencedColumnImpl <em>Referenced Column</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see shemaTables.impl.ReferencedColumnImpl
-	 * @see shemaTables.impl.ShemaTablesPackageImpl#getReferencedColumn()
+	 * @see shematables.impl.ReferencedColumnImpl
+	 * @see shematables.impl.ShematablesPackageImpl#getReferencedColumn()
 	 * @generated
 	 */
 	int REFERENCED_COLUMN = 3;
@@ -278,13 +278,22 @@ public interface ShemaTablesPackage extends EPackage {
 	int REFERENCED_COLUMN__FOREIGN_TABLE = COLUMN_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Foreign Column</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCED_COLUMN__FOREIGN_COLUMN = COLUMN_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Referenced Column</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCED_COLUMN_FEATURE_COUNT = COLUMN_FEATURE_COUNT + 1;
+	int REFERENCED_COLUMN_FEATURE_COUNT = COLUMN_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Referenced Column</em>' class.
@@ -296,11 +305,11 @@ public interface ShemaTablesPackage extends EPackage {
 	int REFERENCED_COLUMN_OPERATION_COUNT = COLUMN_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link shemaTables.impl.DerivedColumnImpl <em>Derived Column</em>}' class.
+	 * The meta object id for the '{@link shematables.impl.DerivedColumnImpl <em>Derived Column</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see shemaTables.impl.DerivedColumnImpl
-	 * @see shemaTables.impl.ShemaTablesPackageImpl#getDerivedColumn()
+	 * @see shematables.impl.DerivedColumnImpl
+	 * @see shematables.impl.ShematablesPackageImpl#getDerivedColumn()
 	 * @generated
 	 */
 	int DERIVED_COLUMN = 4;
@@ -342,22 +351,22 @@ public interface ShemaTablesPackage extends EPackage {
 	int DERIVED_COLUMN__CONSTRAINT = COLUMN__CONSTRAINT;
 
 	/**
-	 * The feature id for the '<em><b>Output Column</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DERIVED_COLUMN__OUTPUT_COLUMN = COLUMN_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Algorithm</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DERIVED_COLUMN__ALGORITHM = COLUMN_FEATURE_COUNT + 1;
+	int DERIVED_COLUMN__ALGORITHM = COLUMN_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Output Column</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVED_COLUMN__OUTPUT_COLUMN = COLUMN_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Derived Column</em>' class.
@@ -378,32 +387,51 @@ public interface ShemaTablesPackage extends EPackage {
 	int DERIVED_COLUMN_OPERATION_COUNT = COLUMN_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link shemaTables.impl.AlgorithmImpl <em>Algorithm</em>}' class.
+	 * The meta object id for the '{@link shematables.impl.ConstraintImpl <em>Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see shemaTables.impl.AlgorithmImpl
-	 * @see shemaTables.impl.ShemaTablesPackageImpl#getAlgorithm()
+	 * @see shematables.impl.ConstraintImpl
+	 * @see shematables.impl.ShematablesPackageImpl#getConstraint()
 	 * @generated
 	 */
-	int ALGORITHM = 5;
+	int CONSTRAINT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Input</b></em>' containment reference.
+	 * The feature id for the '<em><b>File Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALGORITHM__INPUT = 0;
+	int CONSTRAINT__FILE_PATH = 0;
 
 	/**
-	 * The feature id for the '<em><b>Output</b></em>' containment reference.
+	 * The number of structural features of the '<em>Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALGORITHM__OUTPUT = 1;
+	int CONSTRAINT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link shematables.impl.CatalogueImpl <em>Catalogue</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see shematables.impl.CatalogueImpl
+	 * @see shematables.impl.ShematablesPackageImpl#getCatalogue()
+	 * @generated
+	 */
+	int CATALOGUE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -412,7 +440,53 @@ public interface ShemaTablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALGORITHM__NAME = 2;
+	int CATALOGUE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Algorithms</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOGUE__ALGORITHMS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Catalogue</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOGUE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Catalogue</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOGUE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link shematables.impl.AlgorithmImpl <em>Algorithm</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see shematables.impl.AlgorithmImpl
+	 * @see shematables.impl.ShematablesPackageImpl#getAlgorithm()
+	 * @generated
+	 */
+	int ALGORITHM = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALGORITHM__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
@@ -421,7 +495,25 @@ public interface ShemaTablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALGORITHM__PATH = 3;
+	int ALGORITHM__PATH = 1;
+
+	/**
+	 * The feature id for the '<em><b>Output</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALGORITHM__OUTPUT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Input</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALGORITHM__INPUT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Algorithm</em>' class.
@@ -442,23 +534,14 @@ public interface ShemaTablesPackage extends EPackage {
 	int ALGORITHM_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link shemaTables.impl.InputImpl <em>Input</em>}' class.
+	 * The meta object id for the '{@link shematables.impl.InputImpl <em>Input</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see shemaTables.impl.InputImpl
-	 * @see shemaTables.impl.ShemaTablesPackageImpl#getInput()
+	 * @see shematables.impl.InputImpl
+	 * @see shematables.impl.ShematablesPackageImpl#getInput()
 	 * @generated
 	 */
-	int INPUT = 6;
-
-	/**
-	 * The feature id for the '<em><b>Input Columns</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__INPUT_COLUMNS = 0;
+	int INPUT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Constante</b></em>' containment reference.
@@ -467,7 +550,16 @@ public interface ShemaTablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT__CONSTANTE = 1;
+	int INPUT__CONSTANTE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Columns</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__COLUMNS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Input</em>' class.
@@ -488,14 +580,14 @@ public interface ShemaTablesPackage extends EPackage {
 	int INPUT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link shemaTables.impl.OutputImpl <em>Output</em>}' class.
+	 * The meta object id for the '{@link shematables.impl.OutputImpl <em>Output</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see shemaTables.impl.OutputImpl
-	 * @see shemaTables.impl.ShemaTablesPackageImpl#getOutput()
+	 * @see shematables.impl.OutputImpl
+	 * @see shematables.impl.ShematablesPackageImpl#getOutput()
 	 * @generated
 	 */
-	int OUTPUT = 7;
+	int OUTPUT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -552,14 +644,14 @@ public interface ShemaTablesPackage extends EPackage {
 	int OUTPUT_OPERATION_COUNT = COLUMN_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link shemaTables.impl.ConstantImpl <em>Constant</em>}' class.
+	 * The meta object id for the '{@link shematables.impl.ConstantImpl <em>Constant</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see shemaTables.impl.ConstantImpl
-	 * @see shemaTables.impl.ShemaTablesPackageImpl#getConstant()
+	 * @see shematables.impl.ConstantImpl
+	 * @see shematables.impl.ShematablesPackageImpl#getConstant()
 	 * @generated
 	 */
-	int CONSTANT = 8;
+	int CONSTANT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -589,457 +681,385 @@ public interface ShemaTablesPackage extends EPackage {
 	int CONSTANT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link shemaTables.impl.CatalogueImpl <em>Catalogue</em>}' class.
+	 * The meta object id for the '{@link shematables.ColumnDataType <em>Column Data Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see shemaTables.impl.CatalogueImpl
-	 * @see shemaTables.impl.ShemaTablesPackageImpl#getCatalogue()
-	 * @generated
-	 */
-	int CATALOGUE = 9;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATALOGUE__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Algorithms</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATALOGUE__ALGORITHMS = 1;
-
-	/**
-	 * The number of structural features of the '<em>Catalogue</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATALOGUE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Catalogue</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATALOGUE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link shemaTables.impl.TablesImpl <em>Tables</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see shemaTables.impl.TablesImpl
-	 * @see shemaTables.impl.ShemaTablesPackageImpl#getTables()
-	 * @generated
-	 */
-	int TABLES = 10;
-
-	/**
-	 * The feature id for the '<em><b>Shematables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABLES__SHEMATABLES = 0;
-
-	/**
-	 * The number of structural features of the '<em>Tables</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABLES_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Tables</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABLES_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link shemaTables.ColumnDataType <em>Column Data Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see shemaTables.ColumnDataType
-	 * @see shemaTables.impl.ShemaTablesPackageImpl#getColumnDataType()
+	 * @see shematables.ColumnDataType
+	 * @see shematables.impl.ShematablesPackageImpl#getColumnDataType()
 	 * @generated
 	 */
 	int COLUMN_DATA_TYPE = 11;
 
 
 	/**
-	 * Returns the meta object for class '{@link shemaTables.ShemaTable <em>Shema Table</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Shema Table</em>'.
-	 * @see shemaTables.ShemaTable
-	 * @generated
-	 */
-	EClass getShemaTable();
-
-	/**
-	 * Returns the meta object for the attribute '{@link shemaTables.ShemaTable#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see shemaTables.ShemaTable#getName()
-	 * @see #getShemaTable()
-	 * @generated
-	 */
-	EAttribute getShemaTable_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link shemaTables.ShemaTable#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see shemaTables.ShemaTable#getId()
-	 * @see #getShemaTable()
-	 * @generated
-	 */
-	EAttribute getShemaTable_Id();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link shemaTables.ShemaTable#getColumns <em>Columns</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Columns</em>'.
-	 * @see shemaTables.ShemaTable#getColumns()
-	 * @see #getShemaTable()
-	 * @generated
-	 */
-	EReference getShemaTable_Columns();
-
-	/**
-	 * Returns the meta object for the reference '{@link shemaTables.ShemaTable#getCatalogue <em>Catalogue</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Catalogue</em>'.
-	 * @see shemaTables.ShemaTable#getCatalogue()
-	 * @see #getShemaTable()
-	 * @generated
-	 */
-	EReference getShemaTable_Catalogue();
-
-	/**
-	 * Returns the meta object for class '{@link shemaTables.Constraint <em>Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Constraint</em>'.
-	 * @see shemaTables.Constraint
-	 * @generated
-	 */
-	EClass getConstraint();
-
-	/**
-	 * Returns the meta object for the attribute '{@link shemaTables.Constraint#getFilePath <em>File Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>File Path</em>'.
-	 * @see shemaTables.Constraint#getFilePath()
-	 * @see #getConstraint()
-	 * @generated
-	 */
-	EAttribute getConstraint_FilePath();
-
-	/**
-	 * Returns the meta object for class '{@link shemaTables.Column <em>Column</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Column</em>'.
-	 * @see shemaTables.Column
-	 * @generated
-	 */
-	EClass getColumn();
-
-	/**
-	 * Returns the meta object for the attribute '{@link shemaTables.Column#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see shemaTables.Column#getName()
-	 * @see #getColumn()
-	 * @generated
-	 */
-	EAttribute getColumn_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link shemaTables.Column#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see shemaTables.Column#getId()
-	 * @see #getColumn()
-	 * @generated
-	 */
-	EAttribute getColumn_Id();
-
-	/**
-	 * Returns the meta object for the attribute '{@link shemaTables.Column#getDataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Data Type</em>'.
-	 * @see shemaTables.Column#getDataType()
-	 * @see #getColumn()
-	 * @generated
-	 */
-	EAttribute getColumn_DataType();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link shemaTables.Column#getConstraint <em>Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Constraint</em>'.
-	 * @see shemaTables.Column#getConstraint()
-	 * @see #getColumn()
-	 * @generated
-	 */
-	EReference getColumn_Constraint();
-
-	/**
-	 * Returns the meta object for class '{@link shemaTables.ReferencedColumn <em>Referenced Column</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Referenced Column</em>'.
-	 * @see shemaTables.ReferencedColumn
-	 * @generated
-	 */
-	EClass getReferencedColumn();
-
-	/**
-	 * Returns the meta object for the reference '{@link shemaTables.ReferencedColumn#getForeignTable <em>Foreign Table</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Foreign Table</em>'.
-	 * @see shemaTables.ReferencedColumn#getForeignTable()
-	 * @see #getReferencedColumn()
-	 * @generated
-	 */
-	EReference getReferencedColumn_ForeignTable();
-
-	/**
-	 * Returns the meta object for class '{@link shemaTables.DerivedColumn <em>Derived Column</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Derived Column</em>'.
-	 * @see shemaTables.DerivedColumn
-	 * @generated
-	 */
-	EClass getDerivedColumn();
-
-	/**
-	 * Returns the meta object for the reference '{@link shemaTables.DerivedColumn#getOutputColumn <em>Output Column</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Output Column</em>'.
-	 * @see shemaTables.DerivedColumn#getOutputColumn()
-	 * @see #getDerivedColumn()
-	 * @generated
-	 */
-	EReference getDerivedColumn_OutputColumn();
-
-	/**
-	 * Returns the meta object for the reference '{@link shemaTables.DerivedColumn#getAlgorithm <em>Algorithm</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Algorithm</em>'.
-	 * @see shemaTables.DerivedColumn#getAlgorithm()
-	 * @see #getDerivedColumn()
-	 * @generated
-	 */
-	EReference getDerivedColumn_Algorithm();
-
-	/**
-	 * Returns the meta object for class '{@link shemaTables.Algorithm <em>Algorithm</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Algorithm</em>'.
-	 * @see shemaTables.Algorithm
-	 * @generated
-	 */
-	EClass getAlgorithm();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link shemaTables.Algorithm#getInput <em>Input</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Input</em>'.
-	 * @see shemaTables.Algorithm#getInput()
-	 * @see #getAlgorithm()
-	 * @generated
-	 */
-	EReference getAlgorithm_Input();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link shemaTables.Algorithm#getOutput <em>Output</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Output</em>'.
-	 * @see shemaTables.Algorithm#getOutput()
-	 * @see #getAlgorithm()
-	 * @generated
-	 */
-	EReference getAlgorithm_Output();
-
-	/**
-	 * Returns the meta object for the attribute '{@link shemaTables.Algorithm#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see shemaTables.Algorithm#getName()
-	 * @see #getAlgorithm()
-	 * @generated
-	 */
-	EAttribute getAlgorithm_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link shemaTables.Algorithm#getPath <em>Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Path</em>'.
-	 * @see shemaTables.Algorithm#getPath()
-	 * @see #getAlgorithm()
-	 * @generated
-	 */
-	EAttribute getAlgorithm_Path();
-
-	/**
-	 * Returns the meta object for class '{@link shemaTables.Input <em>Input</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Input</em>'.
-	 * @see shemaTables.Input
-	 * @generated
-	 */
-	EClass getInput();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link shemaTables.Input#getInputColumns <em>Input Columns</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Input Columns</em>'.
-	 * @see shemaTables.Input#getInputColumns()
-	 * @see #getInput()
-	 * @generated
-	 */
-	EReference getInput_InputColumns();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link shemaTables.Input#getConstante <em>Constante</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Constante</em>'.
-	 * @see shemaTables.Input#getConstante()
-	 * @see #getInput()
-	 * @generated
-	 */
-	EReference getInput_Constante();
-
-	/**
-	 * Returns the meta object for class '{@link shemaTables.Output <em>Output</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Output</em>'.
-	 * @see shemaTables.Output
-	 * @generated
-	 */
-	EClass getOutput();
-
-	/**
-	 * Returns the meta object for class '{@link shemaTables.Constant <em>Constant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Constant</em>'.
-	 * @see shemaTables.Constant
-	 * @generated
-	 */
-	EClass getConstant();
-
-	/**
-	 * Returns the meta object for the attribute '{@link shemaTables.Constant#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see shemaTables.Constant#getValue()
-	 * @see #getConstant()
-	 * @generated
-	 */
-	EAttribute getConstant_Value();
-
-	/**
-	 * Returns the meta object for class '{@link shemaTables.Catalogue <em>Catalogue</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Catalogue</em>'.
-	 * @see shemaTables.Catalogue
-	 * @generated
-	 */
-	EClass getCatalogue();
-
-	/**
-	 * Returns the meta object for the attribute '{@link shemaTables.Catalogue#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see shemaTables.Catalogue#getName()
-	 * @see #getCatalogue()
-	 * @generated
-	 */
-	EAttribute getCatalogue_Name();
-
-	/**
-	 * Returns the meta object for the reference list '{@link shemaTables.Catalogue#getAlgorithms <em>Algorithms</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Algorithms</em>'.
-	 * @see shemaTables.Catalogue#getAlgorithms()
-	 * @see #getCatalogue()
-	 * @generated
-	 */
-	EReference getCatalogue_Algorithms();
-
-	/**
-	 * Returns the meta object for class '{@link shemaTables.Tables <em>Tables</em>}'.
+	 * Returns the meta object for class '{@link shematables.Tables <em>Tables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Tables</em>'.
-	 * @see shemaTables.Tables
+	 * @see shematables.Tables
 	 * @generated
 	 */
 	EClass getTables();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link shemaTables.Tables#getShematables <em>Shematables</em>}'.
+	 * Returns the meta object for the containment reference list '{@link shematables.Tables#getShematables <em>Shematables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Shematables</em>'.
-	 * @see shemaTables.Tables#getShematables()
+	 * @see shematables.Tables#getShematables()
 	 * @see #getTables()
 	 * @generated
 	 */
 	EReference getTables_Shematables();
 
 	/**
-	 * Returns the meta object for enum '{@link shemaTables.ColumnDataType <em>Column Data Type</em>}'.
+	 * Returns the meta object for class '{@link shematables.ShemaTable <em>Shema Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Shema Table</em>'.
+	 * @see shematables.ShemaTable
+	 * @generated
+	 */
+	EClass getShemaTable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link shematables.ShemaTable#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see shematables.ShemaTable#getName()
+	 * @see #getShemaTable()
+	 * @generated
+	 */
+	EAttribute getShemaTable_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link shematables.ShemaTable#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see shematables.ShemaTable#getId()
+	 * @see #getShemaTable()
+	 * @generated
+	 */
+	EAttribute getShemaTable_Id();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link shematables.ShemaTable#getColumns <em>Columns</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Columns</em>'.
+	 * @see shematables.ShemaTable#getColumns()
+	 * @see #getShemaTable()
+	 * @generated
+	 */
+	EReference getShemaTable_Columns();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link shematables.ShemaTable#getCatalogue <em>Catalogue</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Catalogue</em>'.
+	 * @see shematables.ShemaTable#getCatalogue()
+	 * @see #getShemaTable()
+	 * @generated
+	 */
+	EReference getShemaTable_Catalogue();
+
+	/**
+	 * Returns the meta object for class '{@link shematables.Column <em>Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Column</em>'.
+	 * @see shematables.Column
+	 * @generated
+	 */
+	EClass getColumn();
+
+	/**
+	 * Returns the meta object for the attribute '{@link shematables.Column#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see shematables.Column#getName()
+	 * @see #getColumn()
+	 * @generated
+	 */
+	EAttribute getColumn_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link shematables.Column#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see shematables.Column#getId()
+	 * @see #getColumn()
+	 * @generated
+	 */
+	EAttribute getColumn_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link shematables.Column#getDataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Data Type</em>'.
+	 * @see shematables.Column#getDataType()
+	 * @see #getColumn()
+	 * @generated
+	 */
+	EAttribute getColumn_DataType();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link shematables.Column#getConstraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Constraint</em>'.
+	 * @see shematables.Column#getConstraint()
+	 * @see #getColumn()
+	 * @generated
+	 */
+	EReference getColumn_Constraint();
+
+	/**
+	 * Returns the meta object for class '{@link shematables.ReferencedColumn <em>Referenced Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Referenced Column</em>'.
+	 * @see shematables.ReferencedColumn
+	 * @generated
+	 */
+	EClass getReferencedColumn();
+
+	/**
+	 * Returns the meta object for the reference '{@link shematables.ReferencedColumn#getForeignTable <em>Foreign Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Foreign Table</em>'.
+	 * @see shematables.ReferencedColumn#getForeignTable()
+	 * @see #getReferencedColumn()
+	 * @generated
+	 */
+	EReference getReferencedColumn_ForeignTable();
+
+	/**
+	 * Returns the meta object for the reference '{@link shematables.ReferencedColumn#getForeignColumn <em>Foreign Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Foreign Column</em>'.
+	 * @see shematables.ReferencedColumn#getForeignColumn()
+	 * @see #getReferencedColumn()
+	 * @generated
+	 */
+	EReference getReferencedColumn_ForeignColumn();
+
+	/**
+	 * Returns the meta object for class '{@link shematables.DerivedColumn <em>Derived Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Derived Column</em>'.
+	 * @see shematables.DerivedColumn
+	 * @generated
+	 */
+	EClass getDerivedColumn();
+
+	/**
+	 * Returns the meta object for the reference '{@link shematables.DerivedColumn#getAlgorithm <em>Algorithm</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Algorithm</em>'.
+	 * @see shematables.DerivedColumn#getAlgorithm()
+	 * @see #getDerivedColumn()
+	 * @generated
+	 */
+	EReference getDerivedColumn_Algorithm();
+
+	/**
+	 * Returns the meta object for the reference '{@link shematables.DerivedColumn#getOutputColumn <em>Output Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Output Column</em>'.
+	 * @see shematables.DerivedColumn#getOutputColumn()
+	 * @see #getDerivedColumn()
+	 * @generated
+	 */
+	EReference getDerivedColumn_OutputColumn();
+
+	/**
+	 * Returns the meta object for class '{@link shematables.Constraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Constraint</em>'.
+	 * @see shematables.Constraint
+	 * @generated
+	 */
+	EClass getConstraint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link shematables.Constraint#getFilePath <em>File Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>File Path</em>'.
+	 * @see shematables.Constraint#getFilePath()
+	 * @see #getConstraint()
+	 * @generated
+	 */
+	EAttribute getConstraint_FilePath();
+
+	/**
+	 * Returns the meta object for class '{@link shematables.Catalogue <em>Catalogue</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Catalogue</em>'.
+	 * @see shematables.Catalogue
+	 * @generated
+	 */
+	EClass getCatalogue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link shematables.Catalogue#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see shematables.Catalogue#getName()
+	 * @see #getCatalogue()
+	 * @generated
+	 */
+	EAttribute getCatalogue_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link shematables.Catalogue#getAlgorithms <em>Algorithms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Algorithms</em>'.
+	 * @see shematables.Catalogue#getAlgorithms()
+	 * @see #getCatalogue()
+	 * @generated
+	 */
+	EReference getCatalogue_Algorithms();
+
+	/**
+	 * Returns the meta object for class '{@link shematables.Algorithm <em>Algorithm</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Algorithm</em>'.
+	 * @see shematables.Algorithm
+	 * @generated
+	 */
+	EClass getAlgorithm();
+
+	/**
+	 * Returns the meta object for the attribute '{@link shematables.Algorithm#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see shematables.Algorithm#getName()
+	 * @see #getAlgorithm()
+	 * @generated
+	 */
+	EAttribute getAlgorithm_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link shematables.Algorithm#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see shematables.Algorithm#getPath()
+	 * @see #getAlgorithm()
+	 * @generated
+	 */
+	EAttribute getAlgorithm_Path();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link shematables.Algorithm#getOutput <em>Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Output</em>'.
+	 * @see shematables.Algorithm#getOutput()
+	 * @see #getAlgorithm()
+	 * @generated
+	 */
+	EReference getAlgorithm_Output();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link shematables.Algorithm#getInput <em>Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Input</em>'.
+	 * @see shematables.Algorithm#getInput()
+	 * @see #getAlgorithm()
+	 * @generated
+	 */
+	EReference getAlgorithm_Input();
+
+	/**
+	 * Returns the meta object for class '{@link shematables.Input <em>Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Input</em>'.
+	 * @see shematables.Input
+	 * @generated
+	 */
+	EClass getInput();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link shematables.Input#getConstante <em>Constante</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Constante</em>'.
+	 * @see shematables.Input#getConstante()
+	 * @see #getInput()
+	 * @generated
+	 */
+	EReference getInput_Constante();
+
+	/**
+	 * Returns the meta object for the reference list '{@link shematables.Input#getColumns <em>Columns</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Columns</em>'.
+	 * @see shematables.Input#getColumns()
+	 * @see #getInput()
+	 * @generated
+	 */
+	EReference getInput_Columns();
+
+	/**
+	 * Returns the meta object for class '{@link shematables.Output <em>Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Output</em>'.
+	 * @see shematables.Output
+	 * @generated
+	 */
+	EClass getOutput();
+
+	/**
+	 * Returns the meta object for class '{@link shematables.Constant <em>Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Constant</em>'.
+	 * @see shematables.Constant
+	 * @generated
+	 */
+	EClass getConstant();
+
+	/**
+	 * Returns the meta object for the attribute '{@link shematables.Constant#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see shematables.Constant#getValue()
+	 * @see #getConstant()
+	 * @generated
+	 */
+	EAttribute getConstant_Value();
+
+	/**
+	 * Returns the meta object for enum '{@link shematables.ColumnDataType <em>Column Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for enum '<em>Column Data Type</em>'.
-	 * @see shemaTables.ColumnDataType
+	 * @see shematables.ColumnDataType
 	 * @generated
 	 */
 	EEnum getColumnDataType();
@@ -1051,7 +1071,7 @@ public interface ShemaTablesPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	ShemaTablesFactory getShemaTablesFactory();
+	ShematablesFactory getShematablesFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1068,11 +1088,29 @@ public interface ShemaTablesPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link shemaTables.impl.ShemaTableImpl <em>Shema Table</em>}' class.
+		 * The meta object literal for the '{@link shematables.impl.TablesImpl <em>Tables</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see shemaTables.impl.ShemaTableImpl
-		 * @see shemaTables.impl.ShemaTablesPackageImpl#getShemaTable()
+		 * @see shematables.impl.TablesImpl
+		 * @see shematables.impl.ShematablesPackageImpl#getTables()
+		 * @generated
+		 */
+		EClass TABLES = eINSTANCE.getTables();
+
+		/**
+		 * The meta object literal for the '<em><b>Shematables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABLES__SHEMATABLES = eINSTANCE.getTables_Shematables();
+
+		/**
+		 * The meta object literal for the '{@link shematables.impl.ShemaTableImpl <em>Shema Table</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see shematables.impl.ShemaTableImpl
+		 * @see shematables.impl.ShematablesPackageImpl#getShemaTable()
 		 * @generated
 		 */
 		EClass SHEMA_TABLE = eINSTANCE.getShemaTable();
@@ -1102,7 +1140,7 @@ public interface ShemaTablesPackage extends EPackage {
 		EReference SHEMA_TABLE__COLUMNS = eINSTANCE.getShemaTable_Columns();
 
 		/**
-		 * The meta object literal for the '<em><b>Catalogue</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Catalogue</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1110,29 +1148,11 @@ public interface ShemaTablesPackage extends EPackage {
 		EReference SHEMA_TABLE__CATALOGUE = eINSTANCE.getShemaTable_Catalogue();
 
 		/**
-		 * The meta object literal for the '{@link shemaTables.impl.ConstraintImpl <em>Constraint</em>}' class.
+		 * The meta object literal for the '{@link shematables.impl.ColumnImpl <em>Column</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see shemaTables.impl.ConstraintImpl
-		 * @see shemaTables.impl.ShemaTablesPackageImpl#getConstraint()
-		 * @generated
-		 */
-		EClass CONSTRAINT = eINSTANCE.getConstraint();
-
-		/**
-		 * The meta object literal for the '<em><b>File Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONSTRAINT__FILE_PATH = eINSTANCE.getConstraint_FilePath();
-
-		/**
-		 * The meta object literal for the '{@link shemaTables.impl.ColumnImpl <em>Column</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see shemaTables.impl.ColumnImpl
-		 * @see shemaTables.impl.ShemaTablesPackageImpl#getColumn()
+		 * @see shematables.impl.ColumnImpl
+		 * @see shematables.impl.ShematablesPackageImpl#getColumn()
 		 * @generated
 		 */
 		EClass COLUMN = eINSTANCE.getColumn();
@@ -1170,11 +1190,11 @@ public interface ShemaTablesPackage extends EPackage {
 		EReference COLUMN__CONSTRAINT = eINSTANCE.getColumn_Constraint();
 
 		/**
-		 * The meta object literal for the '{@link shemaTables.impl.ReferencedColumnImpl <em>Referenced Column</em>}' class.
+		 * The meta object literal for the '{@link shematables.impl.ReferencedColumnImpl <em>Referenced Column</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see shemaTables.impl.ReferencedColumnImpl
-		 * @see shemaTables.impl.ShemaTablesPackageImpl#getReferencedColumn()
+		 * @see shematables.impl.ReferencedColumnImpl
+		 * @see shematables.impl.ShematablesPackageImpl#getReferencedColumn()
 		 * @generated
 		 */
 		EClass REFERENCED_COLUMN = eINSTANCE.getReferencedColumn();
@@ -1188,22 +1208,22 @@ public interface ShemaTablesPackage extends EPackage {
 		EReference REFERENCED_COLUMN__FOREIGN_TABLE = eINSTANCE.getReferencedColumn_ForeignTable();
 
 		/**
-		 * The meta object literal for the '{@link shemaTables.impl.DerivedColumnImpl <em>Derived Column</em>}' class.
+		 * The meta object literal for the '<em><b>Foreign Column</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see shemaTables.impl.DerivedColumnImpl
-		 * @see shemaTables.impl.ShemaTablesPackageImpl#getDerivedColumn()
+		 * @generated
+		 */
+		EReference REFERENCED_COLUMN__FOREIGN_COLUMN = eINSTANCE.getReferencedColumn_ForeignColumn();
+
+		/**
+		 * The meta object literal for the '{@link shematables.impl.DerivedColumnImpl <em>Derived Column</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see shematables.impl.DerivedColumnImpl
+		 * @see shematables.impl.ShematablesPackageImpl#getDerivedColumn()
 		 * @generated
 		 */
 		EClass DERIVED_COLUMN = eINSTANCE.getDerivedColumn();
-
-		/**
-		 * The meta object literal for the '<em><b>Output Column</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DERIVED_COLUMN__OUTPUT_COLUMN = eINSTANCE.getDerivedColumn_OutputColumn();
 
 		/**
 		 * The meta object literal for the '<em><b>Algorithm</b></em>' reference feature.
@@ -1214,30 +1234,66 @@ public interface ShemaTablesPackage extends EPackage {
 		EReference DERIVED_COLUMN__ALGORITHM = eINSTANCE.getDerivedColumn_Algorithm();
 
 		/**
-		 * The meta object literal for the '{@link shemaTables.impl.AlgorithmImpl <em>Algorithm</em>}' class.
+		 * The meta object literal for the '<em><b>Output Column</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see shemaTables.impl.AlgorithmImpl
-		 * @see shemaTables.impl.ShemaTablesPackageImpl#getAlgorithm()
+		 * @generated
+		 */
+		EReference DERIVED_COLUMN__OUTPUT_COLUMN = eINSTANCE.getDerivedColumn_OutputColumn();
+
+		/**
+		 * The meta object literal for the '{@link shematables.impl.ConstraintImpl <em>Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see shematables.impl.ConstraintImpl
+		 * @see shematables.impl.ShematablesPackageImpl#getConstraint()
+		 * @generated
+		 */
+		EClass CONSTRAINT = eINSTANCE.getConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>File Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSTRAINT__FILE_PATH = eINSTANCE.getConstraint_FilePath();
+
+		/**
+		 * The meta object literal for the '{@link shematables.impl.CatalogueImpl <em>Catalogue</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see shematables.impl.CatalogueImpl
+		 * @see shematables.impl.ShematablesPackageImpl#getCatalogue()
+		 * @generated
+		 */
+		EClass CATALOGUE = eINSTANCE.getCatalogue();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CATALOGUE__NAME = eINSTANCE.getCatalogue_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Algorithms</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CATALOGUE__ALGORITHMS = eINSTANCE.getCatalogue_Algorithms();
+
+		/**
+		 * The meta object literal for the '{@link shematables.impl.AlgorithmImpl <em>Algorithm</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see shematables.impl.AlgorithmImpl
+		 * @see shematables.impl.ShematablesPackageImpl#getAlgorithm()
 		 * @generated
 		 */
 		EClass ALGORITHM = eINSTANCE.getAlgorithm();
-
-		/**
-		 * The meta object literal for the '<em><b>Input</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ALGORITHM__INPUT = eINSTANCE.getAlgorithm_Input();
-
-		/**
-		 * The meta object literal for the '<em><b>Output</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ALGORITHM__OUTPUT = eINSTANCE.getAlgorithm_Output();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1256,22 +1312,30 @@ public interface ShemaTablesPackage extends EPackage {
 		EAttribute ALGORITHM__PATH = eINSTANCE.getAlgorithm_Path();
 
 		/**
-		 * The meta object literal for the '{@link shemaTables.impl.InputImpl <em>Input</em>}' class.
+		 * The meta object literal for the '<em><b>Output</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see shemaTables.impl.InputImpl
-		 * @see shemaTables.impl.ShemaTablesPackageImpl#getInput()
+		 * @generated
+		 */
+		EReference ALGORITHM__OUTPUT = eINSTANCE.getAlgorithm_Output();
+
+		/**
+		 * The meta object literal for the '<em><b>Input</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ALGORITHM__INPUT = eINSTANCE.getAlgorithm_Input();
+
+		/**
+		 * The meta object literal for the '{@link shematables.impl.InputImpl <em>Input</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see shematables.impl.InputImpl
+		 * @see shematables.impl.ShematablesPackageImpl#getInput()
 		 * @generated
 		 */
 		EClass INPUT = eINSTANCE.getInput();
-
-		/**
-		 * The meta object literal for the '<em><b>Input Columns</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INPUT__INPUT_COLUMNS = eINSTANCE.getInput_InputColumns();
 
 		/**
 		 * The meta object literal for the '<em><b>Constante</b></em>' containment reference feature.
@@ -1282,21 +1346,29 @@ public interface ShemaTablesPackage extends EPackage {
 		EReference INPUT__CONSTANTE = eINSTANCE.getInput_Constante();
 
 		/**
-		 * The meta object literal for the '{@link shemaTables.impl.OutputImpl <em>Output</em>}' class.
+		 * The meta object literal for the '<em><b>Columns</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see shemaTables.impl.OutputImpl
-		 * @see shemaTables.impl.ShemaTablesPackageImpl#getOutput()
+		 * @generated
+		 */
+		EReference INPUT__COLUMNS = eINSTANCE.getInput_Columns();
+
+		/**
+		 * The meta object literal for the '{@link shematables.impl.OutputImpl <em>Output</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see shematables.impl.OutputImpl
+		 * @see shematables.impl.ShematablesPackageImpl#getOutput()
 		 * @generated
 		 */
 		EClass OUTPUT = eINSTANCE.getOutput();
 
 		/**
-		 * The meta object literal for the '{@link shemaTables.impl.ConstantImpl <em>Constant</em>}' class.
+		 * The meta object literal for the '{@link shematables.impl.ConstantImpl <em>Constant</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see shemaTables.impl.ConstantImpl
-		 * @see shemaTables.impl.ShemaTablesPackageImpl#getConstant()
+		 * @see shematables.impl.ConstantImpl
+		 * @see shematables.impl.ShematablesPackageImpl#getConstant()
 		 * @generated
 		 */
 		EClass CONSTANT = eINSTANCE.getConstant();
@@ -1310,59 +1382,15 @@ public interface ShemaTablesPackage extends EPackage {
 		EAttribute CONSTANT__VALUE = eINSTANCE.getConstant_Value();
 
 		/**
-		 * The meta object literal for the '{@link shemaTables.impl.CatalogueImpl <em>Catalogue</em>}' class.
+		 * The meta object literal for the '{@link shematables.ColumnDataType <em>Column Data Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see shemaTables.impl.CatalogueImpl
-		 * @see shemaTables.impl.ShemaTablesPackageImpl#getCatalogue()
-		 * @generated
-		 */
-		EClass CATALOGUE = eINSTANCE.getCatalogue();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CATALOGUE__NAME = eINSTANCE.getCatalogue_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Algorithms</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CATALOGUE__ALGORITHMS = eINSTANCE.getCatalogue_Algorithms();
-
-		/**
-		 * The meta object literal for the '{@link shemaTables.impl.TablesImpl <em>Tables</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see shemaTables.impl.TablesImpl
-		 * @see shemaTables.impl.ShemaTablesPackageImpl#getTables()
-		 * @generated
-		 */
-		EClass TABLES = eINSTANCE.getTables();
-
-		/**
-		 * The meta object literal for the '<em><b>Shematables</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TABLES__SHEMATABLES = eINSTANCE.getTables_Shematables();
-
-		/**
-		 * The meta object literal for the '{@link shemaTables.ColumnDataType <em>Column Data Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see shemaTables.ColumnDataType
-		 * @see shemaTables.impl.ShemaTablesPackageImpl#getColumnDataType()
+		 * @see shematables.ColumnDataType
+		 * @see shematables.impl.ShematablesPackageImpl#getColumnDataType()
 		 * @generated
 		 */
 		EEnum COLUMN_DATA_TYPE = eINSTANCE.getColumnDataType();
 
 	}
 
-} //ShemaTablesPackage
+} //ShematablesPackage

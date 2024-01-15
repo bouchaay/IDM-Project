@@ -1,11 +1,11 @@
 /**
  */
-package shemaTables.impl;
+package shematables.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import shemaTables.Output;
-import shemaTables.ShemaTablesPackage;
+import shematables.Output;
+import shematables.ShematablesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class OutputImpl extends ColumnImpl implements Output {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ShemaTablesPackage.Literals.OUTPUT;
+		return ShematablesPackage.Literals.OUTPUT;
 	}
 
 } //OutputImpl

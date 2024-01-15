@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables.impl;
+package shematables.impl;
 
 import java.util.Collection;
 
@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import shemaTables.ShemaTable;
-import shemaTables.ShemaTablesPackage;
-import shemaTables.Tables;
+import shematables.ShemaTable;
+import shematables.ShematablesPackage;
+import shematables.Tables;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import shemaTables.Tables;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link shemaTables.impl.TablesImpl#getShematables <em>Shematables</em>}</li>
+ *   <li>{@link shematables.impl.TablesImpl#getShematables <em>Shematables</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,6 +43,7 @@ public class TablesImpl extends MinimalEObjectImpl.Container implements Tables {
 	 * @ordered
 	 */
 	protected EList<ShemaTable> shematables;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -59,7 +60,7 @@ public class TablesImpl extends MinimalEObjectImpl.Container implements Tables {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ShemaTablesPackage.Literals.TABLES;
+		return ShematablesPackage.Literals.TABLES;
 	}
 
 	/**
@@ -70,7 +71,7 @@ public class TablesImpl extends MinimalEObjectImpl.Container implements Tables {
 	@Override
 	public EList<ShemaTable> getShematables() {
 		if (shematables == null) {
-			shematables = new EObjectContainmentEList<ShemaTable>(ShemaTable.class, this, ShemaTablesPackage.TABLES__SHEMATABLES);
+			shematables = new EObjectContainmentEList<ShemaTable>(ShemaTable.class, this, ShematablesPackage.TABLES__SHEMATABLES);
 		}
 		return shematables;
 	}
@@ -83,7 +84,7 @@ public class TablesImpl extends MinimalEObjectImpl.Container implements Tables {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ShemaTablesPackage.TABLES__SHEMATABLES:
+			case ShematablesPackage.TABLES__SHEMATABLES:
 				return ((InternalEList<?>)getShematables()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -97,7 +98,7 @@ public class TablesImpl extends MinimalEObjectImpl.Container implements Tables {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ShemaTablesPackage.TABLES__SHEMATABLES:
+			case ShematablesPackage.TABLES__SHEMATABLES:
 				return getShematables();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -112,7 +113,7 @@ public class TablesImpl extends MinimalEObjectImpl.Container implements Tables {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ShemaTablesPackage.TABLES__SHEMATABLES:
+			case ShematablesPackage.TABLES__SHEMATABLES:
 				getShematables().clear();
 				getShematables().addAll((Collection<? extends ShemaTable>)newValue);
 				return;
@@ -128,7 +129,7 @@ public class TablesImpl extends MinimalEObjectImpl.Container implements Tables {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.TABLES__SHEMATABLES:
+			case ShematablesPackage.TABLES__SHEMATABLES:
 				getShematables().clear();
 				return;
 		}
@@ -143,7 +144,7 @@ public class TablesImpl extends MinimalEObjectImpl.Container implements Tables {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.TABLES__SHEMATABLES:
+			case ShematablesPackage.TABLES__SHEMATABLES:
 				return shematables != null && !shematables.isEmpty();
 		}
 		return super.eIsSet(featureID);

@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables.impl;
+package shematables.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -9,8 +9,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import shemaTables.Constant;
-import shemaTables.ShemaTablesPackage;
+import shematables.Constant;
+import shematables.ShematablesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +20,7 @@ import shemaTables.ShemaTablesPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link shemaTables.impl.ConstantImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link shematables.impl.ConstantImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,7 +62,7 @@ public class ConstantImpl extends MinimalEObjectImpl.Container implements Consta
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ShemaTablesPackage.Literals.CONSTANT;
+		return ShematablesPackage.Literals.CONSTANT;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class ConstantImpl extends MinimalEObjectImpl.Container implements Consta
 		int oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.CONSTANT__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, ShematablesPackage.CONSTANT__VALUE, oldValue, value));
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class ConstantImpl extends MinimalEObjectImpl.Container implements Consta
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ShemaTablesPackage.CONSTANT__VALUE:
+			case ShematablesPackage.CONSTANT__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -110,7 +110,7 @@ public class ConstantImpl extends MinimalEObjectImpl.Container implements Consta
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ShemaTablesPackage.CONSTANT__VALUE:
+			case ShematablesPackage.CONSTANT__VALUE:
 				setValue((Integer)newValue);
 				return;
 		}
@@ -125,7 +125,7 @@ public class ConstantImpl extends MinimalEObjectImpl.Container implements Consta
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.CONSTANT__VALUE:
+			case ShematablesPackage.CONSTANT__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -140,7 +140,7 @@ public class ConstantImpl extends MinimalEObjectImpl.Container implements Consta
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.CONSTANT__VALUE:
+			case ShematablesPackage.CONSTANT__VALUE:
 				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

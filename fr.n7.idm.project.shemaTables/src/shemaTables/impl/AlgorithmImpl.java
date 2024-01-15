@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables.impl;
+package shematables.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import shemaTables.Algorithm;
-import shemaTables.Input;
-import shemaTables.Output;
-import shemaTables.ShemaTablesPackage;
+import shematables.Algorithm;
+import shematables.Input;
+import shematables.Output;
+import shematables.ShematablesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,35 +24,15 @@ import shemaTables.ShemaTablesPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link shemaTables.impl.AlgorithmImpl#getInput <em>Input</em>}</li>
- *   <li>{@link shemaTables.impl.AlgorithmImpl#getOutput <em>Output</em>}</li>
- *   <li>{@link shemaTables.impl.AlgorithmImpl#getName <em>Name</em>}</li>
- *   <li>{@link shemaTables.impl.AlgorithmImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link shematables.impl.AlgorithmImpl#getName <em>Name</em>}</li>
+ *   <li>{@link shematables.impl.AlgorithmImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link shematables.impl.AlgorithmImpl#getOutput <em>Output</em>}</li>
+ *   <li>{@link shematables.impl.AlgorithmImpl#getInput <em>Input</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algorithm {
-	/**
-	 * The cached value of the '{@link #getInput() <em>Input</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInput()
-	 * @generated
-	 * @ordered
-	 */
-	protected Input input;
-
-	/**
-	 * The cached value of the '{@link #getOutput() <em>Output</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOutput()
-	 * @generated
-	 * @ordered
-	 */
-	protected Output output;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -94,6 +74,26 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	protected String path = PATH_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getOutput() <em>Output</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutput()
+	 * @generated
+	 * @ordered
+	 */
+	protected Output output;
+
+	/**
+	 * The cached value of the '{@link #getInput() <em>Input</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInput()
+	 * @generated
+	 * @ordered
+	 */
+	protected Input input;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -109,97 +109,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ShemaTablesPackage.Literals.ALGORITHM;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Input getInput() {
-		return input;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetInput(Input newInput, NotificationChain msgs) {
-		Input oldInput = input;
-		input = newInput;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.ALGORITHM__INPUT, oldInput, newInput);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setInput(Input newInput) {
-		if (newInput != input) {
-			NotificationChain msgs = null;
-			if (input != null)
-				msgs = ((InternalEObject)input).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ShemaTablesPackage.ALGORITHM__INPUT, null, msgs);
-			if (newInput != null)
-				msgs = ((InternalEObject)newInput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ShemaTablesPackage.ALGORITHM__INPUT, null, msgs);
-			msgs = basicSetInput(newInput, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.ALGORITHM__INPUT, newInput, newInput));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Output getOutput() {
-		return output;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetOutput(Output newOutput, NotificationChain msgs) {
-		Output oldOutput = output;
-		output = newOutput;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.ALGORITHM__OUTPUT, oldOutput, newOutput);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOutput(Output newOutput) {
-		if (newOutput != output) {
-			NotificationChain msgs = null;
-			if (output != null)
-				msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ShemaTablesPackage.ALGORITHM__OUTPUT, null, msgs);
-			if (newOutput != null)
-				msgs = ((InternalEObject)newOutput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ShemaTablesPackage.ALGORITHM__OUTPUT, null, msgs);
-			msgs = basicSetOutput(newOutput, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.ALGORITHM__OUTPUT, newOutput, newOutput));
+		return ShematablesPackage.Literals.ALGORITHM;
 	}
 
 	/**
@@ -222,7 +132,7 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.ALGORITHM__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ShematablesPackage.ALGORITHM__NAME, oldName, name));
 	}
 
 	/**
@@ -245,7 +155,97 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 		String oldPath = path;
 		path = newPath;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ShemaTablesPackage.ALGORITHM__PATH, oldPath, path));
+			eNotify(new ENotificationImpl(this, Notification.SET, ShematablesPackage.ALGORITHM__PATH, oldPath, path));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Output getOutput() {
+		return output;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOutput(Output newOutput, NotificationChain msgs) {
+		Output oldOutput = output;
+		output = newOutput;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ShematablesPackage.ALGORITHM__OUTPUT, oldOutput, newOutput);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOutput(Output newOutput) {
+		if (newOutput != output) {
+			NotificationChain msgs = null;
+			if (output != null)
+				msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ShematablesPackage.ALGORITHM__OUTPUT, null, msgs);
+			if (newOutput != null)
+				msgs = ((InternalEObject)newOutput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ShematablesPackage.ALGORITHM__OUTPUT, null, msgs);
+			msgs = basicSetOutput(newOutput, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShematablesPackage.ALGORITHM__OUTPUT, newOutput, newOutput));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Input getInput() {
+		return input;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetInput(Input newInput, NotificationChain msgs) {
+		Input oldInput = input;
+		input = newInput;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ShematablesPackage.ALGORITHM__INPUT, oldInput, newInput);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setInput(Input newInput) {
+		if (newInput != input) {
+			NotificationChain msgs = null;
+			if (input != null)
+				msgs = ((InternalEObject)input).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ShematablesPackage.ALGORITHM__INPUT, null, msgs);
+			if (newInput != null)
+				msgs = ((InternalEObject)newInput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ShematablesPackage.ALGORITHM__INPUT, null, msgs);
+			msgs = basicSetInput(newInput, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ShematablesPackage.ALGORITHM__INPUT, newInput, newInput));
 	}
 
 	/**
@@ -256,10 +256,10 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ShemaTablesPackage.ALGORITHM__INPUT:
-				return basicSetInput(null, msgs);
-			case ShemaTablesPackage.ALGORITHM__OUTPUT:
+			case ShematablesPackage.ALGORITHM__OUTPUT:
 				return basicSetOutput(null, msgs);
+			case ShematablesPackage.ALGORITHM__INPUT:
+				return basicSetInput(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -272,14 +272,14 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ShemaTablesPackage.ALGORITHM__INPUT:
-				return getInput();
-			case ShemaTablesPackage.ALGORITHM__OUTPUT:
-				return getOutput();
-			case ShemaTablesPackage.ALGORITHM__NAME:
+			case ShematablesPackage.ALGORITHM__NAME:
 				return getName();
-			case ShemaTablesPackage.ALGORITHM__PATH:
+			case ShematablesPackage.ALGORITHM__PATH:
 				return getPath();
+			case ShematablesPackage.ALGORITHM__OUTPUT:
+				return getOutput();
+			case ShematablesPackage.ALGORITHM__INPUT:
+				return getInput();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -292,17 +292,17 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ShemaTablesPackage.ALGORITHM__INPUT:
-				setInput((Input)newValue);
-				return;
-			case ShemaTablesPackage.ALGORITHM__OUTPUT:
-				setOutput((Output)newValue);
-				return;
-			case ShemaTablesPackage.ALGORITHM__NAME:
+			case ShematablesPackage.ALGORITHM__NAME:
 				setName((String)newValue);
 				return;
-			case ShemaTablesPackage.ALGORITHM__PATH:
+			case ShematablesPackage.ALGORITHM__PATH:
 				setPath((String)newValue);
+				return;
+			case ShematablesPackage.ALGORITHM__OUTPUT:
+				setOutput((Output)newValue);
+				return;
+			case ShematablesPackage.ALGORITHM__INPUT:
+				setInput((Input)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -316,17 +316,17 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.ALGORITHM__INPUT:
-				setInput((Input)null);
-				return;
-			case ShemaTablesPackage.ALGORITHM__OUTPUT:
-				setOutput((Output)null);
-				return;
-			case ShemaTablesPackage.ALGORITHM__NAME:
+			case ShematablesPackage.ALGORITHM__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ShemaTablesPackage.ALGORITHM__PATH:
+			case ShematablesPackage.ALGORITHM__PATH:
 				setPath(PATH_EDEFAULT);
+				return;
+			case ShematablesPackage.ALGORITHM__OUTPUT:
+				setOutput((Output)null);
+				return;
+			case ShematablesPackage.ALGORITHM__INPUT:
+				setInput((Input)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -340,14 +340,14 @@ public class AlgorithmImpl extends MinimalEObjectImpl.Container implements Algor
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ShemaTablesPackage.ALGORITHM__INPUT:
-				return input != null;
-			case ShemaTablesPackage.ALGORITHM__OUTPUT:
-				return output != null;
-			case ShemaTablesPackage.ALGORITHM__NAME:
+			case ShematablesPackage.ALGORITHM__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ShemaTablesPackage.ALGORITHM__PATH:
+			case ShematablesPackage.ALGORITHM__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
+			case ShematablesPackage.ALGORITHM__OUTPUT:
+				return output != null;
+			case ShematablesPackage.ALGORITHM__INPUT:
+				return input != null;
 		}
 		return super.eIsSet(featureID);
 	}

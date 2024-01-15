@@ -1,6 +1,6 @@
-import 'shemaTables.ecore'
+import 'ShemaTables.ecore'
 
-package shemaTables
+package shematables
 
 context ShemaTable
 -- Vérifie qu'un nom d'une table est non null
@@ -36,6 +36,5 @@ inv pathNonNul('Invalid path') :
 context Catalogue
 inv catalogueNameNonNul('Invalid catalogue name') :
 	self.name <> null
-
 
 endpackage

@@ -1,6 +1,6 @@
 /**
  */
-package shemaTables;
+package shematables;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link shemaTables.Constant#getValue <em>Value</em>}</li>
+ *   <li>{@link shematables.Constant#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see shemaTables.ShemaTablesPackage#getConstant()
+ * @see shematables.ShematablesPackage#getConstant()
  * @model
  * @generated
  */
@@ -27,14 +27,14 @@ public interface Constant extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(int)
-	 * @see shemaTables.ShemaTablesPackage#getConstant_Value()
+	 * @see shematables.ShematablesPackage#getConstant_Value()
 	 * @model
 	 * @generated
 	 */
 	int getValue();
 
 	/**
-	 * Sets the value of the '{@link shemaTables.Constant#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link shematables.Constant#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' attribute.
