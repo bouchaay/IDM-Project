@@ -31,7 +31,7 @@ public class Column <T> {
         this.id = id;
         this.dataType = dataType;
         this.constraintFile = constraintFile;
-        this.values = new ArrayList<T>();
+        this.values = new ArrayList<>();
     }
     
     /**
@@ -44,7 +44,7 @@ public class Column <T> {
         this.name = name;
         this.id = id;
         this.dataType = dataType;
-        this.values = new ArrayList<T>();
+        this.values = new ArrayList<>();
     }
     
     /**

@@ -21,7 +21,7 @@ public class ShemaTable {
         this.name = name;
         this.id = id;
         this.catalogue = catalogue;
-        this.columns = new ArrayList<Column<?>>();
+        this.columns = new ArrayList<>();
         this.columns.add(new Column<Integer>("Lines Id", 0, ColumnDataType.INTEGER, new Constraint("")));
     }
 
@@ -50,6 +50,14 @@ public class ShemaTable {
      */
     public int getId() {
         return id;
+    }
+    
+    /**
+     * Modifie l'id du shematable
+     * @param nouveau id
+     */
+    public void setId(int id) {
+    	this.id = id;
     }
 
     /**
