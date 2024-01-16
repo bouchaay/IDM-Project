@@ -3,26 +3,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 /** Classe représentant une entrée d'un algorithme */
-public class Input {
+public class InputA {
 
     /** La liste des colonnes pour l'entrée de l'algorithme */
-    private List<Column<?>> columns;
+    private List<ColumnA<?>> columns;
     /** la constante pour l'entrée de l'algorithme */
-    private Constant constante;
+    private ConstantA constante;
 
     /**
      * Constructeur de la classe Input (nouvelle entrée vide)
      */
-    public Input() {
-        this.columns = new ArrayList<Column<?>>();
+    public InputA() {
+        this.columns = new ArrayList<ColumnA<?>>();
     }
 
     /**
      * Constructeur de la classe Input (nouvelle entrée vide)
      * @param constante La constante pour l'entrée de l'algorithme
      */
-    public Input(Constant constante) {
-        this.columns = new ArrayList<Column<?>>();
+    public InputA(ConstantA constante) {
+        this.columns = new ArrayList<ColumnA<?>>();
         this.constante = constante;
     }
 
@@ -31,7 +31,7 @@ public class Input {
      * @param columns La liste des colonnes pour l'entrée de l'algorithme
      * @param constante La constante pour l'entrée de l'algorithme
      */
-    public Input(List<Column<?>> columns, Constant constante) {
+    public void Input(List<ColumnA<?>> columns, ConstantA constante) {
         this.columns = columns;
         this.constante = constante;
     }
@@ -40,7 +40,7 @@ public class Input {
      * Retourne la liste des colonnes pour l'entrée de l'algorithme
      * @return La liste des colonnes pour l'entrée de l'algorithme
      */
-    public List<Column<?>> getColumns() {
+    public List<ColumnA<?>> getColumns() {
         return columns;
     }
 
@@ -48,7 +48,7 @@ public class Input {
      * Retourne la constante pour l'entrée de l'algorithme
      * @return La constante pour l'entrée de l'algorithme
      */
-    public Constant getConstant() {
+    public ConstantA getConstant() {
         return constante;
     }
 
@@ -56,7 +56,7 @@ public class Input {
      * Modifie la liste des colonnes pour l'entrée de l'algorithme
      * @param columns La nouvelle liste des colonnes pour l'entrée de l'algorithme
      */
-    public void setColumns(List<Column<?>> columns) {
+    public void setColumns(List<ColumnA<?>> columns) {
         this.columns = columns;
     }
 
@@ -64,7 +64,7 @@ public class Input {
      * Modifie la constante pour l'entrée de l'algorithme
      * @param constante La nouvelle constante pour l'entrée de l'algorithme
      */
-    public void setConstant(Constant constante) {
+    public void setConstant(ConstantA constante) {
         this.constante = constante;
     }
 
@@ -72,7 +72,7 @@ public class Input {
      * Ajoute une colonne à la liste des colonnes pour l'entrée de l'algorithme
      * @param column La colonne à ajouter
      */
-    public void addColumnToInput(Column<?> column) {
+    public void addColumnToInput(ColumnA<?> column) {
         this.columns.add(column);
     }
 
@@ -80,7 +80,7 @@ public class Input {
      * Retourne le type de donnée des colonnes de l'entrée de l'algorithme (colonne 2)
      * @return Le type de donnée des colonnes de l'entrée de l'algorithme
      */
-    public ColumnDataType getDataType() {
+    public ColumnDataTypeA getDataType() {
         return this.columns.get(1).getDataType();
     }
 }

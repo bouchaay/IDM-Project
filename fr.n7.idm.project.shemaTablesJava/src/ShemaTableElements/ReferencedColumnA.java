@@ -1,11 +1,11 @@
 package ShemaTableElements;
 
-public class ReferencedColumn extends Column {
+public class ReferencedColumnA extends ColumnA {
 
     /** La table étrangère */
-	private ShemaTable foreignTable;
+	private ShemaTableA foreignTable;
     /** La colonne étrangère */
-    private Column<?> foreignColumn;
+    private ColumnA<?> foreignColumn;
 
     /**
      * Constructeur de la classe ReferencedColumn
@@ -16,7 +16,7 @@ public class ReferencedColumn extends Column {
      * @param foreignTable La table étrangère
      * @param foreignColumn La colonne étrangère
      */
-    public ReferencedColumn(String name, int id, ColumnDataType dataType, Constraint constraintFile, ShemaTable foreignTable, Column<?> foreignColumn) {
+    public ReferencedColumnA(String name, int id, ColumnDataTypeA dataType, ConstraintA constraintFile, ShemaTableA foreignTable, ColumnA<?> foreignColumn) {
         super(name, id, dataType, constraintFile);
         this.foreignTable = foreignTable;
         this.foreignColumn = foreignColumn;
@@ -26,7 +26,7 @@ public class ReferencedColumn extends Column {
      * Retourne la table étrangère
      * @return La table étrangère
      */
-    public ShemaTable getForeignTable() {
+    public ShemaTableA getForeignTable() {
         return foreignTable;
     }
 
@@ -34,7 +34,7 @@ public class ReferencedColumn extends Column {
      * Retournela colonne étrangère
      * @return La colonne étrangère
      */
-    public Column<?> getForeignColumn() {
+    public ColumnA<?> getForeignColumn() {
         return foreignColumn;
     }
 }

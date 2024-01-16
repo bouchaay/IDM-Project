@@ -16,10 +16,10 @@ public class TablesF {
 	private static int tableId = 1;
 	
     /** La liste des shemma de table créés */
-    private List<ShemaTable> shemaTables;
+    private List<ShemaTableA> shemaTables;
     
     /** Les ressources des algorithmes */
-    private static Resource algoRessource = new Resource("/Ressource");
+    private static ResourceA algoRessource = new ResourceA("/Ressource");
 
     /**
      * Constructeur de la classe Tables
@@ -32,7 +32,7 @@ public class TablesF {
      * Getter de la liste des shema de table
      * @return
      */
-    public List<ShemaTable> getShemaTables() {
+    public List<ShemaTableA> getShemaTables() {
         return shemaTables;
     }
 
@@ -40,7 +40,7 @@ public class TablesF {
      * Setter de la liste des shema de table
      * @param shemaTables
      */
-    public void setShemaTables(List<ShemaTable> shemaTables) {
+    public void setShemaTables(List<ShemaTableA> shemaTables) {
         this.shemaTables = shemaTables;
     }
 
@@ -48,7 +48,7 @@ public class TablesF {
      * Ajoute un shema de table à la liste des shema de table
      * @param shemaTable
      */
-    public void addShemaTable(ShemaTable shemaTable) {
+    public void addShemaTable(ShemaTableA shemaTable) {
         this.shemaTables.add(shemaTable);
     }
 
@@ -56,7 +56,7 @@ public class TablesF {
      * Supprime un shema de table de la liste des shema de table
      * @param shemaTable
      */
-    public void removeShemaTable(ShemaTable shemaTable) {
+    public void removeShemaTable(ShemaTableA shemaTable) {
         this.shemaTables.remove(shemaTable);
     }
 
@@ -65,8 +65,8 @@ public class TablesF {
      * @param tableName
      * @return
      */
-    public ShemaTable getShemaTable(String tableName) {
-        for (ShemaTable shemaTable : shemaTables) {
+    public ShemaTableA getShemaTable(String tableName) {
+        for (ShemaTableA shemaTable : shemaTables) {
             if (shemaTable.getName().equals(tableName)) {
                 return shemaTable;
             }
@@ -79,8 +79,8 @@ public class TablesF {
      * @param tableId
      * @return
      */
-    public ShemaTable getShemaTable(int tableId) {
-        for (ShemaTable shemaTable : shemaTables) {
+    public ShemaTableA getShemaTable(int tableId) {
+        for (ShemaTableA shemaTable : shemaTables) {
             if (shemaTable.getId() == tableId) {
                 return shemaTable;
             }
@@ -93,7 +93,7 @@ public class TablesF {
      * @param tableId
      */
     public void removeShemaTable(int tableId) {
-        for (ShemaTable shemaTable : shemaTables) {
+        for (ShemaTableA shemaTable : shemaTables) {
             if (shemaTable.getId() == tableId) {
                 shemaTables.remove(shemaTable);
                 break;
@@ -106,7 +106,7 @@ public class TablesF {
      * @param tableName
      */
     public void removeShemaTable(String tableName) {
-        for (ShemaTable shemaTable : shemaTables) {
+        for (ShemaTableA shemaTable : shemaTables) {
             if (shemaTable.getName().equals(tableName)) {
                 shemaTables.remove(shemaTable);
                 break;
@@ -120,7 +120,7 @@ public class TablesF {
      */
     public int nextTableId() {
         int maxId = 0;
-        for (ShemaTable shemaTable : shemaTables) {
+        for (ShemaTableA shemaTable : shemaTables) {
             if (shemaTable.getId() > maxId) {
                 maxId = shemaTable.getId();
             }
@@ -153,7 +153,7 @@ public class TablesF {
                 frame.dispose();
         		TableInfos table = new TableInfos(tableId);
         		tableId++;
-        		ShemaTable shemaTable = table.getTable();
+        		ShemaTableA shemaTable = table.getTable();
         		new ColumnEditor(shemaTable, algoRessource.getFolderPath());
                 addShemaTable(shemaTable);
                 tablesGUI();
@@ -201,7 +201,7 @@ public class TablesF {
                 }
                 String tableName = (String) JOptionPane.showInputDialog(null, "Nom de la table à afficher : ", "Tables", JOptionPane.QUESTION_MESSAGE, null, tableNames, tableNames[0]);
                 if (tableName != null) {
-                    ShemaTable shemaTable = getShemaTable(tableName);
+                    ShemaTableA shemaTable = getShemaTable(tableName);
                     JOptionPane.showMessageDialog(null, shemaTable.toString(), "Tables", JOptionPane.INFORMATION_MESSAGE);
                 }
             }

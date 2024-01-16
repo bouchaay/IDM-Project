@@ -1,7 +1,7 @@
 package ShemaTableElements;
 
 /** Représente une constante */
-public class Constant {
+public class ConstantA {
 
     /** La constante */
     private int value;
@@ -10,7 +10,7 @@ public class Constant {
      * Constructeur de la classe Constant
      * @param value La constante
      */
-    public Constant(int value) {
+    public ConstantA(int value) {
         this.value = value;
     }
 

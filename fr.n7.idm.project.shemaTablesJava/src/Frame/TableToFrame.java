@@ -6,5 +6,5 @@ import ShemaTableElements.*;
 public class TableToFrame extends JFrame {
 
 	/** La Table */
-	ShemaTable table;
+	ShemaTableA table;
 }

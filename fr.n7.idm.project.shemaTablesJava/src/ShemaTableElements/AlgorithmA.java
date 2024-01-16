@@ -3,12 +3,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /** Classe représentant un algorithme */
-public class Algorithm {
+public class AlgorithmA {
 
     /** L'entrée de l'algorithme */
-	Input input;
+	InputA input;
     /** La sortie de l'algorithme */
-    Output output;
+    OutputA output;
     /** Le nom de l'algorithme */
     String name;
     /** Le fichier de l'algorithme */
@@ -21,7 +21,7 @@ public class Algorithm {
      * @param name Le nom de l'algorithme
      * @param file Le fichier de l'algorithme
      */
-    public Algorithm(Input input, Output output, String name, String path) {
+    public AlgorithmA(InputA input, OutputA output, String name, String path) {
         this.input = input;
         this.output = output;
         this.name = name;
@@ -32,7 +32,7 @@ public class Algorithm {
      * Retourne l'entrée de l'algorithme
      * @return L'entrée de l'algorithme
      */
-    public Input getInput() {
+    public InputA getInput() {
         return input;
     }
 
@@ -40,7 +40,7 @@ public class Algorithm {
      * Retourne la sortie de l'algorithme
      * @return La sortie de l'algorithme
      */
-    public Output getOutput() {
+    public OutputA getOutput() {
         return output;
     }
 
@@ -65,7 +65,7 @@ public class Algorithm {
      * Modifie l'entrée de l'algorithme
      * @param input La nouvelle entrée de l'algorithme
      */
-    public void setInput(Input input) {
+    public void setInput(InputA input) {
         this.input = input;
     }
 
@@ -73,7 +73,7 @@ public class Algorithm {
      * Modifie la sortie de l'algorithme
      * @param output La nouvelle sortie de l'algorithme
      */
-    public void setOutput(Output output) {
+    public void setOutput(OutputA output) {
         this.output = output;
     }
 

@@ -16,7 +16,7 @@ import java.util.List;
  * != a -> tous les éléments de la colonne a doivent être différents de a
  * Les règle pour un string seront exprimées par des regex expressions.
  */
-public class Constraint {
+public class ConstraintA {
 
     /** Le path du fichier descontraintes */
     private String path;
@@ -25,7 +25,7 @@ public class Constraint {
      * Constructeur de la classe Constraint
      * @param path Le path du fichier des contraintes
      */
-    public Constraint(String path) {
+    public ConstraintA(String path) {
         this.path = path;
     }
 
@@ -34,7 +34,7 @@ public class Constraint {
      * @param folderPath Le path du dossier où créer le fichier
      * @param name Le nom de la colonne
      */
-    public Constraint(String folderPath, String name) {
+    public ConstraintA(String folderPath, String name) {
         this.path = folderPath + "/" + name + ".txt";
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(this.path));
@@ -131,12 +131,12 @@ public class Constraint {
      * @param data La donnée à vérifier
      * @return true si la donnée respecte la contrainte, false sinon
      */
-    public boolean checkConstraint(ColumnDataType type, String constraint, Object data) {
-        if (type == ColumnDataType.INTEGER) {
+    public boolean checkConstraint(ColumnDataTypeA type, String constraint, Object data) {
+        if (type == ColumnDataTypeA.INTEGER) {
             return checkIntConstraint(constraint, (int) data);
-        } else if (type == ColumnDataType.FLOAT) {
+        } else if (type == ColumnDataTypeA.FLOAT) {
             return checkFloatConstraint(constraint, (float) data);
-        } else if (type == ColumnDataType.STRING) {
+        } else if (type == ColumnDataTypeA.STRING) {
             return checkStringConstraint(constraint, (String) data);
         } else {
             return false;

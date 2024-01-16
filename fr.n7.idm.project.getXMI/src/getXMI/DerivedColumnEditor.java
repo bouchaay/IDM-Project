@@ -17,14 +17,14 @@ public class DerivedColumnEditor extends JFrame {
     /** Le path des resources */
     private String resourcePath;
     /** ShemaTable de l'entrée */
-    ShemaTable table;
+    ShemaTableA table;
     /** L'input de l'algorithme */
-    public static Input input = new Input();
+    public static InputA input = new InputA();
     /** l'output de l'algorithme */
-    public static Output output;
+    public static OutputA output;
 
 
-    public DerivedColumnEditor(ShemaTable table, String resourcePath) {
+    public DerivedColumnEditor(ShemaTableA table, String resourcePath) {
         this.table = table;
         this.resourcePath = resourcePath;
         setTitle("Input de l'Algorithme");
@@ -115,7 +115,7 @@ public class DerivedColumnEditor extends JFrame {
 
         try {
             // Récupérer la colonne d'entrée à partir de l'ID
-            Column inputColumn = table.getColumnByIndex(Integer.parseInt(inputColumnId));
+            ColumnA inputColumn = table.getColumnByIndex(Integer.parseInt(inputColumnId));
             // Ajouter la colonne d'entrée à l'input
             input.addColumnToInput(inputColumn);
         } catch (Exception e) {
@@ -131,7 +131,7 @@ public class DerivedColumnEditor extends JFrame {
         String constant = constantColumnIdField.getText();
 
         // Créer l'instance de la colonne constante
-        input.setConstant(new Constant(Integer.parseInt(constant)));
+        input.setConstant(new ConstantA(Integer.parseInt(constant)));
         // Effacer le champ après l'ajout
         constantColumnIdField.setText("");
     }
@@ -140,11 +140,11 @@ public class DerivedColumnEditor extends JFrame {
         // Récupérer le nom de l'algorithme
         String algorithmName = algorithmNameField.getText();
         String outputName = algorithmName + "Output";
-        ColumnDataType outputType = input.getDataType();
+        ColumnDataTypeA outputType = input.getDataType();
         // Créer l'instance de l'output
-        output = new Output(outputName, outputType);
+        output = new OutputA(outputName, outputType);
         // Créer l'instance de l'algorithme
-        Algorithm algorithm = new Algorithm(input, output, algorithmName, resourcePath + "/" + algorithmName + ".py");
+        AlgorithmA algorithm = new AlgorithmA(input, output, algorithmName, resourcePath + "/" + algorithmName + ".py");
         // Ajouter l'algorithme au catalogue de la table
         table.getCatalogue().addAlgorithm(algorithm);
         // Disposer la fenêtre

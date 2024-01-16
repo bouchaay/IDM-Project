@@ -3,7 +3,7 @@ import java.util.List;
 import java.io.File;
 import java.util.ArrayList;
 
-public class Resource {
+public class ResourceA {
 
     /** folderPath de la ressource */
     private String folderPath;
@@ -14,7 +14,7 @@ public class Resource {
      * Constructeur de la classe Resource
      * @param folderPath
      */
-    public Resource(String folderPath) {
+    public ResourceA(String folderPath) {
         this.folderPath = folderPath;
         this.algorithmsNames = new ArrayList<>();
 

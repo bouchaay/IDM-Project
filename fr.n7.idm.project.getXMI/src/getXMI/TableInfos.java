@@ -13,7 +13,7 @@ public class TableInfos {
         /** Nom du catalogue de la table */
         String catalogueName;
         /** Shema de table associé */
-        ShemaTable table;
+        ShemaTableA table;
 
         /** Constructeur de la classe TableInfos 
          * Si l'utilisateur ne rentre pas un nomde table, on redemande le nom de la table
@@ -34,7 +34,7 @@ public class TableInfos {
                     System.exit(0);
                 }
             } while (this.catalogueName.equals(""));
-            this.table = new ShemaTable(this.tableName, this.tableId, new Catalogue(this.catalogueName));
+            this.table = new ShemaTableA(this.tableName, this.tableId, new CatalogueA(this.catalogueName));
         }
 
         /**
@@ -65,7 +65,7 @@ public class TableInfos {
          * Getter du shema de table associé
          * @return
          */
-        public ShemaTable getTable() {
+        public ShemaTableA getTable() {
             return table;
         }
 
@@ -97,7 +97,7 @@ public class TableInfos {
          * Setter du shema de table associé
          * @param table
          */
-        public void setTable(ShemaTable table) {
+        public void setTable(ShemaTableA table) {
             this.table = table;
         }
 }

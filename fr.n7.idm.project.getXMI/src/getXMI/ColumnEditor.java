@@ -19,12 +19,12 @@ public class ColumnEditor extends JFrame {
     /** Chemin du fichier de contraintes de la colonne à ajouter */
     private JTextField constraintsPathField;
     /** Liste des colonnes de la table */
-    private ShemaTable table;
+    private ShemaTableA table;
     /** Le path du dossier de ressource */
     private String folderPath;
     
 
-    public ColumnEditor(ShemaTable table, String path) {
+    public ColumnEditor(ShemaTableA table, String path) {
         this.table = table;
         this.folderPath = path;
         setTitle("Columns Editor");
@@ -78,32 +78,32 @@ public class ColumnEditor extends JFrame {
         // L'id de la colonne
         int columnId = Integer.parseInt(columnIdField.getText());
         // Le type de la colonne
-        ColumnDataType columnDataType;
+        ColumnDataTypeA columnDataType;
         String dataType = (String) dataTypeComboBox.getSelectedItem();
         if (dataType.equals("int")) {
-            columnDataType = ColumnDataType.INTEGER;
+            columnDataType = ColumnDataTypeA.INTEGER;
         } else if (dataType.equals("float")) {
-            columnDataType = ColumnDataType.FLOAT;
+            columnDataType = ColumnDataTypeA.FLOAT;
         } else if (dataType.equals("string")) {
-            columnDataType = ColumnDataType.STRING;
+            columnDataType = ColumnDataTypeA.STRING;
         } else {
-            columnDataType = ColumnDataType.STRING;
+            columnDataType = ColumnDataTypeA.STRING;
         }
         // Le chemin du fichier de contraintes de la colonne
         String constraintsPath = constraintsPathField.getText();
 
         switch (columnDataType) {
             case INTEGER:
-                table.addColumn(new Column<Integer>(columnName, columnId, columnDataType, new Constraint(constraintsPath)));
+                table.addColumn(new ColumnA<Integer>(columnName, columnId, columnDataType, new ConstraintA(constraintsPath)));
                 break;
             case FLOAT:
-                table.addColumn(new Column<Float>(columnName, columnId, columnDataType, new Constraint(constraintsPath)));
+                table.addColumn(new ColumnA<Float>(columnName, columnId, columnDataType, new ConstraintA(constraintsPath)));
                 break;
             case STRING:
-                table.addColumn(new Column<String>(columnName, columnId, columnDataType, new Constraint(constraintsPath)));
+                table.addColumn(new ColumnA<String>(columnName, columnId, columnDataType, new ConstraintA(constraintsPath)));
                 break;
             default:
-                table.addColumn(new Column<String>(columnName, columnId, columnDataType, new Constraint(constraintsPath)));
+                table.addColumn(new ColumnA<String>(columnName, columnId, columnDataType, new ConstraintA(constraintsPath)));
                 break;
         }
 

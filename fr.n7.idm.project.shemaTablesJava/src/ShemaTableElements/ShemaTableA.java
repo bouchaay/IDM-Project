@@ -2,27 +2,27 @@ package ShemaTableElements;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShemaTable {
+public class ShemaTableA {
 
     /** Nom de la table */
 	private String name;
     /** Liste des colonnes de la table */
     private int id;
     /** Liste des colonnes de la table */
-    private List<Column<?>> columns;
+    private List<ColumnA<?>> columns;
     /** Catalogue associé à la table */
-    private Catalogue catalogue;
+    private CatalogueA catalogue;
     
     /** Constructeur de la classe ShemaTable
      * @param name Le nom de la table
      * @param id L'identifiant de la table
      */
-    public ShemaTable(String name, int id, Catalogue catalogue) {
+    public ShemaTableA(String name, int id, CatalogueA catalogue) {
         this.name = name;
         this.id = id;
         this.catalogue = catalogue;
         this.columns = new ArrayList<>();
-        this.columns.add(new Column<Integer>("Lines Id", 0, ColumnDataType.INTEGER, new Constraint("")));
+        this.columns.add(new ColumnA<Integer>("Lines Id", 0, ColumnDataTypeA.INTEGER, new ConstraintA("")));
     }
 
     /** Constructeur de la classe ShemaTable
@@ -30,7 +30,7 @@ public class ShemaTable {
      * @param id L'identifiant de la table
      * @param columns La liste des colonnes de la table
      */
-    public ShemaTable(String name, int id, List<Column<?>> columns) {
+    public ShemaTableA(String name, int id, List<ColumnA<?>> columns) {
         this.name = name;
         this.id = id;
         this.columns = columns;
@@ -64,7 +64,7 @@ public class ShemaTable {
      * Retourne le catalogue associé à la table
      * @return Le catalogue associé à la table
      */
-    public Catalogue getCatalogue() {
+    public CatalogueA getCatalogue() {
         return catalogue;
     }
 
@@ -72,7 +72,7 @@ public class ShemaTable {
      * Retourne la liste des colonnes de la table
      * @return La liste des colonnes de la table
      */
-    public List<Column<?>> getColumns() {
+    public List<ColumnA<?>> getColumns() {
         return columns;
     }
 
@@ -80,7 +80,7 @@ public class ShemaTable {
      * Ajoute une colonne à la table
      * @param column La colonne à ajouter
      */
-    public void addColumn(Column<?> column) {
+    public void addColumn(ColumnA<?> column) {
         this.columns.add(column);
     }
 
@@ -97,7 +97,7 @@ public class ShemaTable {
      * @param index L'indice de la colonne à retourner
      * @return La colonne d'indice index
      */
-    public Column<?> getColumnByIndex(int index) {
+    public ColumnA<?> getColumnByIndex(int index) {
         return this.columns.get(index);
     }
 
@@ -106,8 +106,8 @@ public class ShemaTable {
      * @param name Le nom de la colonne à retourner
      * @return La colonne de nom name
      */
-    public Column<?> getColumnByName(String name) {
-        for (Column<?> column : this.columns) {
+    public ColumnA<?> getColumnByName(String name) {
+        for (ColumnA<?> column : this.columns) {
             if (column.getName().equals(name)) {
                 return column;
             }

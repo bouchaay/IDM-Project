@@ -1,6 +1,6 @@
 package ShemaTableElements;
 
-public enum ColumnDataType {
+public enum ColumnDataTypeA {
     INTEGER,
     FLOAT,
     STRING;

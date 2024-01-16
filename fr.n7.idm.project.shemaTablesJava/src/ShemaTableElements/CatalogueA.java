@@ -2,19 +2,19 @@ package ShemaTableElements;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Catalogue {
+public class CatalogueA {
 
     /** Le nom du catalogue */
     private String name;
     /** Les algorithmes */
-    private List<Algorithm> algorithms;
+    private List<AlgorithmA> algorithms;
 
     /**
      * Constructeur de la classe Catalogue
      * @param name Le nom du catalogue
      * @param algorithms Les noms des algorithmes du catalogue
      */
-    public Catalogue(String name, List<Algorithm> algorithms) {
+    public CatalogueA(String name, List<AlgorithmA> algorithms) {
         this.name = name;
         this.algorithms = algorithms;
     }
@@ -23,9 +23,9 @@ public class Catalogue {
      * Constructeur de la classe Catalogue (nouveau catalogue vide)
      * @param name Le nom du catalogue
      */
-    public Catalogue(String name) {
+    public CatalogueA(String name) {
         this.name = name;
-        this.algorithms = new ArrayList<Algorithm>();
+        this.algorithms = new ArrayList<AlgorithmA>();
     }
 
     /**
@@ -40,7 +40,7 @@ public class Catalogue {
      * Retourne les noms des algorithmes du catalogue
      * @return Les noms des algorithmes du catalogue
      */
-    public List<Algorithm> getAlgorithms() {
+    public List<AlgorithmA> getAlgorithms() {
         return algorithms;
     }
 
@@ -56,7 +56,7 @@ public class Catalogue {
      * Modifie les noms des algorithmes du catalogue
      * @param algorithms Les nouveaux noms des algorithmes du catalogue
      */
-    public void setAlgorithms(List<Algorithm> algorithms) {
+    public void setAlgorithms(List<AlgorithmA> algorithms) {
         this.algorithms = algorithms;
     }
 
@@ -64,7 +64,7 @@ public class Catalogue {
      * Ajoute un algorithme au catalogue
      * @param algorithm Le nom de l'algorithme à ajouter
      */
-    public void addAlgorithm(Algorithm algorithm) {
+    public void addAlgorithm(AlgorithmA algorithm) {
         this.algorithms.add(algorithm);
     }
 
@@ -72,7 +72,7 @@ public class Catalogue {
      * Retire un algorithme du catalogue
      * @param algorithm Le nom de l'algorithme à retirer
      */
-    public void removeAlgorithm(Algorithm algorithm) {
+    public void removeAlgorithm(AlgorithmA algorithm) {
         this.algorithms.remove(algorithm);
     }
 
@@ -81,7 +81,7 @@ public class Catalogue {
      */
     public List<String> getAlgorithmsNames() {
         List<String> algorithmsNames = new ArrayList<String>();
-        for (Algorithm algorithm : this.algorithms) {
+        for (AlgorithmA algorithm : this.algorithms) {
             algorithmsNames.add(algorithm.getName());
         }
         return algorithmsNames;

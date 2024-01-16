@@ -3,31 +3,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 /** Liste des shema de tables */
-public class Tables {
+public class TablesA {
 
     /** Listes des shema de tables */
-    private List<ShemaTable> shemaTables;
+    private List<ShemaTableA> shemaTables;
 
     /**
      * Constructeur de la classe Tables
      * @param shemaTables Les shema de tables
      */
-    public Tables(List<ShemaTable> shemaTables) {
+    public TablesA(List<ShemaTableA> shemaTables) {
         this.shemaTables = shemaTables;
     }
 
     /**
      * Constructeur de la classe Tables (nouvelle liste de shema de tables vide)
      */
-    public Tables() {
-        this.shemaTables = new ArrayList<ShemaTable>();
+    public TablesA() {
+        this.shemaTables = new ArrayList<ShemaTableA>();
     }
 
     /**
      * Retourne les shema de tables
      * @return Les shema de tables
      */
-    public List<ShemaTable> getShemaTables() {
+    public List<ShemaTableA> getShemaTables() {
         return shemaTables;
     }
 
@@ -35,7 +35,7 @@ public class Tables {
      * Modifie les shema de tables
      * @param shemaTables Les nouveaux shema de tables
      */
-    public void setShemaTables(List<ShemaTable> shemaTables) {
+    public void setShemaTables(List<ShemaTableA> shemaTables) {
         this.shemaTables = shemaTables;
     }
 
@@ -43,7 +43,7 @@ public class Tables {
      * Ajoute un shema de table
      * @param shemaTable Le shema de table a ajouter
      */
-    public void addShemaTable(ShemaTable shemaTable) {
+    public void addShemaTable(ShemaTableA shemaTable) {
         this.shemaTables.add(shemaTable);
     }
 
@@ -51,7 +51,7 @@ public class Tables {
      * Supprime un shema de table
      * @param shemaTable Le shema de table a supprimer
      */
-    public void removeShemaTable(ShemaTable shemaTable) {
+    public void removeShemaTable(ShemaTableA shemaTable) {
         this.shemaTables.remove(shemaTable);
     }
 
@@ -60,7 +60,7 @@ public class Tables {
      * @param i L'indice du shema de table
      * @return Le shema de table a l'indice i
      */
-    public ShemaTable getShemaTable(int i) {
+    public ShemaTableA getShemaTable(int i) {
         return this.shemaTables.get(i);
     }
 
@@ -77,8 +77,8 @@ public class Tables {
      * @param name Le nom du shema de table
      * @return Le shema de table dont le nom est name
      */
-    public ShemaTable getShemaTable(String name) {
-        for (ShemaTable shemaTable : this.shemaTables) {
+    public ShemaTableA getShemaTable(String name) {
+        for (ShemaTableA shemaTable : this.shemaTables) {
             if (shemaTable.getName().equals(name)) {
                 return shemaTable;
             }

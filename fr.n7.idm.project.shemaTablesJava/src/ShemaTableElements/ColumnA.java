@@ -6,16 +6,16 @@ import java.util.List;
  * Classe représentant une colonne du shemaTable
  * @param <T> Le type de la colonne
  */
-public class Column <T> {
+public class ColumnA <T> {
 
     /** Le nom de la colonne */
 	private String name;
     /** L'identifiant de la colonne */
     private int id;
     /** Le type de la colonne */
-    private ColumnDataType dataType;
+    private ColumnDataTypeA dataType;
     /** La contrainte de la colonne */
-    private Constraint constraintFile;
+    private ConstraintA constraintFile;
     /** La liste des valeurs de la colonne */
     private List<T> values;
 
@@ -26,7 +26,7 @@ public class Column <T> {
      * @param dataType Le type de la colonne
      * @param constraintFile La contrainte de la colonne
      */
-    public Column(String name, int id, ColumnDataType dataType, Constraint constraintFile) {
+    public ColumnA(String name, int id, ColumnDataTypeA dataType, ConstraintA constraintFile) {
         this.name = name;
         this.id = id;
         this.dataType = dataType;
@@ -40,7 +40,7 @@ public class Column <T> {
      * @param id L'identifiant de la colonne
      * @param dataType Le type de la colonne
      */
-    public Column(String name, int id, ColumnDataType dataType) {
+    public ColumnA(String name, int id, ColumnDataTypeA dataType) {
         this.name = name;
         this.id = id;
         this.dataType = dataType;
@@ -55,7 +55,7 @@ public class Column <T> {
      * @param constraintFile La contrainte de la colonne
      * @param values La liste des valeurs de la colonne
      */
-    public Column(String name, int id, ColumnDataType dataType, Constraint constraintFile, List<T> values) {
+    public ColumnA(String name, int id, ColumnDataTypeA dataType, ConstraintA constraintFile, List<T> values) {
         this.name = name;
         this.id = id;
         this.dataType = dataType;
@@ -83,7 +83,7 @@ public class Column <T> {
      * Retourne le type de la colonne
      * @return Le type de la colonne
      */
-    public ColumnDataType getDataType() {
+    public ColumnDataTypeA getDataType() {
         return dataType;
     }
 
@@ -91,7 +91,7 @@ public class Column <T> {
      * Retourne la contrainte de la colonne
      * @return La contrainte de la colonne
      */
-    public Constraint getConstraintFile() {
+    public ConstraintA getConstraintFile() {
         return constraintFile;
     }
 
@@ -148,7 +148,7 @@ public class Column <T> {
      * Modifie le type de la colonne
      * @param dataType Le nouveau type de la colonne
      */
-    public void setDataType(ColumnDataType dataType) {
+    public void setDataType(ColumnDataTypeA dataType) {
         this.dataType = dataType;
     }
 
@@ -156,7 +156,7 @@ public class Column <T> {
      * Modifie la contrainte de la colonne
      * @param constraintFile La nouvelle contrainte de la colonne
      */
-    public void setConstraintFile(Constraint constraintFile) {
+    public void setConstraintFile(ConstraintA constraintFile) {
         this.constraintFile = constraintFile;
     }
 
