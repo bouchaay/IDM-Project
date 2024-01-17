@@ -5,13 +5,13 @@ import User.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-import Main.UserTableModel;
+
 
 import java.awt.*;
 import java.util.Vector;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 public class TableToFrame extends JFrame {
 
@@ -54,6 +54,17 @@ public class TableToFrame extends JFrame {
         // Créer le menu "Fichier"
         JMenu fichierMenu = new JMenu("Fichier");
         menuBar.add(fichierMenu);
+
+        // Créer le menu "visaualiser"
+        JMenu visualiseMenu = new JMenu("visualiser");
+        menuBar.add(visualiseMenu);
+        JMenuItem graphMenuItem = new JMenuItem("Graphe");
+        graphMenuItem.addActionListener(e -> visualiser(0)); 
+        visualiseMenu.add(graphMenuItem );
+        
+        JMenuItem histogrammeMenuItem = new JMenuItem("Histogramme");
+        histogrammeMenuItem.addActionListener(e -> visualiser(1));
+        visualiseMenu.add(histogrammeMenuItem);
 
         // Ajouter l'option "Importer"
         JMenuItem importerMenuItem = new JMenuItem("Importer");
@@ -131,8 +142,7 @@ private void mettreAJourTableau(List<ColumnA<String>> columns) {
     if(nbLigne >= nbLigneTab){
          // Ajouter les nouvelles colonnes
         for (int i = 0; i < nbLigneTab; i++) {
-            tableModel.addColumn(String.valueOf(columnst.get(i).getName()),columns.get(i).getValues().toArray());
-            
+            tableModel.addColumn(String.valueOf(columnst.get(i).getName()),columns.get(i).getValues().toArray());    
         }
     }else{
         // tableau importer a plus de colonne que notre table donc non adapter à notre table
@@ -144,6 +154,100 @@ private void mettreAJourTableau(List<ColumnA<String>> columns) {
 
 }
 	
+    private void visualiser(int typeGraphique) {
+        List<ColumnA<?>> columns = table.getColumns();
+        String[] choixSelectionnes = new String[columns.size()];
+        //String choixX;
+        //String choixY;
+        for (int i = 0; i < columns.size(); i++) {
+            choixSelectionnes[i] = columns.get(i).getName();
+        }
+        /*SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                Visualiser2 vis = new Visualiser2();
+
+                // Attendre jusqu'à ce que la fenêtre soit fermée
+                vis.addWindowListener(new java.awt.event.WindowAdapter() {
+                    public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                        // Utiliser les phrases dans un autre code
+                        String x = interfacePhrases.getPhraseA();
+                        String y = interfacePhrases.getPhraseB();
+
+                        // Faire quelque chose avec les phrases (afficher dans la console dans cet exemple)
+                        System.out.println("X " + x);
+                        System.out.println("Y " + y);
+                    }
+                });
+            }
+        });*/
+
+        
+        
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run()  {
+
+            
+                Visualiser vis = new Visualiser(choixSelectionnes);
+
+                // Attendre jusqu'à ce que la fenêtre soit fermée
+                vis.addWindowListener(new java.awt.event.WindowAdapter() {
+                    public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                        // Utiliser les phrases dans un autre code
+                        String choixX = vis.getXEx();
+                        String choixY = vis.getYEx();
+                        List<String> xs = getColumn(choixX);
+                        List<String> ys = getColumn(choixY);
+
+                       /*  for (String str : x) {
+                            System.out.println(Integer.parseInt(str));
+                        }*/
+                        
+                        // to int
+                        List<Integer> x = strToInt(xs);
+                        List<Integer> y = strToInt(ys);
+
+
+                        System.out.println(x);
+                        System.out.println(y);
+                        Graphe graph = new Graphe(x, y, typeGraphique);
+                        graph.creerGraphe();
+
+                        // Faire quelque chose avec les phrases (afficher dans la console dans cet exemple)
+                        System.out.println("Choix X " + choixX);
+                        System.out.println("Choix Y " + choixY);
+                    }
+
+            
+                
+            
+            });
+        }
+
+ 
+        });
+    }
+        
+        /*while (!vis.getChoixFait()) {
+            try {
+                Thread.sleep(100); // Attendre un court instant pour éviter de bloquer le thread
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }*/
+
+        public List<Integer> strToInt (List<String> list){
+            List<Integer> listInt = new ArrayList<Integer>();
+            for (String str : list) {
+                listInt.add(Integer.parseInt(str));
+            }
+            return listInt;
+        }
+
+       
+        
+    
 		
 	
 	private void exporterf() {
@@ -169,7 +273,7 @@ private void mettreAJourTableau(List<ColumnA<String>> columns) {
     }
 
     // Méthode pour ajouter une colonne au tableau
-    private void ajouterColonne() {
+   /*  private void ajouterColonne() {
         String columnName = JOptionPane.showInputDialog(this, "Nom de la colonne :");
         if (columnName != null && !columnName.isEmpty()) {
             tableModel.addColumn(columnName);
@@ -177,12 +281,23 @@ private void mettreAJourTableau(List<ColumnA<String>> columns) {
     }
 
     // Méthode pour supprimer une colonne du tableau
-    private void supprimerColonne() {
-        int selectedColumn = jTable.getSelectedColumn();
-        if (selectedColumn != -1) {
-            tableModel.setColumnCount(tableModel.getColumnCount() - 1);
-        } else {
-            JOptionPane.showMessageDialog(this, "Veuillez sélectionner une colonne à supprimer.");
+        private void supprimerColonne() {
+            int selectedColumn = jTable.getSelectedColumn();
+            if (selectedColumn != -1) {
+                tableModel.setColumnCount(tableModel.getColumnCount() - 1);
+            } else {
+                JOptionPane.showMessageDialog(this, "Veuillez sélectionner une colonne à supprimer.");
+            }
+        }*/
+    
+     // Add this closing brace
+
+
+    public List<String> getColumn(String columnName) {
+        List<String> column = new ArrayList<>();
+        for (int i = 0; i < tableModel.getRowCount(); i++) {
+            column.add((String) tableModel.getValueAt(i, tableModel.findColumn(columnName)));
         }
+        return column;
     }
 }
