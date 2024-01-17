@@ -74,8 +74,14 @@ public class TableToFrame extends JFrame {
         // Ajouter l'option "Exporter"
         JMenuItem exporterMenuItem = new JMenuItem("Exporter");
         exporterMenuItem.addActionListener(e -> exporterf()); 
-            
         fichierMenu.add(exporterMenuItem);
+
+        // Ajouter l'option Enregistrer
+        JMenuItem enregistrerMenuItem = new JMenuItem("Enregistrer");
+        enregistrerMenuItem.addActionListener(e -> Enregistrer());
+        fichierMenu.add(enregistrerMenuItem);
+            
+        
     
 
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
@@ -128,8 +134,9 @@ public class TableToFrame extends JFrame {
 		// Mettre à jour le modèle de tableau avec de nouvelles données
 		mettreAJourTableau(columns);
 	}
-	
-private void mettreAJourTableau(List<ColumnA<String>> columns) {
+
+
+  private void mettreAJourTableau(List<ColumnA<String>> columns) {
     // Effacer toutes les colonnes existantes
     tableModel.setColumnCount(0);
 
@@ -150,9 +157,17 @@ private void mettreAJourTableau(List<ColumnA<String>> columns) {
         JOptionPane.showMessageDialog(this, "Le tableau importer n'est pas adapter à notre table");
     }
         
-    
-
 }
+
+    private void Enregistrer() {
+        for (ColumnA c : table.getColumns()) {
+            List<String> values = getColumn(c.getName());
+            ColumnA column = new ColumnA(c.getName(), c.getId(), c.getDataType(), c.getConstraintFile(), values);
+            this.table.setColumnName(c.getName(), column);
+        }
+        JOptionPane.showMessageDialog(this, "Enregistrer");
+    }
+
 	
     private void visualiser(int typeGraphique) {
         List<ColumnA<?>> columns = table.getColumns();

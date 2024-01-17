@@ -84,6 +84,17 @@ public class ShemaTableA {
         this.columns.add(column);
     }
 
+    public void setColumnName(String name, ColumnA<?> column) {
+        int i = 0;
+        for (ColumnA<?> col : this.columns) {
+            if (col.getName().equals(name)) {
+                this.columns.set(i, column);
+                break;
+            }
+            i++;
+        }
+    }
+
     /**
      * Supprime la colonne d'indice index
      * @param index L'indice de la colonne à supprimer
