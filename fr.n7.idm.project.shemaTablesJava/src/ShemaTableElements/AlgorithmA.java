@@ -21,11 +21,11 @@ public class AlgorithmA {
      * @param name Le nom de l'algorithme
      * @param file Le fichier de l'algorithme
      */
-    public AlgorithmA(InputA input, OutputA output, String name, String path) {
+    public AlgorithmA(InputA input, String name, String path) {
         this.input = input;
-        this.output = output;
         this.name = name;
         this.path = path;
+        this.output = (new PythonScriptExecutor(input.getColumns(), this)).createOutput();
     }
 
     /**

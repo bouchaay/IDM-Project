@@ -14,4 +14,8 @@ public class DerivedColumnA extends ColumnA {
         super(algorithm.getOutput().getName(), algorithm.getOutput().getId(), algorithm.getOutput().getDataType(), algorithm.getOutput().getConstraintFile());
         this.algorithm = algorithm;
     }
+    
+    public AlgorithmA getAlgorithm() {
+    	return this.algorithm;
+    }
 }

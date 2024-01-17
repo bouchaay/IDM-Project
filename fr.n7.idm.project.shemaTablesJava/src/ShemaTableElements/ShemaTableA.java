@@ -97,8 +97,13 @@ public class ShemaTableA {
      * @param index L'indice de la colonne à retourner
      * @return La colonne d'indice index
      */
-    public ColumnA<?> getColumnByIndex(int index) {
-        return this.columns.get(index);
+    public ColumnA<?> getColumnById(int columnId) {
+        for (ColumnA<?> column : this.columns) {
+            if (column.getId() == columnId) {
+                return column;
+            }
+        }
+        return null;
     }
 
     /**
@@ -113,5 +118,9 @@ public class ShemaTableA {
             }
         }
         return null;
+    }
+
+    public int getNbColumns() {
+        return this.columns.size();
     }
 }

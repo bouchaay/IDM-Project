@@ -77,7 +77,7 @@ public class TablesA {
      * @param name Le nom du shema de table
      * @return Le shema de table dont le nom est name
      */
-    public ShemaTableA getShemaTable(String name) {
+    public ShemaTableA getShemaTableByName(String name) {
         for (ShemaTableA shemaTable : this.shemaTables) {
             if (shemaTable.getName().equals(name)) {
                 return shemaTable;

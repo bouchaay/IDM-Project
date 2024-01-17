@@ -35,19 +35,6 @@ public class ColumnA <T> {
     }
     
     /**
-     * Constructeur de la classe Column sans contraintes
-     * @param name Le nom de la colonne
-     * @param id L'identifiant de la colonne
-     * @param dataType Le type de la colonne
-     */
-    public ColumnA(String name, int id, ColumnDataTypeA dataType) {
-        this.name = name;
-        this.id = id;
-        this.dataType = dataType;
-        this.values = new ArrayList<>();
-    }
-    
-    /**
      * Constructeur de la classe  avec une liste de valeurs
      * @param name Le nom de la colonne
      * @param id L'identifiant de la colonne
@@ -63,7 +50,7 @@ public class ColumnA <T> {
         this.values = values;
     }
 
-    /**
+	/**
      * Retourne le nom de la colonne
      * @return Le nom de la colonne
      */
@@ -160,23 +147,11 @@ public class ColumnA <T> {
         this.constraintFile = constraintFile;
     }
 
-    /**
-     * Vérifier les contraintes sur une colone
-     */
-    public boolean checkConstraint() {
-        /* Retourner la listes des contraintes de la colonne */
-        List<String> constraints = this.constraintFile.getConstraints();
-        /* Parcourir la liste des contraintes */
-        for (String constraint : constraints) {
-            
-            /* Parcourir la liste des données de la colonne */
-            for (T value : this.values) {
-                /* Vérifier la contrainte sur la donnée */
-                if (!this.constraintFile.checkConstraint(this.dataType, constraint, value)) {
-                    return false;
-                }
-            }
-        }
-        return true;
+	public void setValue (T value) {
+        this.values.add(value);
+    }
+
+    public void setValues (List<T> values) {
+        this.values = values;
     }
 }

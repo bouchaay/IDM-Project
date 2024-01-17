@@ -81,6 +81,11 @@ public class InputA {
      * @return Le type de donnée des colonnes de l'entrée de l'algorithme
      */
     public ColumnDataTypeA getDataType() {
-        return this.columns.get(1).getDataType();
+        if (columns.size() > 1) {
+            return columns.get(1).getDataType();
+        } else {
+            // retourner le type int
+            return ColumnDataTypeA.INTEGER;
+        }
     }
 }

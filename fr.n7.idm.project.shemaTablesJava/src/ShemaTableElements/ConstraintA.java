@@ -127,20 +127,72 @@ public class ConstraintA {
     }
 
     /** Vérifier la contrainte sur un type de donnée
-     * @param constraint La contrainte à vérifier
-     * @param data La donnée à vérifier
+     * @param colomn La colonne à vérifier
      * @return true si la donnée respecte la contrainte, false sinon
      */
-    public boolean checkConstraint(ColumnDataTypeA type, String constraint, Object data) {
-        if (type == ColumnDataTypeA.INTEGER) {
-            return checkIntConstraint(constraint, (int) data);
-        } else if (type == ColumnDataTypeA.FLOAT) {
-            return checkFloatConstraint(constraint, (float) data);
-        } else if (type == ColumnDataTypeA.STRING) {
-            return checkStringConstraint(constraint, (String) data);
-        } else {
-            return false;
+    public static boolean checkConstraint(ColumnA column) {
+        ConstraintA constraint = column.getConstraintFile();
+        if (constraint == null) {
+            return true;
         }
+        List<String> constraints = constraint.getConstraints();
+        for (int i = 0; i < column.getValues().size(); i++) {
+            if (column.getValue(i) instanceof Integer) {
+                for (int j = 0; j < constraints.size(); j++) {
+                    if (!constraint.checkIntConstraint(constraints.get(j), (int) column.getValue(i))) {
+                        return false;
+                    }
+                }
+            } else if (column.getValue(i) instanceof Float) {
+                for (int j = 0; j < constraints.size(); j++) {
+                    if (!constraint.checkFloatConstraint(constraints.get(j), (float) column.getValue(i))) {
+                        return false;
+                    }
+                }
+            } else if (column.getValue(i) instanceof String) {
+                for (int j = 0; j < constraints.size(); j++) {
+                    if (!constraint.checkStringConstraint(constraints.get(j), (String) column.getValue(i))) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    /** Retourner la liste des indices des données qui ne respectent pas la contrainte
+     * @param colomn La colonne à vérifier
+     * @return La liste des indices des données qui ne respectent pas la contrainte
+     */
+    public static List<Integer> getFalseConstraintIndex(ColumnA column) {
+        ConstraintA constraint = column.getConstraintFile();
+        List<Integer> falseConstraintIndex = new ArrayList<Integer>();
+        if (constraint == null) {
+            return falseConstraintIndex;
+        }
+        List<String> constraints = constraint.getConstraints();
+        for (int i = 0; i < column.getValues().size(); i++) {
+            if (column.getValue(i) instanceof Integer) {
+                for (int j = 0; j < constraints.size(); j++) {
+                    if (!constraint.checkIntConstraint(constraints.get(j), (int) column.getValue(i))) {
+                        falseConstraintIndex.add(i);
+                    }
+                }
+            } else if (column.getValue(i) instanceof Float) {
+                for (int j = 0; j < constraints.size(); j++) {
+                    if (!constraint.checkFloatConstraint(constraints.get(j), (float) column.getValue(i))) {
+                        falseConstraintIndex.add(i);
+                    }
+                }
+            } else if (column.getValue(i) instanceof String) {
+                for (int j = 0; j < constraints.size(); j++) {
+                    if (!constraint.checkStringConstraint(constraints.get(j), (String) column.getValue(i))) {
+                        falseConstraintIndex.add(i);
+                    }
+                }
+            }
+        }
+        return falseConstraintIndex;
     }
 
     /**
