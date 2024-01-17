@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.n7.fr/idm/project/shemaTables/Xtext"
+			class = "fr.n7.idm.project.shemaTables.xtext.XtextPackage"
+			genModel = "model/generated/Xtext.genmodel" />
+	</extension>
+</plugin>

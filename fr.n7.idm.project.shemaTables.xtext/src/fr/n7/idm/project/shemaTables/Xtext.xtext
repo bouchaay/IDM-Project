@@ -1,0 +1,93 @@
+grammar fr.n7.idm.project.shemaTables.Xtext with org.eclipse.xtext.common.Terminals
+
+generate xtext "http://www.n7.fr/idm/project/shemaTables/Xtext"
+
+
+
+Tables:
+    'Tables' '{'
+        'shematables' shematables+=ShemaTable*
+    '}';
+
+ShemaTable:
+    'ShemaTable' '{'
+        'name' name=ID
+        'id' id=INT
+        'columns' columns+=Column*
+        'catalogue' catalogue=Catalogue
+    '}';
+
+
+
+Column:
+    'Column' '{'
+        'name' name=ID
+        'id' id=INT
+        'dataType' dataType=ColumnDataType
+        'constraint' constraint=Constraint
+    '}';
+
+ReferencedColumn:
+    'ReferencedColumn' '{'
+        'name' name=ID
+        'id' id=INT
+        'dataType' dataType=ColumnDataType
+        'constraint' constraint=Constraint
+        'foreignTable' foreignTable=[ShemaTable|ID]
+        'foreignColumn' foreignColumn=[Column|ID]
+    '}';
+
+DerivedColumn:
+    'DerivedColumn' '{'
+        'name' name=ID
+        'id' id= INT
+        'dataType' dataType=ColumnDataType
+        'constraint' constraint=Constraint
+        'algorithm' algorithm=Algorithm
+        'outputColumn' outputColumn=Output
+    '}';
+
+Constraint:
+    'Constraint' '{'
+        'filePath' filePath=STRING
+    '}';
+
+Catalogue:
+    'Catalogue' '{'
+        'name' name=ID
+        'algorithms' algorithms+=Algorithm*
+    '}';
+
+Algorithm:
+    'Algorithm' '{'
+        'name' name=ID
+        'path' path=STRING
+        'output' output=Output
+        'input' input=Input
+    '}';
+
+Input:
+    'Input' '{'
+        'constante' constante=Constant
+        'columns' columns+=[Column|ID]*
+    '}';
+
+Output:
+    'Output' '{'
+        'name' name=ID
+        'id' id= INT
+        'dataType' dataType=ColumnDataType
+        'constraint' constraint=Constraint
+    '}';
+
+
+
+Constant:
+    'Constant' '{'
+        'value' value= INT
+    '}';
+enum ColumnDataType:
+	int = "int" | float = "float" | string = "string"
+;  
+
+
