@@ -35,7 +35,7 @@ public static void main(String[] args) {
 		// CrÃ©er un objet resourceSetImpl qui contiendra une ressource EMF (le modÃ¨le)
 		ResourceSet resSet = new ResourceSetImpl();
 
-		URI modelURI = URI.createURI("Table5.xmi");
+		URI modelURI = URI.createURI("Table6.xmi");
 		Resource shemaTablesResource = resSet.createResource(modelURI);
 		
 		// La fabrique pour fabriquer les Ã©lÃ©ments de SimplePDL

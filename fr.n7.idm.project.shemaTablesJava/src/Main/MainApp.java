@@ -12,5 +12,4 @@ public class MainApp {
 		new TableToFrame(premierShema);
 
 	}
-
 }

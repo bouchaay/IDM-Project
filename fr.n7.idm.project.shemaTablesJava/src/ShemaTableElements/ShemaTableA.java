@@ -144,4 +144,8 @@ public class ShemaTableA {
             i++;
         }
     }
+    
+    public int getNbColumns() {
+    	return this.columns.size();
+    }
 }

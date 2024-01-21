@@ -6,8 +6,8 @@ package fr.n7.idm.project.shemaTables.xtext.ui.internal;
 import com.google.common.collect.Maps;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import fr.n7.idm.project.shemaTables.XtextRuntimeModule;
-import fr.n7.idm.project.shemaTables.ui.XtextUiModule;
+import fr.n7.idm.project.xtext.ShemaTablesRuntimeModule;
+import fr.n7.idm.project.xtext.ui.ShemaTablesUiModule;
 import java.util.Collections;
 import java.util.Map;
 import org.apache.log4j.Logger;
@@ -23,7 +23,7 @@ import org.osgi.framework.BundleContext;
 public class XtextActivator extends AbstractUIPlugin {
 
 	public static final String PLUGIN_ID = "fr.n7.idm.project.shemaTables.xtext.ui";
-	public static final String FR_N7_IDM_PROJECT_SHEMATABLES_XTEXT = "fr.n7.idm.project.shemaTables.Xtext";
+	public static final String FR_N7_IDM_PROJECT_XTEXT_SHEMATABLES = "fr.n7.idm.project.xtext.ShemaTables";
 	
 	private static final Logger logger = Logger.getLogger(XtextActivator.class);
 	
@@ -73,15 +73,15 @@ public class XtextActivator extends AbstractUIPlugin {
 	}
 	
 	protected com.google.inject.Module getRuntimeModule(String grammar) {
-		if (FR_N7_IDM_PROJECT_SHEMATABLES_XTEXT.equals(grammar)) {
-			return new XtextRuntimeModule();
+		if (FR_N7_IDM_PROJECT_XTEXT_SHEMATABLES.equals(grammar)) {
+			return new ShemaTablesRuntimeModule();
 		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
 	protected com.google.inject.Module getUiModule(String grammar) {
-		if (FR_N7_IDM_PROJECT_SHEMATABLES_XTEXT.equals(grammar)) {
-			return new XtextUiModule(this);
+		if (FR_N7_IDM_PROJECT_XTEXT_SHEMATABLES.equals(grammar)) {
+			return new ShemaTablesUiModule(this);
 		}
 		throw new IllegalArgumentException(grammar);
 	}

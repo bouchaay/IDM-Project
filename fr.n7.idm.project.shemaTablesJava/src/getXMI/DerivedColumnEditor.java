@@ -15,6 +15,8 @@ public class DerivedColumnEditor extends JFrame {
     private JTextField constantColumnIdField;
     /** Nom de l'algorithme */
     private JTextField algorithmNameField;
+    /** Le nom de la nouvelle colonne */
+    private JTextField newcolumnnameField;
     /** Le path des resources */
     private String resourcePath;
     /** ShemaTable de l'entrée */
@@ -39,6 +41,7 @@ public class DerivedColumnEditor extends JFrame {
         inputColumnIdField = new JTextField(10);
         constantColumnIdField = new JTextField(10);
         algorithmNameField = new JTextField(10);
+        newcolumnnameField = new JTextField(10);
 
         JButton addInputButton = new JButton("Add Input");
         addInputButton.addActionListener(new ActionListener() {
@@ -106,6 +109,15 @@ public class DerivedColumnEditor extends JFrame {
         gbc.gridy = 2;
         panel.add(finishButton, gbc);
 
+        // JLabel pour "New column name"
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        panel.add(new JLabel("New column name"), gbc);
+        
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        panel.add(newcolumnnameField, gbc);
+
         // Ajouter le JPanel à la JFrame
         add(panel);
 
@@ -146,6 +158,9 @@ public class DerivedColumnEditor extends JFrame {
         // Créer l'instance de l'algorithme
         AlgorithmA algorithm = new AlgorithmA(input, algorithmName, resourcePath + "/" + algorithmName + ".py");
         // Ajouter l'algorithme au catalogue de la table
+        if (newcolumnnameField.getText() != null) {
+        	algorithm.getOutput().setName(newcolumnnameField.getText());
+        }
         table.getCatalogue().addAlgorithm(algorithm);
         // Définir la colonne dérivée
         DerivedColumnA derivedColumn = new DerivedColumnA(algorithm);

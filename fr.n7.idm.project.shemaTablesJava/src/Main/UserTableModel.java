@@ -10,7 +10,7 @@ public class UserTableModel {
 
 			this.lesTables = new ArrayList<>();
 			// Catalogue de la table
-			CatalogueA catalogue_1 = new CatalogueA("CatalogueIFT");
+			CatalogueA catalogue_1 = new CatalogueA("IFT_CAT");
 			
 			// La table d'id 1
 			ShemaTableA table_1 = new ShemaTableA("IFT", 1, catalogue_1);
@@ -37,7 +37,7 @@ public class UserTableModel {
 			ConstraintA contraintes_1_3 =  new ConstraintA("");
 
 			// Création de la colonne courante d'id 3
-			ColumnA<Integer> currentColumn_1_3 = new ColumnA<Integer>("High", 3, ColumnDataTypeA.INTEGER, contraintes_1_3);
+			ColumnA<Float> currentColumn_1_3 = new ColumnA<Float>("High", 3, ColumnDataTypeA.FLOAT, contraintes_1_3);
 
 			// Ajouter la colonne d'id 3 à la table
 			table_1.addColumn(currentColumn_1_3);
@@ -73,14 +73,14 @@ public class UserTableModel {
 			ConstraintA contraintes_1_7 =  new ConstraintA("");
 
 			// Création de la colonne courante d'id 7
-			ColumnA<Float> currentColumn_1_7 = new ColumnA<Float>("Volume", 7, ColumnDataTypeA.FLOAT, contraintes_1_7);
+			ColumnA<Integer> currentColumn_1_7 = new ColumnA<Integer>("Volume", 7, ColumnDataTypeA.INTEGER, contraintes_1_7);
 
 			// Ajouter la colonne d'id 7 à la table
 			table_1.addColumn(currentColumn_1_7);
 			// Ajouter la table à la liste des tables
 			lesTables.add(table_1);
 			// Catalogue de la table
-			CatalogueA catalogue_2 = new CatalogueA("CatalogueOFT");
+			CatalogueA catalogue_2 = new CatalogueA("OFT_CAT");
 
 			// L'input de l'algorithme actuel
 			InputA input_avg_2 = new InputA();
@@ -90,11 +90,11 @@ public class UserTableModel {
 			ColumnA<Float> currentColumn_avg_2_3 = new ColumnA<Float>("Min", 3, ColumnDataTypeA.FLOAT, currentColConstr_avg_2_3);
 			input_avg_2.addColumnToInput(currentColumn_avg_2_3);
 			ConstraintA currentColConstr_avg_2_4 = new ConstraintA("");
-			ColumnA<Integer> currentColumn_avg_2_4 = new ColumnA<Integer>("Max", 4, ColumnDataTypeA.INTEGER, currentColConstr_avg_2_4);
+			ColumnA<Float> currentColumn_avg_2_4 = new ColumnA<Float>("Max", 4, ColumnDataTypeA.FLOAT, currentColConstr_avg_2_4);
 			input_avg_2.addColumnToInput(currentColumn_avg_2_4);
 
 			// Créer l'algorithme
-			AlgorithmA currentAlgo_avg_2 = new AlgorithmA(input_avg_2, "sub", "/Ressource/avg.py");
+			AlgorithmA currentAlgo_avg_2 = new AlgorithmA(input_avg_2, "avg", "/Ressource/avg.py");
 			catalogue_2.addAlgorithm(currentAlgo_avg_2);
 
 			// L'input de l'algorithme actuel
@@ -109,7 +109,7 @@ public class UserTableModel {
 			input_sub_2.addColumnToInput(currentColumn_sub_2_2);
 
 			// Créer l'algorithme
-			AlgorithmA currentAlgo_sub_2 = new AlgorithmA(input_sub_2, "avg", "/Ressource/sub.py");
+			AlgorithmA currentAlgo_sub_2 = new AlgorithmA(input_sub_2, "sub", "/Ressource/sub.py");
 			catalogue_2.addAlgorithm(currentAlgo_sub_2);
 			
 			// La table d'id 2
@@ -146,7 +146,7 @@ public class UserTableModel {
 			ConstraintA contraintes_2_4 =  new ConstraintA("");
 
 			// Création de la colonne courante d'id 4
-			ColumnA<Integer> currentColumn_2_4 = new ColumnA<Integer>("Max", 4, ColumnDataTypeA.INTEGER, contraintes_2_4);
+			ColumnA<Float> currentColumn_2_4 = new ColumnA<Float>("Max", 4, ColumnDataTypeA.FLOAT, contraintes_2_4);
 
 			// Ajouter la colonne d'id 4 à la table
 			table_2.addColumn(currentColumn_2_4);
@@ -164,7 +164,7 @@ public class UserTableModel {
 			ConstraintA contraintes_2_6 =  new ConstraintA("");
 
 			// Création de la colonne courante d'id 6
-			ColumnA<Float> currentColumn_2_6 = new ColumnA<Float>("Volume", 6, ColumnDataTypeA.FLOAT, contraintes_2_6);
+			ColumnA<Integer> currentColumn_2_6 = new ColumnA<Integer>("Volume", 6, ColumnDataTypeA.INTEGER, contraintes_2_6);
 
 			// Ajouter la colonne d'id 6 à la table
 			table_2.addColumn(currentColumn_2_6);
@@ -173,7 +173,7 @@ public class UserTableModel {
 			ConstraintA contraintes_2_7 =  new ConstraintA("");
 
 			// Création de la colonne courante d'id 7
-			ColumnA<Integer> currentColumn_2_7 = new ColumnA<Integer>("Outputavg", 7, ColumnDataTypeA.INTEGER, contraintes_2_7);
+			ColumnA<Integer> currentColumn_2_7 = new ColumnA<Integer>("Moyenne", 7, ColumnDataTypeA.INTEGER, contraintes_2_7);
 
 			// Ajouter la colonne d'id 7 à la table
 			table_2.addColumn(currentColumn_2_7);
@@ -182,7 +182,7 @@ public class UserTableModel {
 			ConstraintA contraintes_2_8 =  new ConstraintA("");
 
 			// Création de la colonne courante d'id 8
-			ColumnA<Integer> currentColumn_2_8 = new ColumnA<Integer>("Outputsub", 8, ColumnDataTypeA.INTEGER, contraintes_2_8);
+			ColumnA<Integer> currentColumn_2_8 = new ColumnA<Integer>("Variation", 8, ColumnDataTypeA.INTEGER, contraintes_2_8);
 
 			// Ajouter la colonne d'id 8 à la table
 			table_2.addColumn(currentColumn_2_8);

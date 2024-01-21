@@ -17,7 +17,7 @@ public class ReferencedColumnA extends ColumnA {
      * @param foreignColumn La colonne étrangère
      */
     public ReferencedColumnA(String name, int id, ColumnDataTypeA dataType, ConstraintA constraintFile, ShemaTableA foreignTable, ColumnA<?> foreignColumn) {
-        super(name, id, dataType, constraintFile);
+        super(name, id, dataType, constraintFile, foreignColumn.getValues());
         this.foreignTable = foreignTable;
         this.foreignColumn = foreignColumn;
     }

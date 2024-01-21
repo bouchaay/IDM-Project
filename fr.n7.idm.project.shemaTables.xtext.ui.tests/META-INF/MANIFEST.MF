@@ -16,4 +16,4 @@ Require-Bundle: fr.n7.idm.project.shemaTables.xtext.ui,
 Import-Package: org.junit.jupiter.api;version="[5.1.0,6.0.0)",
  org.junit.jupiter.api.extension;version="[5.1.0,6.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: fr.n7.idm.project.shemaTables.ui.tests;x-internal=true
+Export-Package: fr.n7.idm.project.xtext.ui.tests;x-internal=true

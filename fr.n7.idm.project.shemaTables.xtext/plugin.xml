@@ -3,8 +3,8 @@
 <plugin>
 	<extension point="org.eclipse.emf.ecore.generated_package">
 		<package
-			uri = "http://www.n7.fr/idm/project/shemaTables/Xtext"
-			class = "fr.n7.idm.project.shemaTables.xtext.XtextPackage"
-			genModel = "model/generated/Xtext.genmodel" />
+			uri = "http://www.n7.fr/idm/project/xtext/ShemaTables"
+			class = "fr.n7.idm.project.xtext.shemaTables.ShemaTablesPackage"
+			genModel = "model/generated/ShemaTables.genmodel" />
 	</extension>
 </plugin>

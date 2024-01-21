@@ -18,7 +18,7 @@ Require-Bundle: fr.n7.idm.project.shemaTables.xtext,
  org.eclipse.xtext.builder
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: fr.n7.idm.project.shemaTables.ui.quickfix,
- fr.n7.idm.project.shemaTables.ui.contentassist,
- fr.n7.idm.project.shemaTables.xtext.ui.internal
+Export-Package: fr.n7.idm.project.xtext.ui.quickfix,
+ fr.n7.idm.project.shemaTables.xtext.ui.internal,
+ fr.n7.idm.project.xtext.ui.contentassist
 Bundle-Activator: fr.n7.idm.project.shemaTables.xtext.ui.internal.XtextActivator

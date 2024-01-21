@@ -11,8 +11,9 @@ public class Maind {
 
     public Maind() {
         super();
-        Sysytem.out.println("Hello World");
+        System.out.println("Hello World");
     }
+    
     public static void main(String[] args) throws IOException, InterruptedException {
         // Créer la liste de listes en Java
         List<List<Integer>> inputList = new ArrayList<>();
