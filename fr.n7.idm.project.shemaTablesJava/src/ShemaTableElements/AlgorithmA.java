@@ -92,4 +92,17 @@ public class AlgorithmA {
     public void setPath(String path) {
         this.path = path;
     }
+
+    /**
+     * Retourne la liste de noms des colonnes de l'entrée de l'algorithme
+     * @return La liste des colonnes de l'entrée de l'algorithme
+     */
+    public List<String> getColInNames() {
+        List<String> colInNames = new ArrayList<String>();
+        List<ColumnA<?>> colIn = input.getColumns();
+        for (ColumnA<?> col : colIn) {
+            colInNames.add(col.getName());
+        }
+        return colInNames;
+    }
 }

@@ -50,6 +50,13 @@ public class ColumnA <T> {
         this.values = values;
     }
 
+    public ColumnA(String name, int id,  List<T> value) {
+        this.name = name;
+        this.id = id;
+        this.values = value;
+       
+    }
+
 	/**
      * Retourne le nom de la colonne
      * @return Le nom de la colonne

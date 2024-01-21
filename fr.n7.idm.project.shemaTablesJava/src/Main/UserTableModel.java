@@ -94,7 +94,7 @@ public class UserTableModel {
 			input_avg_2.addColumnToInput(currentColumn_avg_2_4);
 
 			// Créer l'algorithme
-			AlgorithmA currentAlgo_avg_2 = new AlgorithmA(input_avg_2, "avg", "/Ressource/avg.py");
+			AlgorithmA currentAlgo_avg_2 = new AlgorithmA(input_avg_2, "sub", "/Ressource/avg.py");
 			catalogue_2.addAlgorithm(currentAlgo_avg_2);
 
 			// L'input de l'algorithme actuel
@@ -109,7 +109,7 @@ public class UserTableModel {
 			input_sub_2.addColumnToInput(currentColumn_sub_2_2);
 
 			// Créer l'algorithme
-			AlgorithmA currentAlgo_sub_2 = new AlgorithmA(input_sub_2, "sub", "/Ressource/sub.py");
+			AlgorithmA currentAlgo_sub_2 = new AlgorithmA(input_sub_2, "avg", "/Ressource/sub.py");
 			catalogue_2.addAlgorithm(currentAlgo_sub_2);
 			
 			// La table d'id 2

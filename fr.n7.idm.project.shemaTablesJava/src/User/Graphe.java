@@ -7,11 +7,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Graphe {
-    private List<Integer> x;
-    private List<Integer> y;
+    private List<?> x;
+    private List<?> y;
     private int typeGraphique;
 
-    public Graphe(List<Integer> x, List<Integer> y, int typeGraphique) {
+    public Graphe(List<?> x, List<?> y, int typeGraphique) {
         this.x = x;
         this.y = y;
         this.typeGraphique = typeGraphique;
@@ -26,11 +26,13 @@ public class Graphe {
     }
 
 
-    private static String appelerAPIPython(List<Integer> x, List<Integer> y, int typeGraphique) {
+    private static String appelerAPIPython(List<?> x, List<?> y, int typeGraphique) {
         try {
             // Construire l'URL de l'API Python
             String url = "http://localhost:5000/tracer_graphique";
             URL obj = new URL(url);
+
+            
 
             // Créer la connexion
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();

@@ -123,15 +123,25 @@ public class ShemaTableA {
      * @return La colonne de nom name
      */
     public ColumnA<?> getColumnByName(String name) {
+        ColumnA<?> columnA = null;
         for (ColumnA<?> column : this.columns) {
             if (column.getName().equals(name)) {
-                return column;
-            }
+                columnA = column;
+                break;
+            } 
         }
-        return null;
+        return columnA;
+        
     }
 
-    public int getNbColumns() {
-        return this.columns.size();
+    public void setColumnWithName(String name, List<?> values) {
+        int i = 0;
+        for (ColumnA<?> col : this.columns) {
+            if (col.getName().equals(name)) {
+                this.columns.set(i, new ColumnA<>(name, i, values));
+                break;
+            }
+            i++;
+        }
     }
 }

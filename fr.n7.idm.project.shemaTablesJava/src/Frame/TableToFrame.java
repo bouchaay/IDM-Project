@@ -1,6 +1,7 @@
 package Frame;
 import ShemaTableElements.*;
 import User.*;
+import Ressource.Operation;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -8,6 +9,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 import java.awt.*;
+import java.io.IOException;
 import java.util.Vector;
 import java.util.ArrayList;
 import java.util.List;
@@ -142,13 +144,13 @@ public class TableToFrame extends JFrame {
 
     List<ColumnA<?>> columnst = table.getColumns();
     //nombre de colonne du tableau importer
-    int nbLigneTab =columns.size();
+    int nbcolTab =columns.size();
     //nombre de colonne du notre table la table
-    int nbLigne = columnst.size();
+    int nbcol = columnst.size();
 
-    if(nbLigne >= nbLigneTab){
+    if(nbcol >= nbcolTab){
          // Ajouter les nouvelles colonnes
-        for (int i = 0; i < nbLigneTab; i++) {
+        for (int i = 0; i < nbcolTab; i++) {
             tableModel.addColumn(String.valueOf(columnst.get(i).getName()),columns.get(i).getValues().toArray());    
         }
     }else{
@@ -160,16 +162,87 @@ public class TableToFrame extends JFrame {
 }
 
     private void Enregistrer() {
+        
         for (ColumnA c : table.getColumns()) {
-            List<String> values = getColumn(c.getName());
+            List<?> values = getColumn(c.getName());
             ColumnA column = new ColumnA(c.getName(), c.getId(), c.getDataType(), c.getConstraintFile(), values);
             this.table.setColumnName(c.getName(), column);
         }
+        
+        CatalogueA catalogue = table.getCatalogue();
+        List<AlgorithmA> algorithms = catalogue.getAlgorithms();
+        for (int i = 0; i < algorithms.size(); i++) {
+            Operation op = new Operation(table);
+            System.out.println("algo " + i);
+            String list = op.excOperation(i);
+            System.out.println("algo2 " + list);
+            List<?> columnCalcu = getValueInt(list);
+            
+            System.out.println("columnCalcu " + columnCalcu);
+            String nameAlg = "Output" + algorithms.get(i).getName() ;
+            System.out.println("nameAlg " + nameAlg);
+            this.table.setColumnWithName(nameAlg, columnCalcu);
+        }
+
+        List<ColumnA<String>> columnstr = toColumnsStr(table.getColumns());
+        mettreAJourTableau(columnstr); 
+           
         JOptionPane.showMessageDialog(this, "Enregistrer");
     }
 
+
+
+   
+
+
+
+
+    // transforme string : la liste en  liste de string
+    private List<String> getValueInt (String colum){
+        List<String> columnc = new ArrayList<>();
+
+        // Supprimer les crochets d'ouverture et de fermeture
+        colum = colum.substring(1, colum.length() - 1);
+
+        // Diviser la chaîne en un tableau de chaînes en utilisant la virgule comme délimiteur
+        String[] elements = colum.split(",");
+        for (String element : elements) {
+            try {
+                double valeur = Double.parseDouble(element.trim());
+                columnc.add(String.valueOf(valeur));
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                // Handle the case where conversion fails (invalid string)
+            }
+        }
+
+        // Display the list of floating-point numbers
+        System.out.println(columnc);
+        return columnc;
+    }
+    
+
+
+   /*  private List<List<?>> getValuesIn (AlgorithmA algo){
+        List<String> colInNames = algo.getColInNames();
+        List<List<?>> colInValues = new ArrayList<>();
+        for (String colName : colInNames) {
+            ColumnA<?> col = table.getColumnByName(colName);
+            if (col != null) {
+                colInValues.add(col.getValues());
+            }
+        }
+        return colInValues;
+    }*/
+
 	
     private void visualiser(int typeGraphique) {
+
+        try {
+            Runtime.getRuntime().exec("python tracer_graphique.py");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         List<ColumnA<?>> columns = table.getColumns();
         String[] choixSelectionnes = new String[columns.size()];
         //String choixX;
@@ -212,21 +285,21 @@ public class TableToFrame extends JFrame {
                         // Utiliser les phrases dans un autre code
                         String choixX = vis.getXEx();
                         String choixY = vis.getYEx();
-                        List<String> xs = getColumn(choixX);
-                        List<String> ys = getColumn(choixY);
+                        List<?> xs = getColumn(choixX);
+                        List<?> ys = getColumn(choixY);
 
                        /*  for (String str : x) {
                             System.out.println(Integer.parseInt(str));
                         }*/
                         
                         // to int
-                        List<Integer> x = strToInt(xs);
-                        List<Integer> y = strToInt(ys);
+                        //List<Integer> x = strToInt(xs);
+                        //List<Integer> y = strToInt(ys);
 
 
-                        System.out.println(x);
-                        System.out.println(y);
-                        Graphe graph = new Graphe(x, y, typeGraphique);
+                        System.out.println(xs);
+                        System.out.println(ys);
+                        Graphe graph = new Graphe(xs, ys, typeGraphique);
                         graph.creerGraphe();
 
                         // Faire quelque chose avec les phrases (afficher dans la console dans cet exemple)
@@ -271,6 +344,8 @@ public class TableToFrame extends JFrame {
     // Méthode pour ajouter une ligne au tableau
     private void ajouterLigne() {
         Vector<Object> emptyRow = new Vector<>();
+        int rowCount = tableModel.getRowCount();
+        emptyRow.add(rowCount + 1);
         for (int i = 0; i < tableModel.getColumnCount(); i++) {
             emptyRow.add("");
         }
@@ -308,11 +383,33 @@ public class TableToFrame extends JFrame {
      // Add this closing brace
 
 
-    public List<String> getColumn(String columnName) {
-        List<String> column = new ArrayList<>();
+    public List<?> getColumn(String columnName) {
+        List<Object> column = new ArrayList<>(); // Specify the type of List as Object
         for (int i = 0; i < tableModel.getRowCount(); i++) {
-            column.add((String) tableModel.getValueAt(i, tableModel.findColumn(columnName)));
+            column.add((Object) tableModel.getValueAt(i, tableModel.findColumn(columnName))); // Explicitly cast the value to Object
         }
         return column;
+    }
+
+    public List<String> toStr (List<?> list){
+        List<String> listStr = new ArrayList<String>();
+        for (Object str : list) {
+            listStr.add(String.valueOf(str));
+        }
+        return listStr;
+    }
+
+    public ColumnA<String> toColumnStr (ColumnA<?> column){
+        List<String> listStr = toStr(column.getValues());
+        ColumnA<String> columnStr = new ColumnA<String>(column.getName(), column.getId(), ColumnDataTypeA.STRING, null, listStr);
+        return columnStr;
+    }
+
+    public List<ColumnA<String>> toColumnsStr (List<ColumnA<?>> columns){
+        List<ColumnA<String>> columnsStr = new ArrayList<ColumnA<String>>();
+        for (ColumnA<?> column : columns) {
+            columnsStr.add(toColumnStr(column));
+        }
+        return columnsStr;
     }
 }
