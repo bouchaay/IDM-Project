@@ -22,7 +22,7 @@ public class ShemaTableA {
         this.id = id;
         this.catalogue = catalogue;
         this.columns = new ArrayList<>();
-        this.columns.add(new ColumnA<Integer>("Lines Id", 0, ColumnDataTypeA.INTEGER, new ConstraintA("")));
+        this.columns.add(new ColumnA<Integer>("Id", 0, ColumnDataTypeA.INTEGER, new ConstraintA("")));
     }
 
     /** Constructeur de la classe ShemaTable

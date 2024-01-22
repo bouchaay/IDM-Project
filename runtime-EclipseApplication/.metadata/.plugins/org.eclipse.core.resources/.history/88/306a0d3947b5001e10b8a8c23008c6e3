@@ -1,0 +1,22 @@
+Tables {
+	ShemaTable {
+		name IFT
+		id 1
+		Column {
+			name Date
+			id 1
+			dataType int
+			constraint {
+				filePath ""
+			}
+		}
+		Catalogue {
+			name IFT_CAT
+			}
+			
+		}
+		
+	}
+}
+
+
